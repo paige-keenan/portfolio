@@ -111,8 +111,4 @@ $(document).ready(function() {
 	render();
 
 
-
-
-
 });
-
