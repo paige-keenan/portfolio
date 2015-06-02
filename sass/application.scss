@@ -1,8 +1,10 @@
-<<<<<<< HEAD
 // Variables
 $background: #eeede8;
+$button-gradient: linear-gradient(45deg, rgba(53, 224, 255, 1) 0%, rgba(34, 133, 232, 1) 25%, rgba(97, 68, 183, 1) 51%, rgba(148, 24, 199, 1) 100%);
+$button-hover: linear-gradient(45deg, #29B8D2 0%, #1462B0 25%, #3D2976 51%, #6E1493 100%);
 $font-stack: 'Oswald' Helvetica, sans-serif;
-$headline-color: rgba(202, 3, 3, 0.37);
+$headline-color: rgba(81, 93, 94, 0.36);
+$white: #fff;
 
 
 // Defaults
@@ -65,7 +67,7 @@ $headline-color: rgba(202, 3, 3, 0.37);
 
 	// Hero
 	.header {
-		background: rgba(24, 172, 174, 0.19);
+		background: rgba(22, 220, 255, 0.31);
 		position: relative;
 		width: 100%;
 
@@ -80,14 +82,28 @@ $headline-color: rgba(202, 3, 3, 0.37);
 	}
 
 	nav {
-		display: flex;
-		flex-flow: row wrap;
-		flex: 0 1 auto;
-		justify-content: center;
 
 		li {			
-			flex-basis: 50%;
+			padding-top: 20px; 
 			text-align: center;
+
+			button {
+				background: $button-gradient;
+				border: 0;
+				color: $white;
+				cursor: pointer;
+				font-family: $font-stack;
+				font-size: 20px;
+				padding: 15px 0;
+				text-transform: uppercase;
+				transition: .2s ease-in-out;
+				width: 80%;
+
+				&:hover {
+					background: $button-hover;
+					transition: .2s ease-in-out;
+				}
+			}
 		}
 	}
 }

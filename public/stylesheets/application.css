@@ -1,23 +1,15 @@
-<<<<<<< HEAD
-=======
-@font-face {
-  font-family: 'Biko';
-  src: url('../fonts/Biko_Black.otf'); }
-
->>>>>>> b9beda2936346bd859a1f0ab4eb34ac1c0cabd6f
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0; }
-<<<<<<< HEAD
   * a {
     text-decoration: none; }
   * li {
     list-style: none; }
   * h1, * h2 {
     font-family: 'Oswald' Helvetica, sans-serif;
-    color: rgba(202, 3, 3, 0.37); }
+    color: rgba(81, 93, 94, 0.36); }
   * h1 {
     font-size: 40px;
     line-height: 35px;
@@ -46,7 +38,7 @@
         position: absolute;
         top: 0; } }
   * .header {
-    background: rgba(24, 172, 174, 0.19);
+    background: rgba(22, 220, 255, 0.31);
     position: relative;
     width: 100%; }
     @media screen and (min-width: 768px) {
@@ -54,38 +46,20 @@
         height: 400px; } }
   * .main {
     background: #eeede8; }
-  * nav {
-    display: flex;
-    flex-flow: row wrap;
-    flex: 0 1 auto;
-    justify-content: center; }
-    * nav li {
-      flex-basis: 50%;
-      text-align: center; }
-=======
-
-section.header {
-  background: rgba(174, 24, 24, 0.19);
-  height: 400px;
-  position: relative;
-  width: 100%; }
-  section.header h1 {
-    -moz-transform: translate(0px, -50%);
-    -webkit-transform: translate(0px, -50%);
-    color: rgba(202, 34, 34, 0.26);
-    font-family: 'Biko', sans-serif;
-    font-size: 100px;
-    line-height: 80px;
-    position: absolute;
-    right: 30px;
-    text-align: right;
-    text-transform: uppercase;
-    top: 50%;
-    transform: translate(0px, -50%);
-    width: 600px; }
-
-canvas {
-  opacity: .2;
-  position: absolute;
-  top: 0; }
->>>>>>> b9beda2936346bd859a1f0ab4eb34ac1c0cabd6f
+  * nav li {
+    padding-top: 20px;
+    text-align: center; }
+    * nav li button {
+      background: linear-gradient(45deg, #35e0ff 0%, #2285e8 25%, #6144b7 51%, #9418c7 100%);
+      border: 0;
+      color: #fff;
+      cursor: pointer;
+      font-family: 'Oswald' Helvetica, sans-serif;
+      font-size: 20px;
+      padding: 15px 0;
+      text-transform: uppercase;
+      transition: .2s ease-in-out;
+      width: 80%; }
+      * nav li button:hover {
+        background: linear-gradient(45deg, #29B8D2 0%, #1462B0 25%, #3D2976 51%, #6E1493 100%);
+        transition: .2s ease-in-out; }
