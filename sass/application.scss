@@ -82,27 +82,31 @@ $white: #fff;
 	}
 
 	nav {
+		padding-bottom: 20px; 
 
 		li {			
 			padding-top: 20px; 
 			text-align: center;
 
 			button {
+				background-size: 200%;
 				background: $button-gradient;
 				border: 0;
 				color: $white;
 				cursor: pointer;
 				font-family: $font-stack;
-				font-size: 20px;
+				font-size: 15px;
+				letter-spacing: 1px;
 				padding: 15px 0;
 				text-transform: uppercase;
-				transition: .2s ease-in-out;
-				width: 80%;
+				transition: .5s ease-in-out;
+				width: 75%;
 
 				&:hover {
-					background: $button-hover;
-					transition: .2s ease-in-out;
+					background-position: 100px;
+					transition: .5s ease-in-out;
 				}
+
 			}
 		}
 	}
