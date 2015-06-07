@@ -1,8 +1,9 @@
 // Variables
 $background: #eeede8;
-$button-gradient: linear-gradient(45deg, rgba(53, 224, 255, 1) 0%, rgba(34, 133, 232, 1) 25%, rgba(97, 68, 183, 1) 51%, rgba(148, 24, 199, 1) 100%);
-$button-hover: linear-gradient(45deg, #29B8D2 0%, #1462B0 25%, #3D2976 51%, #6E1493 100%);
+$bright-blue: #29B8D2;
+$button-gradient: linear-gradient(120deg, #6EE4F1 0%, #22A1E8 25%, #4462B7 51%, #0B33EB 100%);
 $font-stack: 'Oswald' Helvetica, sans-serif;
+$headline-color-mobile: rgba(6, 9, 40, 0.42);
 $headline-color: rgba(81, 93, 94, 0.36);
 $white: #fff;
 
@@ -24,8 +25,14 @@ $white: #fff;
 	
 	h1,
 	h2 {
+		color: $headline-color-mobile;
 		font-family: $font-stack;
-		color: $headline-color;		
+
+		@media screen and (min-width: 768px) {
+			color: $headline-color;		
+		}
+
+		
 	}
 
 	h1 {
@@ -44,16 +51,28 @@ $white: #fff;
 
 	h2 {
 		font-size: 25px;
+		padding-bottom: 50px;
 		text-align: center;
 		text-transform: capitalize;
-		padding-bottom: 50px;
 
 		@media screen and(min-width: 768px) {
 			font-size: 60px;
 		}		
 	}
 
-	// Canvas Specefic
+	h3 {
+		color: $white;
+		font-family: $font-stack;
+		font-size: 50px;
+		text-align: center;	
+	}
+
+	h4 {
+		color: $bright-blue;
+		font-family: $font-stack;
+	}
+
+	// Canvas Specific
 	canvas {
 		display: none;
 
@@ -89,22 +108,42 @@ $white: #fff;
 			text-align: center;
 
 			button {
-				background-size: 200%;
-				background: $button-gradient;
 				border: 0;
 				color: $white;
 				cursor: pointer;
 				font-family: $font-stack;
 				font-size: 15px;
+				height: 50px;
 				letter-spacing: 1px;
-				padding: 15px 0;
+				overflow: hidden;;
+				position: relative;
 				text-transform: uppercase;
-				transition: .5s ease-in-out;
 				width: 75%;
+				
 
-				&:hover {
-					background-position: 100px;
+				&::after {
+					background: $button-gradient;
+					content: '';
+					height: 100%;
+					left: 0;
+					opacity: 1;
+					position: absolute;
+					top: 0;
 					transition: .5s ease-in-out;
+					width: 150%;
+				}
+
+				p {
+					position: absolute;
+					text-align: center;
+					top: 15px;
+					width: 100%;
+					z-index: 1;
+				}
+
+				&:hover::after {
+					left: -100px;
+					transition: .5s ease-in-out;	
 				}
 
 			}
