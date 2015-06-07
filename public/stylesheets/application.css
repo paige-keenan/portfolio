@@ -8,8 +8,11 @@
   * li {
     list-style: none; }
   * h1, * h2 {
-    font-family: 'Oswald' Helvetica, sans-serif;
-    color: rgba(81, 93, 94, 0.36); }
+    color: rgba(6, 9, 40, 0.42);
+    font-family: 'Oswald' Helvetica, sans-serif; }
+    @media screen and (min-width: 768px) {
+      * h1, * h2 {
+        color: rgba(81, 93, 94, 0.36); } }
   * h1 {
     font-size: 40px;
     line-height: 35px;
@@ -23,12 +26,20 @@
         font-size: 100px; } }
   * h2 {
     font-size: 25px;
+    padding-bottom: 50px;
     text-align: center;
-    text-transform: capitalize;
-    padding-bottom: 50px; }
+    text-transform: capitalize; }
     @media screen and (min-width: 768px) {
       * h2 {
         font-size: 60px; } }
+  * h3 {
+    color: #fff;
+    font-family: 'Oswald' Helvetica, sans-serif;
+    font-size: 50px;
+    text-align: center; }
+  * h4 {
+    color: #29B8D2;
+    font-family: 'Oswald' Helvetica, sans-serif; }
   * canvas {
     display: none; }
     @media screen and (min-width: 768px) {
@@ -46,20 +57,39 @@
         height: 400px; } }
   * .main {
     background: #eeede8; }
-  * nav li {
-    padding-top: 20px;
-    text-align: center; }
-    * nav li button {
-      background: linear-gradient(45deg, #35e0ff 0%, #2285e8 25%, #6144b7 51%, #9418c7 100%);
-      border: 0;
-      color: #fff;
-      cursor: pointer;
-      font-family: 'Oswald' Helvetica, sans-serif;
-      font-size: 20px;
-      padding: 15px 0;
-      text-transform: uppercase;
-      transition: .2s ease-in-out;
-      width: 80%; }
-      * nav li button:hover {
-        background: linear-gradient(45deg, #29B8D2 0%, #1462B0 25%, #3D2976 51%, #6E1493 100%);
-        transition: .2s ease-in-out; }
+  * nav {
+    padding-bottom: 20px; }
+    * nav li {
+      padding-top: 20px;
+      text-align: center; }
+      * nav li button {
+        border: 0;
+        color: #fff;
+        cursor: pointer;
+        font-family: 'Oswald' Helvetica, sans-serif;
+        font-size: 15px;
+        height: 50px;
+        letter-spacing: 1px;
+        overflow: hidden;
+        position: relative;
+        text-transform: uppercase;
+        width: 75%; }
+        * nav li button::after {
+          background: linear-gradient(120deg, #6EE4F1 0%, #22A1E8 25%, #4462B7 51%, #0B33EB 100%);
+          content: '';
+          height: 100%;
+          left: 0;
+          opacity: 1;
+          position: absolute;
+          top: 0;
+          transition: .5s ease-in-out;
+          width: 150%; }
+        * nav li button p {
+          position: absolute;
+          text-align: center;
+          top: 15px;
+          width: 100%;
+          z-index: 1; }
+        * nav li button:hover::after {
+          left: -100px;
+          transition: .5s ease-in-out; }

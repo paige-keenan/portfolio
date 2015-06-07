@@ -3,18 +3,27 @@ html
   head
     include head.jade
     section.header
-       a(href='#')
-          h1 Paige Keenan
-          h2 Front End Developer
+      a(href='#')
+        h1 Paige Keenan
+        h2 Front End Developer
 
     section.main
-       nav
-          ul
-             li
-                button(target='#' title='about' type='submit') About
+      nav
+        ul
+          li
+            button(target='#' title='about' type='submit')
+              p About
 
-             li 
-                button(target='#' title='contact' type='submit') Contact
+          li 
+            button(target='#' title='contact' type='submit') Contact
+              p Contact
+
+      //- section.work
+      //-   h3 Work
+      //-   .work__one
+      //-     h4 Bridgestonetire
+
+
 
   body
     include scriptInclude.jade
