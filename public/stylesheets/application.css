@@ -8,7 +8,7 @@
   * li {
     list-style: none; }
   * h1, * h2 {
-    color: #0B6E7F;
+    color: #4B2A45;
     font-family: 'Oswald' Helvetica, sans-serif; }
     @media screen and (min-width: 768px) {
       * h1, * h2 {
@@ -32,14 +32,10 @@
     @media screen and (min-width: 768px) {
       * h2 {
         font-size: 60px; } }
-  * h3 {
+  * h3, * h4 {
     color: #fff;
     font-family: 'Oswald' Helvetica, sans-serif;
-    font-size: 50px;
-    text-align: center; }
-  * h4 {
-    color: #29B8D2;
-    font-family: 'Oswald' Helvetica, sans-serif; }
+    letter-spacing: .5px; }
   * canvas {
     display: none; }
     @media screen and (min-width: 768px) {
@@ -49,11 +45,12 @@
         position: absolute;
         top: 0; } }
   * .header {
-    background: rgba(22, 220, 255, 0.31);
+    background: #3d9ebf;
     position: relative;
     width: 100%; }
     @media screen and (min-width: 768px) {
       * .header {
+        background: rgba(22, 220, 255, 0.31);
         height: 400px; } }
   * .main {
     background: #eeede8; }
@@ -75,7 +72,7 @@
         text-transform: uppercase;
         width: 75%; }
         * nav li button::after {
-          background: linear-gradient(120deg, #6EE4F1 0%, #22A1E8 25%, #4462B7 51%, #0B33EB 100%);
+          background: linear-gradient(120deg, #3d9ebf 0%, #446685 25%, #4a304b 51%, #4f1633 100%);
           content: '';
           height: 100%;
           left: 0;
@@ -91,5 +88,50 @@
           width: 100%;
           z-index: 1; }
         * nav li button:hover::after {
-          left: -100px;
+          left: -50%;
           transition: .5s ease-in-out; }
+  * .work .work__item:hover .work__overlay {
+    opacity: .85;
+    transition: .2s ease-in-out; }
+  * .work__overlay {
+    background: #4b2843;
+    content: '';
+    height: 75%;
+    left: 12.5%;
+    opacity: .5;
+    position: absolute;
+    top: 12.5%;
+    transition: .2s ease-in-out;
+    width: 75%; }
+  * .work__one {
+    background: url('../images/bridgestone.jpg') center center;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+    width: 100%; }
+    * .work__one__overlay {
+      position: relative; }
+  * .work__two {
+    background: url('../images/maps.png') center center;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+    width: 100%; }
+    * .work__two__overlay {
+      position: relative; }
+  * .work__three {
+    background: url('../images/atlanta-humane-society.png') center center;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+    width: 100%; }
+    * .work__three__overlay {
+      position: relative; }
+  * .work__four {
+    background: url('../images/black-girls-code.png') center center;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+    width: 100%; }
+    * .work__four__overlay {
+      position: relative; }

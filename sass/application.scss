@@ -1,12 +1,12 @@
 // Variables
+$background-mobile: #3d9ebf;
 $background: #eeede8;
-$bright-blue: #29B8D2;
-$button-gradient: linear-gradient(120deg, #6EE4F1 0%, #22A1E8 25%, #4462B7 51%, #0B33EB 100%);
+$button-gradient: linear-gradient(120deg, #3d9ebf 0%, #446685 25%, #4a304b 51%, #4f1633 100%);
 $font-stack: 'Oswald' Helvetica, sans-serif;
-$headline-color-mobile: #0B6E7F;
+$headline-color-mobile: #4B2A45;
 $headline-color: rgba(81, 93, 94, 0.36);
 $white: #fff;
-
+$work-overlay: rgba(75, 40, 67, 1);
 
 // Defaults
 * {
@@ -24,7 +24,7 @@ $white: #fff;
 	}
 	
 	h1,
-	h2 {
+	h2, {
 		color: $headline-color-mobile;
 		font-family: $font-stack;
 
@@ -60,16 +60,11 @@ $white: #fff;
 		}		
 	}
 
-	h3 {
+	h3,
+	h4 {
 		color: $white;
 		font-family: $font-stack;
-		font-size: 50px;
-		text-align: center;	
-	}
-
-	h4 {
-		color: $bright-blue;
-		font-family: $font-stack;
+		letter-spacing: .5px;
 	}
 
 	// Canvas Specific
@@ -86,11 +81,12 @@ $white: #fff;
 
 	// Hero
 	.header {
-		background: rgba(22, 220, 255, 0.31);
+		background: $background-mobile;
 		position: relative;
 		width: 100%;
 
 		@media screen and (min-width: 768px) {
+			background: rgba(22, 220, 255, 0.31);
 			height: 400px;
 		}
 	}	
@@ -142,11 +138,83 @@ $white: #fff;
 				}
 
 				&:hover::after {
-					left: -100px;
+					left: -50%;
 					transition: .5s ease-in-out;	
 				}
 
 			}
 		}
+	}
+
+	// Work items
+	.work {
+
+		.work__item {	
+
+			&:hover .work__overlay {
+				opacity: .85;
+				transition: .2s ease-in-out;				
+			}
+		}
+
+		&__overlay {
+			background: $work-overlay;
+			content: '';
+			height: 75%;
+			left: 12.5%;
+			opacity: .5;
+			position: absolute;
+			top: 12.5%;
+			transition: .2s ease-in-out;
+			width: 75%;		
+		}				
+
+		&__one {
+			background: url('../images/bridgestone.jpg') center center;
+			background-size: cover;
+			height: 300px;
+			position: relative;
+			width: 100%;
+
+			&__overlay {
+				position: relative;
+			}
+		}
+
+		&__two {
+			background: url('../images/maps.png') center center;
+			background-size: cover;
+			height: 300px;
+			position: relative;
+			width: 100%;
+
+			&__overlay {
+				position: relative;
+			}
+		}
+
+		&__three {
+			background: url('../images/atlanta-humane-society.png') center center;
+			background-size: cover;
+			height: 300px;
+			position: relative;
+			width: 100%;
+
+			&__overlay {
+				position: relative;
+			}
+		}	
+
+		&__four {
+			background: url('../images/black-girls-code.png') center center;
+			background-size: cover;
+			height: 300px;
+			position: relative;
+			width: 100%;
+
+			&__overlay {
+				position: relative;
+			}
+		}						
 	}
 }
