@@ -1,3 +1,41 @@
+@keyframes transformBackground {
+  0% {
+    background: #FF9A9A; }
+
+  12.5% {
+    background: #FFA96D; }
+
+  37% {
+    background: #FF6D6D; }
+
+  62% {
+    background: #349C93; }
+
+  87% {
+    background: blue; }
+
+  100% {
+    background: #FF9A9A; } }
+
+@-webkit-keyframes transformBackground {
+  0% {
+    background: #FF9A9A; }
+
+  12.5% {
+    background: #FFA96D; }
+
+  37% {
+    background: #FF6D6D; }
+
+  62% {
+    background: #349C93; }
+
+  87% {
+    background: blue; }
+
+  100% {
+    background: #FF9A9A; } }
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -8,7 +46,7 @@
   * li {
     list-style: none; }
   * h1, * h2 {
-    color: #4B2A45;
+    color: #fff;
     font-family: 'Oswald' Helvetica, sans-serif; }
     @media screen and (min-width: 768px) {
       * h1, * h2 {
@@ -26,7 +64,6 @@
         font-size: 100px; } }
   * h2 {
     font-size: 25px;
-    padding-bottom: 50px;
     text-align: center;
     text-transform: capitalize; }
     @media screen and (min-width: 768px) {
@@ -45,7 +82,9 @@
         position: absolute;
         top: 0; } }
   * .header {
-    background: #3d9ebf;
+    animation: 10s transformBackground infinite;
+    -webkit-animation: 10s transformBackground infinite;
+    background: blue;
     position: relative;
     width: 100%; }
     @media screen and (min-width: 768px) {
@@ -61,7 +100,9 @@
       text-align: center; }
       * nav li button {
         border: 0;
+        background: rgba(0, 0, 0, 0.2);
         color: #fff;
+        border: 2px solid #fff;
         cursor: pointer;
         font-family: 'Oswald' Helvetica, sans-serif;
         font-size: 15px;
@@ -70,39 +111,16 @@
         overflow: hidden;
         position: relative;
         text-transform: uppercase;
-        width: 75%; }
-        * nav li button::after {
-          background: linear-gradient(120deg, #3d9ebf 0%, #446685 25%, #4a304b 51%, #4f1633 100%);
-          content: '';
-          height: 100%;
-          left: 0;
-          opacity: 1;
-          position: absolute;
-          top: 0;
-          transition: .5s ease-in-out;
-          width: 150%; }
+        width: 50%; }
         * nav li button p {
           position: absolute;
           text-align: center;
           top: 15px;
           width: 100%;
           z-index: 1; }
-        * nav li button:hover::after {
-          left: -50%;
-          transition: .5s ease-in-out; }
   * .work .work__item:hover .work__overlay {
     opacity: .85;
     transition: .2s ease-in-out; }
-  * .work__overlay {
-    background: #4b2843;
-    content: '';
-    height: 75%;
-    left: 12.5%;
-    opacity: .5;
-    position: absolute;
-    top: 12.5%;
-    transition: .2s ease-in-out;
-    width: 75%; }
   * .work__one {
     background: url('../images/bridgestone.jpg') center center;
     background-size: cover;
@@ -134,4 +152,20 @@
     position: relative;
     width: 100%; }
     * .work__four__overlay {
+      position: relative; }
+  * .work__five {
+    background: url('../images/100-girls-of-code.png') center center;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+    width: 100%; }
+    * .work__five__overlay {
+      position: relative; }
+  * .work__six {
+    background: url('../images/ghost.png') center center;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+    width: 100%; }
+    * .work__six__overlay {
       position: relative; }

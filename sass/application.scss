@@ -1,12 +1,55 @@
 // Variables
 $background-mobile: #3d9ebf;
 $background: #eeede8;
-$button-gradient: linear-gradient(120deg, #3d9ebf 0%, #446685 25%, #4a304b 51%, #4f1633 100%);
+// $button-gradient: linear-gradient(120deg, #3d9ebf 0%, #446685 25%, #4a304b 51%, #4f1633 100%);
 $font-stack: 'Oswald' Helvetica, sans-serif;
-$headline-color-mobile: #4B2A45;
+// $headline-color-mobile: #4B2A45;
 $headline-color: rgba(81, 93, 94, 0.36);
 $white: #fff;
 $work-overlay: rgba(75, 40, 67, 1);
+
+// Animations
+@keyframes transformBackground {
+	0% {
+		background: #FF9A9A;
+	}
+	12.5% {
+		background: #FFA96D;
+	}
+	37% {
+		background: #FF6D6D;
+	}
+	62% {
+		background: #349C93;
+	}
+	87% {
+		background: blue;
+	}
+	100% {
+		background: #FF9A9A;
+	}
+}
+
+@-webkit-keyframes transformBackground {
+	0% {
+		background: #FF9A9A;
+	}
+	12.5% {
+		background: #FFA96D;
+	}
+	37% {
+		background: #FF6D6D;
+	}
+	62% {
+		background: #349C93;
+	}
+	87% {
+		background: blue;
+	}
+	100% {
+		background: #FF9A9A;
+	}
+}
 
 // Defaults
 * {
@@ -25,7 +68,7 @@ $work-overlay: rgba(75, 40, 67, 1);
 	
 	h1,
 	h2, {
-		color: $headline-color-mobile;
+		color: $white;
 		font-family: $font-stack;
 
 		@media screen and (min-width: 768px) {
@@ -51,7 +94,6 @@ $work-overlay: rgba(75, 40, 67, 1);
 
 	h2 {
 		font-size: 25px;
-		padding-bottom: 50px;
 		text-align: center;
 		text-transform: capitalize;
 
@@ -81,7 +123,10 @@ $work-overlay: rgba(75, 40, 67, 1);
 
 	// Hero
 	.header {
-		background: $background-mobile;
+	  	animation: 10s transformBackground infinite;
+	  	-webkit-animation: 10s transformBackground infinite;
+	  	background: blue;
+	  	// background-image: radial-gradient(circle at top right, #1B96CB, #243384 50%);
 		position: relative;
 		width: 100%;
 
@@ -105,7 +150,9 @@ $work-overlay: rgba(75, 40, 67, 1);
 
 			button {
 				border: 0;
+				background: rgba(0, 0, 0, 0.2);
 				color: $white;
+				border: 2px solid $white;
 				cursor: pointer;
 				font-family: $font-stack;
 				font-size: 15px;
@@ -114,20 +161,7 @@ $work-overlay: rgba(75, 40, 67, 1);
 				overflow: hidden;;
 				position: relative;
 				text-transform: uppercase;
-				width: 75%;
-				
-
-				&::after {
-					background: $button-gradient;
-					content: '';
-					height: 100%;
-					left: 0;
-					opacity: 1;
-					position: absolute;
-					top: 0;
-					transition: .5s ease-in-out;
-					width: 150%;
-				}
+				width: 50%;
 
 				p {
 					position: absolute;
@@ -135,11 +169,6 @@ $work-overlay: rgba(75, 40, 67, 1);
 					top: 15px;
 					width: 100%;
 					z-index: 1;
-				}
-
-				&:hover::after {
-					left: -50%;
-					transition: .5s ease-in-out;	
 				}
 
 			}
@@ -157,17 +186,17 @@ $work-overlay: rgba(75, 40, 67, 1);
 			}
 		}
 
-		&__overlay {
-			background: $work-overlay;
-			content: '';
-			height: 75%;
-			left: 12.5%;
-			opacity: .5;
-			position: absolute;
-			top: 12.5%;
-			transition: .2s ease-in-out;
-			width: 75%;		
-		}				
+		// &__overlay {
+		// 	background: $work-overlay;
+		// 	content: '';
+		// 	height: 75%;
+		// 	left: 12.5%;
+		// 	opacity: .5;
+		// 	position: absolute;
+		// 	top: 12.5%;
+		// 	transition: .2s ease-in-out;
+		// 	width: 75%;		
+		// }				
 
 		&__one {
 			background: url('../images/bridgestone.jpg') center center;
@@ -215,6 +244,30 @@ $work-overlay: rgba(75, 40, 67, 1);
 			&__overlay {
 				position: relative;
 			}
-		}						
+		}
+
+		&__five {
+			background: url('../images/100-girls-of-code.png') center center;
+			background-size: cover;
+			height: 300px;
+			position: relative;
+			width: 100%;
+
+			&__overlay {
+				position: relative;
+			}
+		}	
+
+		&__six {
+			background: url('../images/ghost.png') center center;
+			background-size: cover;
+			height: 300px;
+			position: relative;
+			width: 100%;
+
+			&__overlay {
+				position: relative;
+			}
+		}										
 	}
 }
