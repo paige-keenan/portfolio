@@ -1,40 +1,140 @@
 @keyframes transformBackground {
   0% {
-    background: #FF9A9A; }
+    background: #FFB78C; }
 
-  12.5% {
-    background: #FFA96D; }
+  18% {
+    background: #F39A7D; }
 
-  37% {
-    background: #FF6D6D; }
+  48% {
+    background: #E6766C; }
 
-  62% {
-    background: #349C93; }
-
-  87% {
-    background: blue; }
+  78% {
+    background: #DF6363; }
 
   100% {
-    background: #FF9A9A; } }
+    background: #FFB78C; } }
 
 @-webkit-keyframes transformBackground {
   0% {
-    background: #FF9A9A; }
+    background: #FFB78C; }
 
-  12.5% {
-    background: #FFA96D; }
+  18% {
+    background: #F39A7D; }
 
-  37% {
-    background: #FF6D6D; }
+  48% {
+    background: #E6766C; }
 
-  62% {
-    background: #349C93; }
-
-  87% {
-    background: blue; }
+  78% {
+    background: #DF6363; }
 
   100% {
-    background: #FF9A9A; } }
+    background: #FFB78C; } }
+
+.header {
+  animation: 10s transformBackground infinite;
+  -webkit-animation: 10s transformBackground infinite;
+  background: blue;
+  position: relative;
+  width: 100%; }
+  @media screen and (min-width: 768px) {
+    .header {
+      background: rgba(22, 220, 255, 0.31);
+      height: 400px; } }
+  .header::after {
+    content: '';
+    background: url('../images/mountain-header.jpg');
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: .25;
+    background-position: center;
+    background-size: cover; }
+
+.main {
+  background: #eeede8; }
+
+nav {
+  padding-bottom: 20px; }
+  nav li {
+    padding-top: 20px;
+    text-align: center; }
+    nav li button {
+      border: 0;
+      border-radius: 50px;
+      background: none;
+      color: #fff;
+      border: 2px solid #fff;
+      cursor: pointer;
+      font-family: 'Fjalla One' Helvetica, sans-serif;
+      font-size: 15px;
+      height: 45px;
+      letter-spacing: 1px;
+      overflow: hidden;
+      position: relative;
+      text-transform: uppercase;
+      width: 50%;
+      max-width: 175px;
+      min-width: 100px; }
+      nav li button p {
+        position: absolute;
+        text-align: center;
+        top: 15px;
+        width: 100%;
+        z-index: 1; }
+
+.work .work__item:hover .work__overlay {
+  opacity: .85;
+  transition: .2s ease-in-out; }
+.work__one {
+  background: url('../images/bridgestone.jpg') center center;
+  background-size: cover;
+  height: 300px;
+  position: relative;
+  width: 100%; }
+  .work__one__overlay {
+    position: relative; }
+.work__two {
+  background: url('../images/maps.png') center center;
+  background-size: cover;
+  height: 300px;
+  position: relative;
+  width: 100%; }
+  .work__two__overlay {
+    position: relative; }
+.work__three {
+  background: url('../images/atlanta-humane-society.png') center center;
+  background-size: cover;
+  height: 300px;
+  position: relative;
+  width: 100%; }
+  .work__three__overlay {
+    position: relative; }
+.work__four {
+  background: url('../images/black-girls-code.png') center center;
+  background-size: cover;
+  height: 300px;
+  position: relative;
+  width: 100%; }
+  .work__four__overlay {
+    position: relative; }
+.work__five {
+  background: url('../images/100-girls-of-code.png') center center;
+  background-size: cover;
+  height: 300px;
+  position: relative;
+  width: 100%; }
+  .work__five__overlay {
+    position: relative; }
+.work__six {
+  background: url('../images/ghost.png') center center;
+  background-size: cover;
+  height: 300px;
+  position: relative;
+  width: 100%; }
+  .work__six__overlay {
+    position: relative; }
 
 * {
   -webkit-box-sizing: border-box;
@@ -46,13 +146,14 @@
   * li {
     list-style: none; }
   * h1, * h2 {
-    color: #fff;
-    font-family: 'Oswald' Helvetica, sans-serif; }
+    color: #fff; }
     @media screen and (min-width: 768px) {
       * h1, * h2 {
         color: rgba(81, 93, 94, 0.36); } }
   * h1 {
+    font-family: 'Fjalla One' Helvetica, sans-serif;
     font-size: 40px;
+    letter-spacing: 2px;
     line-height: 35px;
     padding-top: 50px;
     text-align: center;
@@ -63,6 +164,7 @@
         padding-top: 100px;
         font-size: 100px; } }
   * h2 {
+    font-family: 'Source Sans Pro' Helvetica, sans-serif;
     font-size: 25px;
     text-align: center;
     text-transform: capitalize; }
@@ -71,101 +173,5 @@
         font-size: 60px; } }
   * h3, * h4 {
     color: #fff;
-    font-family: 'Oswald' Helvetica, sans-serif;
+    font-family: 'Source Sans Pro' Helvetica, sans-serif;
     letter-spacing: .5px; }
-  * canvas {
-    display: none; }
-    @media screen and (min-width: 768px) {
-      * canvas {
-        display: block;
-        opacity: .2;
-        position: absolute;
-        top: 0; } }
-  * .header {
-    animation: 10s transformBackground infinite;
-    -webkit-animation: 10s transformBackground infinite;
-    background: blue;
-    position: relative;
-    width: 100%; }
-    @media screen and (min-width: 768px) {
-      * .header {
-        background: rgba(22, 220, 255, 0.31);
-        height: 400px; } }
-  * .main {
-    background: #eeede8; }
-  * nav {
-    padding-bottom: 20px; }
-    * nav li {
-      padding-top: 20px;
-      text-align: center; }
-      * nav li button {
-        border: 0;
-        background: rgba(0, 0, 0, 0.2);
-        color: #fff;
-        border: 2px solid #fff;
-        cursor: pointer;
-        font-family: 'Oswald' Helvetica, sans-serif;
-        font-size: 15px;
-        height: 50px;
-        letter-spacing: 1px;
-        overflow: hidden;
-        position: relative;
-        text-transform: uppercase;
-        width: 50%; }
-        * nav li button p {
-          position: absolute;
-          text-align: center;
-          top: 15px;
-          width: 100%;
-          z-index: 1; }
-  * .work .work__item:hover .work__overlay {
-    opacity: .85;
-    transition: .2s ease-in-out; }
-  * .work__one {
-    background: url('../images/bridgestone.jpg') center center;
-    background-size: cover;
-    height: 300px;
-    position: relative;
-    width: 100%; }
-    * .work__one__overlay {
-      position: relative; }
-  * .work__two {
-    background: url('../images/maps.png') center center;
-    background-size: cover;
-    height: 300px;
-    position: relative;
-    width: 100%; }
-    * .work__two__overlay {
-      position: relative; }
-  * .work__three {
-    background: url('../images/atlanta-humane-society.png') center center;
-    background-size: cover;
-    height: 300px;
-    position: relative;
-    width: 100%; }
-    * .work__three__overlay {
-      position: relative; }
-  * .work__four {
-    background: url('../images/black-girls-code.png') center center;
-    background-size: cover;
-    height: 300px;
-    position: relative;
-    width: 100%; }
-    * .work__four__overlay {
-      position: relative; }
-  * .work__five {
-    background: url('../images/100-girls-of-code.png') center center;
-    background-size: cover;
-    height: 300px;
-    position: relative;
-    width: 100%; }
-    * .work__five__overlay {
-      position: relative; }
-  * .work__six {
-    background: url('../images/ghost.png') center center;
-    background-size: cover;
-    height: 300px;
-    position: relative;
-    width: 100%; }
-    * .work__six__overlay {
-      position: relative; }

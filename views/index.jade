@@ -2,32 +2,21 @@ doctype html
 html
   head
     include head.jade
-    section.header
-      a(href='#')
-        h1 Paige Keenan
-        h2 Front End Developer
+    include header.jade
 
-      nav
-        ul
-          li
-            button(target='#' title='about' type='submit') About
-
-          li 
-            button(target='#' title='contact' type='submit') Contact
-
-      section.work
-        .work__one.work__item
-          .work__overlay.work__one__overlay(data-role='develop')
-        .work__two.work__item
-          .work__overlay.work__two__overlay(data-role='develop design')  
-        .work__three.work__item
-          .work__overlay.work__three__overlay(data-role='develop design')     
-        .work__four.work__item
-          .work__overlay.work__four__overlay(data-role='develop design')  
-        .work__five.work__item
-          .work__overlay.work__five__overlay(data-role='other') 
-        .work__six.work__item
-          .work__overlay.work__six__overlay(data-role='develop design')                                                  
+    section.work
+      .work__one.work__item
+        .work__overlay.work__one__overlay(data-role='develop')
+      .work__two.work__item
+        .work__overlay.work__two__overlay(data-role='develop design')  
+      .work__three.work__item
+        .work__overlay.work__three__overlay(data-role='develop design')     
+      .work__four.work__item
+        .work__overlay.work__four__overlay(data-role='develop design')  
+      .work__five.work__item
+        .work__overlay.work__five__overlay(data-role='other') 
+      .work__six.work__item
+        .work__overlay.work__six__overlay(data-role='develop design')                                                  
 
 
 

@@ -1,0 +1,35 @@
+@keyframes transformBackground {
+	0% {
+		background: #FFB78C;
+	}
+	18% {
+		background: #F39A7D;
+	}
+	48% {
+		background: #E6766C;
+	}
+	78% {
+		background: #DF6363;
+	}
+	100% {
+		background: #FFB78C;
+	}
+}
+
+@-webkit-keyframes transformBackground {
+	0% {
+		background: #FFB78C;
+	}
+	18% {
+		background: #F39A7D;
+	}
+	48% {
+		background: #E6766C;
+	}
+	78% {
+		background: #DF6363;
+	}
+	100% {
+		background: #FFB78C;
+	}
+}
