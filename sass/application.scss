@@ -1,9 +1,11 @@
 // Variables
 $background-mobile: #3d9ebf;
 $background: #eeede8;
+$body-color: #575656;
 $body-font-stack: 'Source Sans Pro' Helvetica, sans-serif;
 $headline-color: rgba(81, 93, 94, 0.36);
 $headline-font-stack: 'Fjalla One' Helvetica, sans-serif;
+$icon-color: #E9615A;
 $white: #fff;
 $work-overlay: rgba(75, 40, 67, 1);
 
@@ -12,6 +14,7 @@ $work-overlay: rgba(75, 40, 67, 1);
 @import 'animations';
 @import 'header';
 @import 'work';
+@import 'about';
 
 // Defaults
 * {
@@ -44,7 +47,7 @@ $work-overlay: rgba(75, 40, 67, 1);
 		font-size: 40px;
 		letter-spacing: 2px;	
 		line-height: 35px;
-		padding-top: 50px;
+		padding-top: 30px;
 		text-align: center;
 		text-transform: uppercase;	
 
@@ -57,19 +60,50 @@ $work-overlay: rgba(75, 40, 67, 1);
 
 	h2 {
 		font-family: $body-font-stack;
-		font-size: 25px;
+		font-size: 20px;
 		text-align: center;
-		text-transform: capitalize;
+		text-transform: uppercase;
+		letter-spacing: 1px;
 
 		@media screen and(min-width: 768px) {
 			font-size: 60px;
 		}		
 	}
 
-	h3,
-	h4 {
-		color: $white;
-		font-family: $body-font-stack;
+	h3 {
+		color: $body-color;
+		font-family: $headline-font-stack;
+		text-transform: uppercase;
 		letter-spacing: .5px;
+		width: 50%;
+		display: inline-block;
+		font-size: 16px;
+		padding: 0 20px 0 0;
+		margin-bottom: 10px;
+		vertical-align: top;
+		position: relative;
+
+		&::after {
+			position: absolute;
+			content: '';
+			width: 2px;
+			height: 20px;
+			background: $body-color;
+			right: 0;
+			top: 50%;
+			margin-top: -10px;
+		}
+	}
+
+	h4 {
+		color: $body-color;
+		font-family: $body-font-stack;
+		width: 50%;
+		display: inline-block;
+		text-align: right;
+		font-size: 16px;
+		text-transform: uppercase;
+		padding: 0 0 0 20px;
+		vertical-align: top;
 	}
 }

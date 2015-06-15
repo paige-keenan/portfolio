@@ -1,82 +1,85 @@
 .work {
+	padding: 20px;
+
+	&__nav {
+		display: none;
+		padding: 0 0 20px;
+		width: 100%;
+
+		a {
+			color: $body-color;
+			font-family: $body-font-stack;
+		}
+
+		&__active {
+			border-bottom: 4px solid #FFB78C;
+		}
+
+		@media screen and (min-width: 768px) {
+			display: block;
+		}		
+	}
 
 	.work__item {	
+		display: inline-block;
+		height: 220px;
+		margin-bottom: 40px;
+		position: relative;
+		width: 100%;		
 
-		&:hover .work__overlay {
-			opacity: .85;
-			transition: .2s ease-in-out;				
+		&__overlay {
+			// background: $white;
+			height: 100%;
+			left: 0;
+			// opacity: .3;
+			position: absolute;
+			top: 0;
+			width: 100%;
+
+			&:hover {
+				background: none;
+			}
+		}
+
+		&__icons {
+			bottom: 0;
+			color: $icon-color;
+			opacity: .75;
+			position: absolute;
+			right: 0;
+
+			i {
+				display: inline-block;
+				font-size: 25px;
+				font-weight: bold;		
+				padding: 5px;		
+			}
 		}
 	}			
 
 	&__one {
 		background: url('../images/bridgestone.jpg') center center;
 		background-size: cover;
-		height: 300px;
-		position: relative;
-		width: 100%;
-
-		&__overlay {
-			position: relative;
-		}
 	}
 
 	&__two {
-		background: url('../images/maps.png') center center;
+		background: url('../images/maps.jpg') center center;
 		background-size: cover;
-		height: 300px;
-		position: relative;
-		width: 100%;
-
-		&__overlay {
-			position: relative;
-		}
 	}
 
 	&__three {
-		background: url('../images/atlanta-humane-society.png') center center;
+		background: url('../images/atlanta-humane-society.jpg') center center;
 		background-size: cover;
-		height: 300px;
-		position: relative;
-		width: 100%;
-
-		&__overlay {
-			position: relative;
-		}
 	}	
+
 
 	&__four {
-		background: url('../images/black-girls-code.png') center center;
+		background: url('../images/100-girls-of-code.jpg') center center;
 		background-size: cover;
-		height: 300px;
-		position: relative;
-		width: 100%;
-
-		&__overlay {
-			position: relative;
-		}
-	}
-
-	&__five {
-		background: url('../images/100-girls-of-code.png') center center;
-		background-size: cover;
-		height: 300px;
-		position: relative;
-		width: 100%;
-
-		&__overlay {
-			position: relative;
-		}
 	}	
 
-	&__six {
-		background: url('../images/ghost.png') center center;
+	&__five {
+		background: url('../images/ghost.jpg') center center;
 		background-size: cover;
-		height: 300px;
-		position: relative;
-		width: 100%;
-
-		&__overlay {
-			position: relative;
-		}
 	}										
 }

@@ -10,7 +10,7 @@
 		height: 400px;
 	}
 
-	&::after {
+	&::before {
 		content: '';
 		background: url('../images/mountain-header.jpg');
 		width: 100%;
@@ -21,46 +21,47 @@
 		opacity: .25;
 		background-position: center;
 		background-size: cover;
+	}	
+
+	.main {
+		background: $background;
 	}
-}	
 
-.main {
-	background: $background;
-}
+	nav {
+		padding-bottom: 30px; 
 
-nav {
-	padding-bottom: 20px; 
+		li {			
+			padding-top: 20px; 
+			text-align: center;
 
-	li {			
-		padding-top: 20px; 
-		text-align: center;
+			button {
+				border: 0;
+				border-radius: 50px;
+				background: none;
+				color: $white;
+				cursor: pointer;
+				border: 2px solid $white;
+				cursor: pointer;
+				font-family: $headline-font-stack;
+				font-size: 15px;
+				height: 45px;
+				letter-spacing: 1px;
+				overflow: hidden;;
+				position: relative;
+				text-transform: uppercase;
+				width: 50%;
+				max-width: 150px;
+				min-width: 100px;
 
-		button {
-			border: 0;
-			border-radius: 50px;
-			background: none;
-			color: $white;
-			border: 2px solid $white;
-			cursor: pointer;
-			font-family: $headline-font-stack;
-			font-size: 15px;
-			height: 45px;
-			letter-spacing: 1px;
-			overflow: hidden;;
-			position: relative;
-			text-transform: uppercase;
-			width: 50%;
-			max-width: 175px;
-			min-width: 100px;
+				p {
+					position: absolute;
+					text-align: center;
+					top: 15px;
+					width: 100%;
+					z-index: 1;
+				}
 
-			p {
-				position: absolute;
-				text-align: center;
-				top: 15px;
-				width: 100%;
-				z-index: 1;
 			}
-
 		}
 	}
-}
+}	

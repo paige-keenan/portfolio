@@ -1,0 +1,20 @@
+.about {
+	padding: 20px;
+
+	&__container {
+		background: url('../images/about-me.jpg');
+		width: 75%;
+		border-radius: 100%;
+		height: auto;
+		padding-top: 75%;
+		margin: 0 12.5%;
+		background-size: cover;
+		background-position: center;
+	}
+
+	h1 {
+		color: $body-color;
+		text-align: left;
+			
+	}
+}
