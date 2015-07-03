@@ -1,18 +1,72 @@
 .work {
 	padding: 20px;
 
+	@media screen and (min-width: 768px) {
+		padding: 0;
+	}	
+
 	&__nav {
 		display: none;
-		padding: 0 0 20px;
+		padding: 20px;
 		width: 100%;
+
+		h5, ul {
+			color: $body-color;
+			font-family: $body-font-stack;
+			width: auto;
+			display: inline-block;	
+		}
+
+		h5 {
+			font-size: 15px;
+			margin: 5px 5px 0 0;
+			text-transform: uppercase;		
+			vertical-align: top;
+		}
+
+		li {
+			display: inline-block;
+			height: 30px;
+			margin: 0 10px;
+			padding: 0 25px;
+			position: relative;
+			width: 130px;
+
+			&::after {
+				background: $body-color;
+				content: '';
+				height: 20px;
+				position: absolute;
+				right: -10px;
+				top: 5px;
+				transform: rotate(25deg);
+				width: 2px;
+			}
+		}
 
 		a {
 			color: $body-color;
 			font-family: $body-font-stack;
+			left: 0;
+			position: absolute;
+			text-align: center;
+			top: 5px;
+			width: 100%;
 		}
 
-		&__active {
-			border-bottom: 4px solid #FFB78C;
+		.active {
+			background: #F0B875;
+			border-radius: 6px;
+  			transform: skew(-25deg);
+
+  			a {
+  				color: $white;
+				transform: skew(25deg);
+  			}
+
+  			&::after {
+  				transform: rotate(0deg);
+  			}
 		}
 
 		@media screen and (min-width: 768px) {
@@ -20,18 +74,42 @@
 		}		
 	}
 
+	&__container {
+		@media screen and (min-width: 768px) {
+			background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJ0lEQVQIW2P8sLP+P79bAwMMMP7///8/nMfAwAAX+LirgQGkEkMFAL/kEvWCNMlcAAAAAElFTkSuQmCC');
+			font-size: 0;
+			min-height: 600px;
+		}
+	}
+
+	section {
+		height: 250px;
+		margin-bottom: 80px;
+		width: 100%;
+
+		@media screen and (min-width: 768px) {
+			display: inline-block;
+			height: 0;
+			margin-bottom: 0;
+			transition: .3s ease-in;
+			width: 0;
+
+			&nth-child(2) {
+				padding: 0 5px 5px 5px;	
+			}
+		}
+	}
+
 	.work__item {	
 		display: inline-block;
-		height: 220px;
+		height: 100%;
 		margin-bottom: 40px;
 		position: relative;
-		width: 100%;		
+		width: 100%;	
 
 		&__overlay {
-			// background: $white;
 			height: 100%;
 			left: 0;
-			// opacity: .3;
 			position: absolute;
 			top: 0;
 			width: 100%;
@@ -55,7 +133,27 @@
 				padding: 5px;		
 			}
 		}
+
+		@media screen and (min-width: 768px) {
+			margin-bottom: 0;
+		}			
 	}			
+	.filterByThis {
+		height: 250px;
+		margin-bottom: 80px;
+		width: 100%;
+
+		@media screen and (min-width: 768px) {
+			height: 300px;
+			margin-bottom: 0;
+			transition: .3s ease-in;
+			width: 33.333%;
+		}	
+
+		@media screen and (min-width: 1200px) {
+			width: 25%;
+		}
+	}
 
 	&__one {
 		background: url('../images/bridgestone.jpg') center center;
@@ -68,7 +166,7 @@
 	}
 
 	&__three {
-		background: url('../images/atlanta-humane-society.jpg') center center;
+		background: url('../images/humane-society.jpg') center center;
 		background-size: cover;
 	}	
 
@@ -79,7 +177,17 @@
 	}	
 
 	&__five {
-		background: url('../images/ghost.jpg') center center;
+		background: url('../images/red-cross.jpg') center center;
 		background-size: cover;
-	}										
+	}		
+
+	&__six {
+		background: url('../images/flamingo.jpg') center center;
+		background-size: cover;
+	}	
+
+	&__seven {
+		background: url('../images/kotori.jpg') center center;
+		background-size: cover;
+	}											
 }

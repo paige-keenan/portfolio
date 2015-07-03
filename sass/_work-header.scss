@@ -1,0 +1,13 @@
+.work__header {
+	animation: none;
+	background: none;
+
+	&::before {
+		background: none;
+	}
+
+	&__proj-1 {
+		background: url('../images/bridgestone.jpg') center center;
+		background-size: cover;
+	}
+}

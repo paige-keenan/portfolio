@@ -6,6 +6,7 @@ $body-font-stack: 'Source Sans Pro' Helvetica, sans-serif;
 $headline-color: rgba(81, 93, 94, 0.36);
 $headline-font-stack: 'Fjalla One' Helvetica, sans-serif;
 $icon-color: #E9615A;
+$subhead-color: #FF8484;
 $white: #fff;
 $work-overlay: rgba(75, 40, 67, 1);
 
@@ -15,6 +16,7 @@ $work-overlay: rgba(75, 40, 67, 1);
 @import 'header';
 @import 'work';
 @import 'about';
+@import 'work-header';
 
 // Defaults
 * {
@@ -34,12 +36,6 @@ $work-overlay: rgba(75, 40, 67, 1);
 	h1,
 	h2, {
 		color: $white;
-
-		@media screen and (min-width: 768px) {
-			color: $headline-color;		
-		}
-
-		
 	}
 
 	h1 {
@@ -53,8 +49,8 @@ $work-overlay: rgba(75, 40, 67, 1);
 
 		@media screen and(min-width: 768px) {
 			line-height: 80px;
-			padding-top: 100px;
-	 		font-size: 100px;
+			padding-top: 50px;
+	 		font-size: 85px;
 		}			
 	}
 
@@ -66,7 +62,7 @@ $work-overlay: rgba(75, 40, 67, 1);
 		letter-spacing: 1px;
 
 		@media screen and(min-width: 768px) {
-			font-size: 60px;
+			font-size: 40px;
 		}		
 	}
 
@@ -93,6 +89,10 @@ $work-overlay: rgba(75, 40, 67, 1);
 			top: 50%;
 			margin-top: -10px;
 		}
+
+		@media screen and (min-width: 768px) {
+			display: none;
+		}
 	}
 
 	h4 {
@@ -105,5 +105,17 @@ $work-overlay: rgba(75, 40, 67, 1);
 		text-transform: uppercase;
 		padding: 0 0 0 20px;
 		vertical-align: top;
+		
+		@media screen and (min-width: 768px) {
+			display: none;
+		}		
+	}
+
+	p {
+		color: $body-color;
+		font-family: $body-font-stack;
+		font-size: 16px;
+		line-height: 22px;
+		margin-top: 15px;					
 	}
 }
