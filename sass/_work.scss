@@ -1,8 +1,12 @@
 .work {
+	background: $white;
 	padding: 20px;
+	margin-bottom: 100px;
 
 	@media screen and (min-width: 768px) {
-		padding: 0;
+		background: none;
+		margin-bottom: 0;
+		padding: 0 0 100px;
 	}	
 
 	&__nav {
