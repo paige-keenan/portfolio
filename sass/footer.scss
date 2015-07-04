@@ -1,0 +1,28 @@
+.footer {
+	background: #2E2E2E;
+	bottom: 0;
+	height: 200px;
+	padding-top: 100px;
+	position: fixed;
+	width: 100%;
+	z-index: -1;
+
+	ul {
+		display: block;
+		margin: 0 auto;
+		padding-top: 35px;
+		width: 250px;
+	}
+
+
+	li {
+		display: inline-block;
+		text-align: center;
+		width: 25%;
+	}
+
+	a {
+		color: #F0B875;
+		font-size: 30px;
+	}
+}

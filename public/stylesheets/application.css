@@ -1,3 +1,18 @@
+.about {
+  padding: 20px; }
+  .about__container {
+    background: url('../images/about-me.jpg');
+    width: 75%;
+    border-radius: 100%;
+    height: auto;
+    padding-top: 75%;
+    margin: 0 12.5%;
+    background-size: cover;
+    background-position: center top; }
+  .about h1 {
+    color: #FF8484;
+    text-align: left; }
+
 @keyframes transformBackground {
   0% {
     background: #FFB78C; }
@@ -29,6 +44,27 @@
 
   100% {
     background: #FFB78C; } }
+
+.footer {
+  background: #2E2E2E;
+  bottom: 0;
+  height: 200px;
+  padding-top: 100px;
+  position: fixed;
+  width: 100%;
+  z-index: -1; }
+  .footer ul {
+    display: block;
+    margin: 0 auto;
+    padding-top: 35px;
+    width: 250px; }
+  .footer li {
+    display: inline-block;
+    text-align: center;
+    width: 25%; }
+  .footer a {
+    color: #F0B875;
+    font-size: 30px; }
 
 .header {
   animation: 10s transformBackground infinite;
@@ -108,10 +144,14 @@
           z-index: 1; }
 
 .work {
-  padding: 20px; }
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 100px; }
   @media screen and (min-width: 768px) {
     .work {
-      padding: 0; } }
+      background: none;
+      padding: 0;
+      margin: 0 0 100px; } }
   .work__nav {
     display: none;
     padding: 20px;
@@ -192,8 +232,9 @@
       position: absolute;
       top: 0;
       width: 100%; }
-      .work .work__item__overlay:hover {
-        background: none; }
+      @media screen and (min-width: 768px) {
+        .work .work__item__overlay:hover {
+          background: radial-gradient(rgba(235, 216, 151, 0), rgba(0, 0, 0, 0.6)); } }
     .work .work__item__icons {
       bottom: 0;
       color: #E9615A;
@@ -243,21 +284,6 @@
     background: url('../images/kotori.jpg') center center;
     background-size: cover; }
 
-.about {
-  padding: 20px; }
-  .about__container {
-    background: url('../images/about-me.jpg');
-    width: 75%;
-    border-radius: 100%;
-    height: auto;
-    padding-top: 75%;
-    margin: 0 12.5%;
-    background-size: cover;
-    background-position: center top; }
-  .about h1 {
-    color: #FF8484;
-    text-align: left; }
-
 .work__header {
   animation: none;
   background: none; }
@@ -272,6 +298,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0; }
+  * body {
+    position: relative; }
   * a {
     text-decoration: none; }
   * li {

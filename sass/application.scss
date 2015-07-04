@@ -12,10 +12,11 @@ $work-overlay: rgba(75, 40, 67, 1);
 
 
 // Stylesheets Include
+@import 'about';
 @import 'animations';
+@import 'footer';
 @import 'header';
 @import 'work';
-@import 'about';
 @import 'work-header';
 
 // Defaults
@@ -24,6 +25,10 @@ $work-overlay: rgba(75, 40, 67, 1);
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+
+	body {
+		position: relative;
+	}
 
 	a {
 		text-decoration: none;
