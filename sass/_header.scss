@@ -1,7 +1,7 @@
 .header {
   	animation: 10s transformBackground infinite;
   	-webkit-animation: 10s transformBackground infinite;
-  	background: blue;
+  	background: #F0B875;
 	position: relative;
 	width: 100%;
 
@@ -36,68 +36,6 @@
 			@media screen and (min-width: 768px) {
 				display: inline-block;
 				width: 50%;
-			}
-
-			button {
-				background: none;
-				border-radius: 50px;
-				border: 2px solid $white;
-				color: $white;
-				cursor: pointer;
-				font-family: $headline-font-stack;
-				font-size: 15px;
-				height: 45px;
-				letter-spacing: 1px;
-				max-width: 150px;
-				overflow: hidden;;
-				position: relative;
-				text-transform: uppercase;
-				transition: .2s ease-in;
-				width: 50%;
-				min-width: 100px;		
-
-				&:hover {
-					background: $white;	
-					transition: .2s ease-in;				
-				}	
-
-
-				@media screen and (min-width: 768px) {
-					margin: 0 10px 10px 10px;
-
-					&[title=home] {
-						float: right;
-					}
-
-					&[title=contact] {
-						float: left;
-					}
-				}
-
-				a {
-					color: $white;
-					height: 100%;
-					left: 0;
-					padding-top: 12px;
-					position: absolute;
-					top: 0;
-					transition: .2s ease-in;
-					width: 100%;
-
-					&:hover {
-						color: #F0B875;
-						transition: .2s ease-in;
-					}
-				}
-
-				p {
-					position: absolute;
-					text-align: center;
-					top: 15px;
-					width: 100%;
-					z-index: 1;
-				}
-
 			}
 		}
 	}

@@ -1,8 +1,9 @@
 // Variables
+$accent-blue: #2A4250;
 $background-mobile: #3d9ebf;
 $background: #eeede8;
 $body-color: #575656;
-$body-font-stack: 'Source Sans Pro' Helvetica, sans-serif;
+$body-font-stack: 'Ubuntu' Helvetica, sans-serif;
 $headline-color: rgba(81, 93, 94, 0.36);
 $headline-font-stack: 'Fjalla One' Helvetica, sans-serif;
 $icon-color: #E9615A;
@@ -18,6 +19,7 @@ $work-overlay: rgba(75, 40, 67, 1);
 @import 'header';
 @import 'work';
 @import 'work-header';
+@import 'work-page';
 
 // Defaults
 * {
@@ -61,13 +63,14 @@ $work-overlay: rgba(75, 40, 67, 1);
 
 	h2 {
 		font-family: $body-font-stack;
-		font-size: 20px;
+		font-size: 16px;
+		font-weight: 800;
 		text-align: center;
 		text-transform: uppercase;
 		letter-spacing: 1px;
 
 		@media screen and(min-width: 768px) {
-			font-size: 40px;
+			font-size: 35px;
 		}		
 	}
 
@@ -107,6 +110,8 @@ $work-overlay: rgba(75, 40, 67, 1);
 		display: inline-block;
 		text-align: right;
 		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 1px;
 		text-transform: uppercase;
 		padding: 0 0 0 20px;
 		vertical-align: top;
@@ -123,4 +128,66 @@ $work-overlay: rgba(75, 40, 67, 1);
 		line-height: 22px;
 		margin-top: 15px;					
 	}
+
+	button {
+		background: none;
+		border-radius: 50px;
+		border: 2px solid $white;
+		color: $white;
+		cursor: pointer;
+		font-family: $headline-font-stack;
+		font-size: 15px;
+		height: 45px;
+		letter-spacing: 1px;
+		max-width: 150px;
+		overflow: hidden;;
+		position: relative;
+		text-transform: uppercase;
+		transition: .2s ease-in;
+		width: 50%;
+		min-width: 100px;		
+
+		&:hover {
+			background: $white;	
+			transition: .2s ease-in;				
+		}	
+
+
+		@media screen and (min-width: 768px) {
+			margin: 0 10px 10px 10px;
+
+			&[title=home] {
+				float: right;
+			}
+
+			&[title=contact] {
+				float: left;
+			}
+		}
+
+		a {
+			color: $white;
+			height: 100%;
+			left: 0;
+			padding-top: 12px;
+			position: absolute;
+			top: 0;
+			transition: .2s ease-in;
+			width: 100%;
+
+			&:hover {
+				color: $accent-blue;
+				transition: .2s ease-in;
+			}
+		}
+
+		p {
+			position: absolute;
+			text-align: center;
+			top: 15px;
+			width: 100%;
+			z-index: 1;
+		}
+
+	}		
 }
