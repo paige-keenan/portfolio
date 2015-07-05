@@ -105,7 +105,7 @@
   margin-bottom: 100px; }
   @media screen and (min-width: 768px) {
     .work {
-      background: none;
+      background: #fff;
       padding: 0;
       margin: 0 0 100px; } }
   @media screen and (min-width: 1200px) {
@@ -202,7 +202,7 @@
       width: 100%; }
       @media screen and (min-width: 768px) {
         .work .work__item__overlay:hover {
-          background: radial-gradient(rgba(235, 216, 151, 0), rgba(0, 0, 0, 0.6)); }
+          background: radial-gradient(rgba(235, 216, 151, 0), #2a4250); }
         .work .work__item__overlay:hover h3 {
           display: block; } }
       .work .work__item__overlay h3 {
@@ -292,7 +292,7 @@
   @media screen and (min-width: 768px) {
     .work-page {
       margin-top: 350px;
-      padding: 20px 75px; } }
+      padding: 20px 75px 50px; } }
   .work-page h2 {
     color: #2A4250;
     font-family: 'Fjalla One' Helvetica, sans-serif;
@@ -357,7 +357,7 @@
           font-weight: 800;
           margin: 0 6px 0 12px; }
   .work-page__container {
-    display: inline-block; }
+    display: inline; }
     @media screen and (min-width: 768px) {
       .work-page__container {
         display: block; } }
@@ -386,17 +386,39 @@
           font-weight: 400; }
     @media screen and (min-width: 768px) {
       .work-page__tech-specs {
-        width: 40%;
+        width: 100%;
         display: inline-block;
         vertical-align: top;
         margin-top: 105px;
         float: right;
         max-width: 300px; } }
+  @media screen and (min-width: 768px) {
+    .work-page__button-container {
+      width: 100%;
+      max-width: 300px;
+      float: right; } }
+  @media screen and (min-width: 768px) {
+    .work-page__tech-container {
+      width: 40%;
+      display: inline-block;
+      float: right; } }
   .work-page button {
     display: inline-block;
-    border: 2px solid #528198; }
+    border: 2px solid #528198;
+    width: 47%; }
+    .work-page button:hover {
+      background: #528198; }
     .work-page button a {
       text-decoration: none; }
+      .work-page button a:hover {
+        color: #fff; }
+  .work-page__view-site {
+    display: inline-block;
+    margin: 0 1% 0 0; }
+  .work-page__view-code {
+    display: inline-block;
+    margin: 0 0 0 1%;
+    float: right; }
 
 * {
   -webkit-box-sizing: border-box;

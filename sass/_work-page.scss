@@ -7,7 +7,7 @@
 
 	@media screen and (min-width: 768px) {
 		margin-top: 350px;
-		padding: 20px 75px;
+		padding: 20px 75px 50px;
 	}
 
 	h2 {
@@ -101,7 +101,7 @@
 	}
 
 	&__container {
-		display: inline-block;
+		display: inline;
 
 		@media screen and (min-width: 768px) {
 			display: block;
@@ -145,7 +145,7 @@
 		}
 
 		@media screen and (min-width: 768px) {
-			width: 40%;
+			width: 100%;
 			display: inline-block;
 			vertical-align: top;
 			margin-top: 105px;
@@ -155,12 +155,48 @@
 
 	}
 
+	&__button-container {
+		@media screen and (min-width: 768px) {
+			width: 100%;
+			max-width: 300px;
+			float: right;
+		}
+	}
+
+	&__tech-container {
+		@media screen and (min-width: 768px) {
+			width: 40%;
+			display: inline-block;
+			float: right;
+		}
+	}
+
 	button {
 		display: inline-block;
 		border: 2px solid #528198;
+		width: 47%;
+
+		&:hover {
+			background: #528198;
+		}
 
 		a {
 			text-decoration: none;
-		}
+
+			&:hover {
+				color: $white;
+			}
+		}		
+	}
+
+	&__view-site {
+		display: inline-block;
+		margin: 0 1% 0 0;
+	}
+
+	&__view-code {
+		display: inline-block;
+		margin: 0 0 0 1%;
+		float: right;
 	}
 }

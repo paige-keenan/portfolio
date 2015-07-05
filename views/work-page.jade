@@ -13,14 +13,21 @@ section.work-page
           p Developer    
       p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets contain
 
-    .work-page__tech-specs
-      h4 Tech Stack:
-      ul
-        li
-          .triangle
-          p JavaScript
-        li
-          .triangle
-          p HTML/CSS
-    button      
-      a(href='#') View Site      
+    .work-page__tech-container
+      .work-page__tech-specs
+        h4 Tech Stack:
+        ul
+          li
+            .triangle
+            p Jade
+          li
+            .triangle
+            p Sass
+          li
+            .triangle
+            p CoffeeScript             
+      .work-page__button-container
+        button.work-page__view-site      
+          a(href='#') View Site      
+        button.work-page__view-code     
+          a(href='#') View Code            
