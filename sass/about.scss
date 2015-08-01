@@ -1,5 +1,14 @@
 .about {
+	background: $white;
+	box-shadow: 0px 26px 43px rgba(25, 25, 25, 1);
+	margin-bottom: 100px;
+	margin-top: 235px;
 	padding: 20px;
+
+	@media screen and (min-width: 768px) {
+		margin-top: 350px;
+		padding: 20px 75px 50px;
+	}	
 
 	&__container {
 		background: url('../images/about-me.jpg');
@@ -7,13 +16,96 @@
 		border-radius: 100%;
 		height: auto;
 		padding-top: 75%;
-		margin: 0 12.5%;
+		margin: 20px 12.5%;
 		background-size: cover;
 		background-position: center top;
+
+		@media screen and (min-width: 768px) {
+			width: 400px;
+			height: 400px;
+			border-radius: 50%;
+			padding: 0;
+			overflow: hidden;
+			background: none;
+			display: block;
+			margin: 0 auto;
+		}
+
+		&__contact-info {
+			margin: 15px 0 30px 0;
+		}
+
+		#instafeed {
+			// display: none;
+
+			@media screen and (min-width: 768px) {
+				display: block;
+				width: 450px;
+
+				img {
+					width: 77px;
+					height: 77px;
+				    margin: 0 5px 0 0;
+				    padding: 0;
+				    display: inline-block;					
+				}
+			}
+		}
 	}
 
 	h1 {
-		color: $subhead-color;
+		color: $accent-blue;
 		text-align: left;		
 	}
+
+	h2 {
+		display: inline-block;
+		color: #374C5E;
+		font-style: normal;
+		font-weight: 800;
+		margin: 0 6px 0 12px;
+		text-align: left;		
+	}
+
+	p {
+		line-height: 25px;
+		color: #374C5E;		
+
+		@media screen and (min-width: 768px) {
+			line-height: 30px;
+		}		
+	}
+
+	li p {
+		color: #1E5F80;
+		display: inline-block;
+	}
+
+	li a {
+		display: inline-block;
+		margin-top: 15px;
+		color: #1E5F80;	
+		text-decoration: underline;
+		font-family: $body-font-stack;
+	}
+}
+
+.work__header__proj-1 {
+  	// animation: 10s transformBackground infinite !important;
+  	-webkit-animation: 10s transformBackground infinite;	
+}
+
+#instafeed {
+	  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3;
+  width: 120%;
+  opacity: .5;
+}
+
+#instafeed img {
+  width: 118px;
+  margin-bottom: -5px;
+  height: 118px;
 }

@@ -17,6 +17,7 @@ $work-overlay: rgba(75, 40, 67, 1);
 @import 'animations';
 @import 'footer';
 @import 'header';
+@import 'nav';
 @import 'work';
 @import 'work-header';
 @import 'work-page';
@@ -50,13 +51,13 @@ $work-overlay: rgba(75, 40, 67, 1);
 		font-size: 40px;
 		letter-spacing: 2px;	
 		line-height: 35px;
-		padding-top: 30px;
+		padding-top: 70px;
 		text-align: center;
 		text-transform: uppercase;	
 
 		@media screen and(min-width: 768px) {
 			line-height: 80px;
-			padding-top: 50px;
+			padding-top: 90px;
 	 		font-size: 85px;
 		}			
 	}
@@ -132,7 +133,8 @@ $work-overlay: rgba(75, 40, 67, 1);
 	button {
 		background: none;
 		border-radius: 50px;
-		border: 2px solid $white;
+		// border: 2px solid $white;
+		border: 0;
 		color: $white;
 		cursor: pointer;
 		font-family: $headline-font-stack;
@@ -148,7 +150,7 @@ $work-overlay: rgba(75, 40, 67, 1);
 		min-width: 100px;		
 
 		&:hover {
-			background: $white;	
+			// background: $white;	
 			transition: .2s ease-in;				
 		}	
 
@@ -166,7 +168,8 @@ $work-overlay: rgba(75, 40, 67, 1);
 		}
 
 		a {
-			color: $white;
+			color: #1E5F80;
+			// color: $white;
 			height: 100%;
 			left: 0;
 			padding-top: 12px;
@@ -189,5 +192,35 @@ $work-overlay: rgba(75, 40, 67, 1);
 			z-index: 1;
 		}
 
-	}		
+	}	
+
+	.triangle {
+		background-color: $accent-blue;
+		border-top-right-radius: 50%;			
+		display: inline-block;
+		height: 8px;
+		position: relative;
+		margin-bottom: 4px;
+		text-align: left;
+		transform: rotate(-90deg) skewX(-30deg) scale(1,.866);
+		width:  8px;
+
+		&:before,
+		&:after {
+			background-color: inherit;				
+			border-top-right-radius: 50%;				
+			content: '';
+			height: 8px;
+			position: absolute;
+			width:  8px;
+		}
+
+		&:before {
+			transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+		}
+
+		&:after {
+			transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+		}
+	}			
 }

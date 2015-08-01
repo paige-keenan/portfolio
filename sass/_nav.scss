@@ -1,0 +1,101 @@
+nav {
+
+	.mobile-nav {
+		height: 30px;
+		position: fixed;
+		right: 5px;
+		top: 5px;
+		transition: .3s ease-in;
+		width: 30px;
+
+		&__toggle {
+			background: $white;
+			height: 3px;
+			margin-top: 3px;
+			width: 20px;
+		}
+
+		.moveToggle {
+			right: 210px;
+			transition: .3s ease-in;
+		}	
+
+		@media screen and (min-width: 768px) {
+			display: none;
+		}	
+	}
+
+	.nav {
+		background: #1F2D34;
+		font-size: 13px;
+		height: 100%;
+		padding-bottom: 20px;
+		position: fixed;
+		right: -280%;
+		text-transform: uppercase;
+		top: 0;
+		transition: .3s ease-in;
+		width: 80%;
+		z-index: 1;
+
+		@media screen and (min-width: 768px) {
+			background: none;
+			position: fixed;
+			right: 20px;
+			top: 0;
+			float: left;
+			width: auto;
+		}
+
+		@media screen and (min-width: 1200px) {
+			width: 1000px;
+			display: block;
+			margin: 0 auto;
+		}
+
+		a {
+			color: $white;
+			display: block;
+			font-family: $body-font-stack;
+			font-size: 20px;
+			padding: 30px 0;
+			text-align: center;
+			width: 100%;
+
+			&:nth-child(2) {
+				border-top: 2px solid $accent-blue;
+				border-bottom: 2px solid $accent-blue;
+
+				@media screen and (min-width: 768px) {
+					border-top: 0;
+					border-bottom: 0;
+				}
+			}
+
+
+			@media screen and (min-width: 768px) {
+				background: none;
+				color: #1E5F80;
+				float: left;
+				font-size: 13px;
+				margin: 0 15px;
+				width: auto;
+			}
+
+			@media screen and (min-width: 1200px) {
+
+			}
+
+		}
+	}
+
+	.showMenu {
+		right: 0;
+		transition: .3s ease-in;
+	}	
+
+	.moveToggle {
+		right: 83%;
+		transition: .3s ease-in;
+	}
+}	

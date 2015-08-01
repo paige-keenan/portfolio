@@ -1,10 +1,36 @@
 $(function() {
 
   function init() {
+    navToggle();
+    outterClick();
     showAll();
     filterItemClicked();
+    initInstafeed();
   };
-  
+
+  function navToggle() {
+    $('.mobile-nav').on('click', function(event) {
+      event.stopPropagation();
+      $(this).toggleClass('moveToggle');
+      $('nav .nav').toggleClass('showMenu');
+    });
+  };
+
+  function outterClick() {
+    // Close nav is body is clicked.
+    $('body').on('click', function(event) {
+      if($('.mobile-nav').hasClass('moveToggle')) {
+          $('.mobile-nav').removeClass('moveToggle');
+          $('nav .nav').removeClass('showMenu');
+      };
+    }); 
+
+    // Keep nav open if nav is clicked.
+    $('nav .nav').on('click', function(event) {
+      event.stopPropagation();
+    }); 
+  }
+
   // Determine what filter is chosen. Add active class.
   function filterItemClicked() {
     $('.work__nav li').on('click', function(event) {
@@ -42,6 +68,22 @@ $(function() {
 
     });
   };  
+
+  function initInstafeed() {
+    var feed = new Instafeed({
+        get: 'user',
+        target: 'instafeed',
+        userId: 398474966,
+        accessToken: '398474966.467ede5.f4990701d3c9465d9ebdc0865bed48e4',
+        links: 'false',
+        limit: 60,
+        sortBy: 'most-liked',
+        filter: function(image) {
+          return image.tags.indexOf('noport') === -1;
+        }
+    });
+    feed.run();    
+  }
 
   init();	
 
