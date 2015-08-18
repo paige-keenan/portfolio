@@ -64,12 +64,12 @@
 		}
 
 		.active {
-			background: $accent-blue;
+			border: 2px solid $accent-blue;
 			border-radius: 6px;
   			transform: skew(-25deg);
 
   			a {
-  				color: $white;
+  				color: $accent-blue;
 				transform: skew(25deg);
   			}
 
