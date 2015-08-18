@@ -125,7 +125,7 @@
 		height: 100%;
 		margin-bottom: 40px;
 		position: relative;
-		width: 100%;	
+		width: 99%;	
 
 		&__overlay {
 			height: 100%;
@@ -179,7 +179,7 @@
 		}
 
 		@media screen and (min-width: 768px) {
-			margin-bottom: 0;
+			margin: 3px auto 0;
 		}			
 	}			
 	.filterByThis {
