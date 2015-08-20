@@ -1,5 +1,4 @@
 nav {
-
 	.mobile-nav {
 		height: 30px;
 		position: fixed;
@@ -16,6 +15,7 @@ nav {
 		}
 
 		.moveToggle {
+			-webkit-transition: .3s ease-in;
 			right: 210px;
 			transition: .3s ease-in;
 		}	
@@ -94,19 +94,22 @@ nav {
 	}
 
 	.showMenu {
+		-webkit-transition: .3s ease-in;
 		right: 0;
 		transition: .3s ease-in;
 	}	
 
 	.moveToggle {
+		-webkit-transition: right .3s ease-in;
 		right: 83%;
-		transition: right .3s ease-in;
 		top: 25px;
+		transition: right .3s ease-in;
 
 		.mobile-nav__toggle {
 			margin-top: -2px;
 
 			&:nth-child(1) {
+				-webkit-transform: rotate(45deg);
 				transform: rotate(45deg);
 			}
 
@@ -115,6 +118,7 @@ nav {
 			}
 
 			&:nth-child(3) {
+				-webkit-transform: rotate(-45deg);
 				transform: rotate(-45deg);
 			}
 		}

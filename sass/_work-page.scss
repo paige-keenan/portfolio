@@ -85,9 +85,9 @@
 
 	&__main {
 		@media screen and (min-width: 768px) {
-			width: 55%;
-			margin-right: 5%;
 			display: inline-block;
+			margin-right: 5%;
+			width: 55%;
 		}
 	}
 
@@ -115,35 +115,35 @@
 		}
 
 		@media screen and (min-width: 768px) {
-			width: 100%;
 			display: inline-block;
-			vertical-align: top;
-			margin-top: 105px;
 			float: right;
+			margin-top: 105px;
 			max-width: 300px;
+			vertical-align: top;
+			width: 100%;
 		}
 
 	}
 
 	&__button-container {
 		@media screen and (min-width: 768px) {
-			width: 100%;
-			max-width: 300px;
 			float: right;
+			max-width: 300px;
+			width: 100%;
 		}
 	}
 
 	&__tech-container {
 		@media screen and (min-width: 768px) {
-			width: 40%;
 			display: inline-block;
 			float: right;
+			width: 40%;
 		}
 	}
 
 	button {
-		display: inline-block;
 		border: 2px solid #1E5F80;
+		display: inline-block;
 		width: 47%;
 
 		&:hover {
@@ -167,7 +167,7 @@
 
 	&__view-code {
 		display: inline-block;
-		margin: 0 0 0 1%;
 		float: right;
+		margin: 0 0 0 1%;
 	}
 }

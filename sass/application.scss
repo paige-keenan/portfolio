@@ -67,8 +67,8 @@ $work-overlay: rgba(75, 40, 67, 1);
 		font-family: $body-font-stack;
 		font-size: 16px;
 		font-weight: 800;
-		text-align: center;
 		letter-spacing: 1px;
+		text-align: center;
 		text-transform: uppercase;
 
 		@media screen and(min-width: 768px) {
@@ -78,26 +78,26 @@ $work-overlay: rgba(75, 40, 67, 1);
 
 	h3 {
 		color: $body-color;
-		font-family: $headline-font-stack;
-		text-transform: uppercase;
-		letter-spacing: .5px;
-		width: 50%;
 		display: inline-block;
+		font-family: $headline-font-stack;
 		font-size: 16px;
-		padding: 0 20px 0 0;
+		letter-spacing: .5px;
 		margin-bottom: 10px;
-		vertical-align: top;
+		padding: 0 20px 0 0;
 		position: relative;
+		text-transform: uppercase;
+		vertical-align: top;
+		width: 50%;
 
 		&::after {
-			position: absolute;
-			content: '';
-			width: 2px;
-			height: 20px;
 			background: $body-color;
+			content: '';
+			height: 20px;
+			margin-top: -10px;
+			position: absolute;
 			right: 0;
 			top: 50%;
-			margin-top: -10px;
+			width: 2px;
 		}
 
 		@media screen and (min-width: 768px) {
@@ -107,16 +107,16 @@ $work-overlay: rgba(75, 40, 67, 1);
 
 	h4 {
 		color: $body-color;
-		font-family: $body-font-stack;
-		width: 50%;
 		display: inline-block;
-		text-align: right;
+		font-family: $body-font-stack;
 		font-size: 16px;
 		font-weight: 400;
 		letter-spacing: 1px;
-		text-transform: uppercase;
 		padding: 0 0 0 20px;
+		text-align: right;
+		text-transform: uppercase;
 		vertical-align: top;
+		width: 50%;
 		
 		@media screen and (min-width: 768px) {
 			display: none;
@@ -142,14 +142,15 @@ $work-overlay: rgba(75, 40, 67, 1);
 		height: 45px;
 		letter-spacing: 1px;
 		max-width: 150px;
+		min-width: 100px;		
 		overflow: hidden;;
 		position: relative;
 		text-transform: uppercase;
 		transition: .2s ease-in;
 		width: 50%;
-		min-width: 100px;		
 
 		&:hover {	
+			-webkit-transition: .2s ease-in;				
 			transition: .2s ease-in;				
 		}	
 
@@ -193,14 +194,14 @@ $work-overlay: rgba(75, 40, 67, 1);
 	}	
 
 	.triangle {
+		-webkit-transform: rotate(-90deg) skewX(-30deg) scale(1,.866);
 		background-color: $accent-blue;
 		border-top-right-radius: 50%;			
 		display: inline-block;
 		height: 8px;
-		position: relative;
 		margin-bottom: 4px;
+		position: relative;
 		text-align: left;
-		-webkit-transform: rotate(-90deg) skewX(-30deg) scale(1,.866);
 		transform: rotate(-90deg) skewX(-30deg) scale(1,.866);
 		width:  8px;
 

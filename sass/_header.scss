@@ -1,6 +1,6 @@
 .header {
+	-webkit-animation: 10s transformBackground infinite;
   	animation: 10s transformBackground infinite;
-  	-webkit-animation: 10s transformBackground infinite;
   	background: #F0B875;
 	position: relative;
 	width: 100%;
@@ -11,10 +11,10 @@
 	}
 
 	&::before {
-		content: '';
 		background: url('../images/mountain-header.jpg');
 		background-position: center;
-		background-size: cover;
+		background-size: cover;		
+		content: '';
 		height: 100%;
 		left: 0;
 		opacity: .25;
@@ -29,10 +29,10 @@
 
 	nav {
 		h2 {
-			width: 50%;
 			float: left;
-			text-align: center;
 			font-weight: 400;
+			text-align: center;
+			width: 50%;
 		}
 	}
 }	
