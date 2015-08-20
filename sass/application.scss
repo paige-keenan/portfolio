@@ -133,7 +133,6 @@ $work-overlay: rgba(75, 40, 67, 1);
 	button {
 		background: none;
 		border-radius: 50px;
-		// border: 2px solid $white;
 		border: 0;
 		color: $white;
 		cursor: pointer;
@@ -149,8 +148,7 @@ $work-overlay: rgba(75, 40, 67, 1);
 		width: 50%;
 		min-width: 100px;		
 
-		&:hover {
-			// background: $white;	
+		&:hover {	
 			transition: .2s ease-in;				
 		}	
 
@@ -169,7 +167,6 @@ $work-overlay: rgba(75, 40, 67, 1);
 
 		a {
 			color: #1E5F80;
-			// color: $white;
 			height: 100%;
 			left: 0;
 			padding-top: 12px;
