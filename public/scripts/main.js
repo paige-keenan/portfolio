@@ -12,7 +12,7 @@ $(function() {
     $('.mobile-nav').on('click', function(event) {
       event.stopPropagation();
       $(this).toggleClass('moveToggle');
-      $('nav .nav').toggleClass('showMenu');
+      $('nav .nav, nav .work-nav').toggleClass('showMenu');
     });
   };
 
@@ -21,12 +21,12 @@ $(function() {
     $('body').on('click', function(event) {
       if($('.mobile-nav').hasClass('moveToggle')) {
           $('.mobile-nav').removeClass('moveToggle');
-          $('nav .nav').removeClass('showMenu');
+          $('nav .nav, nav .work-nav').removeClass('showMenu');
       };
     }); 
 
     // Keep nav open if nav is clicked.
-    $('nav .nav').on('click', function(event) {
+    $('nav .nav, nav .work-nav').on('click', function(event) {
       event.stopPropagation();
     }); 
   }
