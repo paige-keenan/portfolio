@@ -3,16 +3,16 @@ nav {
 	.mobile-nav {
 		height: 30px;
 		position: fixed;
-		right: 5px;
-		top: 5px;
+		right: 10px;
+		top: 10px;
 		transition: .3s ease-in;
 		width: 30px;
 
 		&__toggle {
 			background: $white;
 			height: 3px;
-			margin-top: 3px;
-			width: 20px;
+			margin-top: 5px;
+			width: 30px;
 		}
 
 		.moveToggle {
@@ -25,7 +25,8 @@ nav {
 		}	
 	}
 
-	.nav {
+	.nav,
+	.work-nav {
 		background: #1F2D34;
 		font-size: 13px;
 		height: 100%;
@@ -40,15 +41,19 @@ nav {
 
 		@media screen and (min-width: 768px) {
 			background: none;
-			position: fixed;
+			float: left;
+			height: auto;
+			position: absolute;
 			right: 20px;
 			top: 0;
-			float: left;
 			width: auto;
+
+			&.work-nav {
+				position: fixed;
+			}
 		}
 
 		@media screen and (min-width: 1200px) {
-			width: 1000px;
 			display: block;
 			margin: 0 auto;
 		}
@@ -75,7 +80,6 @@ nav {
 
 			@media screen and (min-width: 768px) {
 				background: none;
-				color: #1E5F80;
 				float: left;
 				font-size: 13px;
 				margin: 0 15px;
@@ -96,6 +100,23 @@ nav {
 
 	.moveToggle {
 		right: 83%;
-		transition: .3s ease-in;
+		transition: right .3s ease-in;
+		top: 20px;
+
+		.mobile-nav__toggle {
+			margin-top: -2px;
+
+			&:nth-child(1) {
+				transform: rotate(45deg);
+			}
+
+			&:nth-child(2) {
+				display: none;
+			}
+
+			&:nth-child(3) {
+				transform: rotate(-45deg);
+			}
+		}
 	}
 }	
