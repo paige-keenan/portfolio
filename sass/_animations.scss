@@ -1,35 +1,35 @@
 @keyframes transformBackground {
 	0% {
-		background: #D6F7F8;
+		background: #185266;
 	}
 	18% {
-		background: #AADDDE;
+		background: #236679;
 	}
 	48% {
-		background: #CCE5F3;
+		background: #2f93aa;
 	}
 	78% {
-		background: #B6E5FF;
+		background: #236679;
 	}
 	100% {
-		background: #D6F7F8;
+		background: #185266;
 	}
 }
 
-// @-webkit-keyframes transformBackground {
-// 	0% {
-// 		background: #D7F9FB;
-// 	}
-// 	18% {
-// 		background: #B5D6F9;
-// 	}
-// 	48% {
-// 		background: #8DB8F6;
-// 	}
-// 	78% {
-// 		background: #C2D0F6;
-// 	}
-// 	100% {
-// 		background: #D7F9FB;
-// 	}
-// }	
+@-webkit-keyframes transformBackground {
+	0% {
+		background: #185266;
+	}
+	18% {
+		background: #236679;
+	}
+	48% {
+		background: #2f93aa;
+	}
+	78% {
+		background: #236679;
+	}
+	100% {
+		background: #185266;
+	}
+}	
