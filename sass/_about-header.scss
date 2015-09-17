@@ -1,11 +1,15 @@
 .about__header {
 	-webkit-animation: 10s transformBackground infinite;
 	animation: 10s transformBackground infinite; 	
-    height: 350px;
+    height: 395px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: -1;
+
+	@media screen and (min-width: 1200px) {
+		height: 600px;
+	}    
 
 	&::before {
 		background: none;
@@ -13,23 +17,26 @@
 
 	&__container {
 		background: url('../images/about-me.jpg');
-		background-position: center top;
+		background-position: center center;
 		background-size: cover;			
-		border-radius: 100%;
-		height: auto;
-		margin: 20px 22.5%;
-		padding-top: 55%;
-		width: 55%;
+		height: 235px;
+		width: 100%;
+		opacity: .5;
 
 		@media screen and (min-width: 768px) {
 			background: none;
 			border-radius: 0;
 			display: block;
-			height: 295px;
+			height: 395px;
 			margin: 0 auto;
 			overflow: hidden;
 			padding: 0;
 			width: 100%;
+		}
+
+		@media screen and (min-width: 1200px) {
+			height: 600px;
+			margin-top: -80px;
 		}
 
 		#instafeed {
@@ -37,16 +44,21 @@
 
 			@media screen and (min-width: 768px) {
 				display: block;
-				height: 295px;
+				height: 395px;
 				width: 120%;
 
 				img {
-					height: 119.5px;
-					width: 119.5px;
+					height: 131px;
+					width: 131px;
 				    display: inline-block;	
-				    margin-bottom: -3px;				
+				    margin-bottom: -4px;				
 				    opacity: .3;
 				    padding: 0;
+
+				    @media screen and (min-width: 1200px) {
+						height: 175px;
+						width: 175px;
+				    }
 				}
 			}
 		}

@@ -1,10 +1,15 @@
 .work__header {
 	animation: none;
+	-webkit-animation: none;
 	background: none;
-	height: 350px;
+	height: 250px;
 	position: fixed;
 	top: 0;
 	z-index: -1;
+
+	@media screen and (min-width: 768px) {
+		height: 396px;
+	}
 
 	&::before {
 		background: none;
@@ -29,17 +34,27 @@
 	}
 
 	&__proj-3 {
-		background: url('../images/humane-society.jpg') center center;
+		background: url('../images/humane-society-hero.jpg') center center;
 		background-size: cover;
 	}
 
 	&__proj-4 {
-		background: url('../images/100-girls-of-code.jpg') center center;
+		background: url('../images/red-cross.jpg') center center;
 		background-size: cover;
 	}
 
 	&__proj-5 {
-		background: url('../images/red-cross.jpg') center center;
+		background: url('../images/flamingo.jpg') center center;
+		background-size: cover;
+	}
+
+	&__proj-6 {
+		background: url('../images/100-girls-of-code.jpg') center center;
 		background-size: cover;
 	}		
+
+	&__proj-7 {
+		background: url('../images/kotori.jpg') center center;
+		background-size: cover;
+	}				
 }
