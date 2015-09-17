@@ -36,7 +36,7 @@
   .about li a {
     color: #1E5F80;
     display: inline-block;
-    font-family: 'Ubuntu' Helvetica, sans-serif;
+    font-family: 'Ubuntu', Helvetica, sans-serif;
     margin-top: 15px;
     text-decoration: underline; }
 
@@ -224,7 +224,7 @@ nav .nav, nav .work-nav {
   nav .nav a, nav .work-nav a {
     color: #fff;
     display: block;
-    font-family: 'Ubuntu' Helvetica, sans-serif;
+    font-family: 'Ubuntu', Helvetica, sans-serif;
     font-size: 20px;
     padding: 30px 0;
     text-align: center;
@@ -285,7 +285,7 @@ nav .moveToggle {
     .work__nav h5, .work__nav ul {
       color: #575656;
       display: inline-block;
-      font-family: 'Ubuntu' Helvetica, sans-serif;
+      font-family: 'Ubuntu', Helvetica, sans-serif;
       width: auto; }
     .work__nav h5 {
       font-size: 15px;
@@ -311,7 +311,7 @@ nav .moveToggle {
         width: 2px; }
     .work__nav a {
       color: #575656;
-      font-family: 'Ubuntu' Helvetica, sans-serif;
+      font-family: 'Ubuntu', Helvetica, sans-serif;
       left: 0;
       position: absolute;
       text-align: center;
@@ -411,7 +411,7 @@ nav .moveToggle {
     @media screen and (min-width: 768px) {
       .work .filterByThis {
         height: 300px;
-        margin-bottom: 0;
+        margin-bottom: 3px;
         transition: .3s ease-in;
         width: 33.333%; } }
   .work__one {
@@ -488,7 +488,7 @@ nav .moveToggle {
       padding: 30px 100px 50px; } }
   .work-page h2 {
     color: #2A4250;
-    font-family: 'Fjalla One' Helvetica, sans-serif;
+    font-family: 'Fjalla One', Helvetica, sans-serif;
     font-size: 50px;
     padding: 20px 0 15px;
     text-align: left;
@@ -517,7 +517,7 @@ nav .moveToggle {
     display: inline-block; }
     .work-page ul li {
       display: inline-block;
-      font-family: 'Ubuntu' Helvetica, sans-serif;
+      font-family: 'Ubuntu', Helvetica, sans-serif;
       width: 100%; }
       .work-page ul li p {
         color: #1E5F80;
@@ -612,7 +612,7 @@ nav .moveToggle {
   * h1, * h2 {
     color: #fff; }
   * h1 {
-    font-family: 'Fjalla One' Helvetica, sans-serif;
+    font-family: 'Fjalla One', Helvetica, sans-serif;
     font-size: 40px;
     letter-spacing: 2px;
     line-height: 35px;
@@ -625,7 +625,7 @@ nav .moveToggle {
         padding-top: 140px;
         font-size: 85px; } }
   * h2 {
-    font-family: 'Ubuntu' Helvetica, sans-serif;
+    font-family: 'Ubuntu', Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 800;
     letter-spacing: 1px;
@@ -637,7 +637,7 @@ nav .moveToggle {
   * h3 {
     color: #575656;
     display: inline-block;
-    font-family: 'Fjalla One' Helvetica, sans-serif;
+    font-family: 'Fjalla One', Helvetica, sans-serif;
     font-size: 16px;
     letter-spacing: .5px;
     margin-bottom: 10px;
@@ -661,7 +661,7 @@ nav .moveToggle {
   * h4 {
     color: #575656;
     display: inline-block;
-    font-family: 'Ubuntu' Helvetica, sans-serif;
+    font-family: 'Ubuntu', Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 1px;
@@ -675,7 +675,7 @@ nav .moveToggle {
         display: none; } }
   * p {
     color: #575656;
-    font-family: 'Ubuntu' Helvetica, sans-serif;
+    font-family: 'Ubuntu', Helvetica, sans-serif;
     font-size: 16px;
     line-height: 22px;
     margin-top: 15px; }
@@ -685,7 +685,7 @@ nav .moveToggle {
     border: 0;
     color: #fff;
     cursor: pointer;
-    font-family: 'Fjalla One' Helvetica, sans-serif;
+    font-family: 'Fjalla One', Helvetica, sans-serif;
     font-size: 15px;
     height: 45px;
     letter-spacing: 1px;
