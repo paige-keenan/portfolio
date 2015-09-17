@@ -1,114 +1,90 @@
-$(document).ready(function() {
+$(function() {
 
-	var scene, camera, renderer;
+  function init() {
+    navToggle();
+    outterClick();
+    showAll();
+    filterItemClicked();
+    initInstafeed();
+  };
 
-	var WIDTH  = window.innerWidth;
-	var HEIGHT = 400; 
-	var SPEED = 0.009;
+  function navToggle() {
+    $('.mobile-nav').on('click', function(event) {
+      event.stopPropagation();
+      $(this).toggleClass('moveToggle');
+      $('nav .nav, nav .work-nav').toggleClass('showMenu');
+    });
+  };
 
-	var colors = [
-	    {
-	      "color" : 0x000000,
-	    },
-	    {
-	      "color" : 0x000000,
-	    },
-	    {
-	      "color" : 0x000066,
-	    },
-	    {
-	      "color" : 0x000066,
-	    },
-	    {
-	      "color" : 0x3333FF,
-	    },
-	    {
-	      "color" : 0x3333FF,
-	    },
-	    {
-	      "color" : 0x3399FF,
-	    },
-	    {
-	      "color" : 0x3399FF,
-	    }, 
-	    {
-	      "color" : 0x33FFFF,
-	    },
-	    {
-	      "color" : 0x33FFFF,
-	    },
-	    {
-	      "color" : 0xCCFFFF,
-	    },
-	    {
-	      "color" : 0xCCFFFF,
-	    }              
+  function outterClick() {
+    // Close nav is body is clicked.
+    $('body').on('click', function(event) {
+      if($('.mobile-nav').hasClass('moveToggle')) {
+          $('.mobile-nav').removeClass('moveToggle');
+          $('nav .nav, nav .work-nav').removeClass('showMenu');
+      };
+    }); 
 
-	];
+    // Keep nav open if nav is clicked.
+    $('nav .nav, nav .work-nav').on('click', function(event) {
+      event.stopPropagation();
+    }); 
+  }
 
-	function init() {
-	    scene = new THREE.Scene(); 
+  // Determine what filter is chosen. Add active class.
+  function filterItemClicked() {
+    $('.work__nav li').on('click', function(event) {
+      event.preventDefault();
+      $('.work__nav li').removeClass( 'active' );
+      $(this).addClass( 'active' );
 
-	    initCube();
-	    initCamera();
-	    initRenderer();
+      var filterBy = $('.work__nav li.active').children( 'a' ).data( 'filter' ); 
 
-	    document.body.appendChild(renderer.domElement);
-	};
+      if( filterBy.indexOf('all') > -1 ) {
+        showAll();
+      } else {
+        adjustGridItems( filterBy );
+      }
+    });       
+  };
 
-	function absolutelyCenter() {
-	    // When user resizes window, Adjust viewport accordingly.
-	    $(window).resize(function() {
-	        WIDTH  = window.innerWidth;
-	        HEIGHT = 400;  
-	        $('canvas').css({'width': WIDTH, 'height': HEIGHT}); 
-	    });
-	};
+  function showAll() {
+    $('.work__container section').each(function() {
+      $('.work__nav li').eq(0).addClass(' active ');
+      $(this).addClass( 'filterByThis' );
+    });
+  };
+  
+  // Add filterByThis class to items whose filter is chosen above. Handle animation in CSS.
+  function adjustGridItems( filterBy ) {
+    $('.work__container section').each(function(index, value) {
 
-	function initCamera() { 
-	    camera = new THREE.PerspectiveCamera(15, WIDTH / HEIGHT, 1, 10);
-	    camera.position.set(0, 3.5, 5);
-	    camera.lookAt(scene.position);
+      $(this).removeClass( 'filterByThis' );
 
-	    var directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-	    directionalLight.position.set(0, 0, 5);
-	    scene.add(directionalLight);
-	};
+      var role = $(this).data( 'role' );
+      var match = $( '.work__container section[data-role*=' + filterBy + ']' );
 
-	function initRenderer() {
-	    renderer = new THREE.WebGLRenderer({ alpha: true });
-	    renderer.setSize(WIDTH, HEIGHT);
-	};
+      match.addClass( 'filterByThis' );
 
-	function initCube() {
-	    var geometry = new THREE.CubeGeometry(3, 5, 5);  
-	    var material = new THREE.MeshLambertMaterial({ wireframe: false, vertexColors: THREE.FaceColors}); 
-	    cube = new THREE.Mesh(geometry, material);
-	    scene.add(cube); 
-	    
-	    // Grab colors from Color object and set face of cube.
-	    for (i=0; i < geometry.faces.length; i+=2) {
-	        var color = new THREE.Color(colors[ i ].color);
-	        geometry.faces[ i ].color = color;
-	        geometry.faces[ i + 1].color = color;
-	    };
-	};
+    });
+  };  
 
-	function rotateCube() {
-	    cube.rotation.x -= SPEED * 2;
-	    cube.rotation.y -= SPEED;
-	    cube.rotation.z -= SPEED * 1;
-	};
+  function initInstafeed() {
+    var feed = new Instafeed({
+        get: 'user',
+        target: 'instafeed',
+        userId: 398474966,
+        accessToken: '398474966.467ede5.f4990701d3c9465d9ebdc0865bed48e4',
+        links: 'false',
+        limit: 60,
+        sortBy: 'most-liked',
+        filter: function(image) {
+          return image.tags.indexOf('noport') === -1;
+        }
+    });
+    feed.run();    
+  }
 
-	function render() {
-	    requestAnimationFrame(render);
-	    rotateCube();
-	    renderer.render(scene, camera);
-	};
-
-	absolutelyCenter();
-	init();
-	render();
-
+  init();	
 
 });
