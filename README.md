@@ -16,4 +16,4 @@ $ grunt watch
 4. Navigate to http://localhost:4000 to view project locally.
 
 ## Alternatively:
-1. Pull down "prod_build" folder in open in browser.
+1. Pull down "prod_build" folder and open in browser.
