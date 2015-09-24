@@ -18,7 +18,7 @@
 
 	&__nav {
 		display: none;
-		padding: 30px 20px;
+		padding: 20px 20px;
 		width: 100%;
 
 		h5, ul {
@@ -235,5 +235,10 @@
 	&__seven {
 		background: url('../images/kotori.jpg') center center;
 		background-size: cover;
-	}											
+	}
+
+	&__eight {
+		background: url('../images/courtney-portfolio.jpg') center center;
+		background-size: cover;
+	}												
 }
