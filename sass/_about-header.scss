@@ -1,15 +1,9 @@
 .about__header {
 	-webkit-animation: 10s transformBackground infinite;
 	animation: 10s transformBackground infinite; 	
-    height: 395px;
-    position: fixed;
     top: 0;
     width: 100%;
     z-index: -1;
-
-	@media screen and (min-width: 1200px) {
-		height: 600px;
-	}    
 
 	&::before {
 		background: none;

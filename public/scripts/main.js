@@ -5,7 +5,9 @@ $(function() {
     outterClick();
     showAll();
     filterItemClicked();
-    initInstafeed();
+    if(window.location.href.indexOf('about') > 1) {
+      initInstafeed();  
+    }
   };
 
   function navToggle() {
