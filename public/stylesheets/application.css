@@ -67,7 +67,6 @@
         width: 100%; } }
     @media screen and (min-width: 1200px) {
       .about__header__container {
-        height: 600px;
         margin-top: -80px; } }
     @media screen and (min-width: 1450px) {
       .about__header__container {
@@ -526,7 +525,8 @@ nav .moveToggle {
     text-decoration: underline; }
   .work-page ol {
     display: inline-block;
-    padding: 20px 0 0 30px; }
+    padding: 20px 0 0 30px;
+    width: 100%; }
     .work-page ol li {
       display: inline-block;
       font-family: 'Ubuntu', Helvetica, sans-serif;

@@ -3,7 +3,7 @@
 	animation: 10s transformBackground infinite; 	
     top: 0;
     width: 100%;
-    z-index: -1;
+    z-index: -1; 
 
 	&::before {
 		background: none;
@@ -29,7 +29,6 @@
 		}
 
 		@media screen and (min-width: 1200px) {
-			height: 600px;
 			margin-top: -80px;
 		}
 
