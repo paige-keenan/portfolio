@@ -620,6 +620,8 @@ nav .moveToggle {
     width: 47%; }
     .work-page button:hover {
       background: #1E5F80; }
+    .work-page button:hover a {
+      color: #fff; }
     .work-page button a {
       color: #1E5F80;
       text-decoration: none; }

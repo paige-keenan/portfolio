@@ -193,6 +193,10 @@
 			background: #1E5F80;
 		}
 
+		&:hover a {
+			color: $white;
+		}
+
 		a {
 			color: #1E5F80;
 			text-decoration: none;
