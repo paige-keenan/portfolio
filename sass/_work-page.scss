@@ -13,13 +13,14 @@
 	h2 {
 		color: $accent-blue;
 		font-family: $headline-font-stack;
-		font-size: 50px;
+		font-size: 30px;
 		padding: 20px 0 15px;
 		text-align: left;
 		word-wrap: break-word;
 		width: 100%;
 
 		@media screen and (min-width: 768px) {
+			font-size: 50px;
 			padding: 20px 0 30px;
 		}
 	}
