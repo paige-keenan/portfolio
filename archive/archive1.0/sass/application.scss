@@ -1,0 +1,228 @@
+// Variables
+$accent-blue: #2A4250;
+$background-mobile: #3d9ebf;
+$background: #eeede8;
+$body-color: #575656;
+$body-font-stack: 'Ubuntu', Helvetica, sans-serif;
+$headline-color: rgba(81, 93, 94, 0.36);
+$headline-font-stack: 'Fjalla One', Helvetica, sans-serif;
+$icon-color: #E9615A;
+$subhead-color: #FF8484;
+$white: #fff;
+$work-overlay: rgba(75, 40, 67, 1);
+
+
+// Stylesheets Include
+@import 'about';
+@import 'about-header';
+@import 'animations';
+@import 'footer';
+@import 'header';
+@import 'nav';
+@import 'work';
+@import 'work-header';
+@import 'work-page';
+
+// Defaults
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+	body {
+		position: relative;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	li {
+		list-style: none;
+	}
+	
+	h1,
+	h2, {
+		color: $white;
+	}
+
+	h1 {
+		font-family: $headline-font-stack;
+		font-size: 40px;
+		letter-spacing: 2px;	
+		line-height: 35px;
+		padding-top: 70px;
+		text-align: center;
+		text-transform: uppercase;	
+
+		@media screen and(min-width: 768px) {
+			line-height: 80px;
+			padding-top: 140px;
+	 		font-size: 85px;
+		}			
+	}
+
+	h2 {
+		font-family: $body-font-stack;
+		font-size: 16px;
+		font-weight: 800;
+		letter-spacing: 1px;
+		text-align: center;
+		text-transform: uppercase;
+
+		@media screen and(min-width: 768px) {
+			font-size: 35px;
+		}		
+	}
+
+	h3 {
+		color: $body-color;
+		display: inline-block;
+		font-family: $headline-font-stack;
+		font-size: 16px;
+		letter-spacing: 1.5px;
+		margin-bottom: 10px;
+		padding: 0 20px 0 0;
+		position: relative;
+		text-transform: uppercase;
+		vertical-align: top;
+		width: 50%;
+
+		&::after {
+			background: $body-color;
+			content: '';
+			height: 20px;
+			margin-top: -10px;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			width: 2px;
+		}
+
+		@media screen and (min-width: 768px) {
+			display: none;
+		}
+	}
+
+	h4 {
+		color: $body-color;
+		display: inline-block;
+		font-family: $body-font-stack;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 1px;
+		padding: 0 0 0 20px;
+		text-align: right;
+		text-transform: uppercase;
+		vertical-align: top;
+		width: 50%;
+		
+		@media screen and (min-width: 768px) {
+			display: none;
+		}		
+	}
+
+	p {
+		color: $body-color;
+		font-family: $body-font-stack;
+		font-size: 16px;
+		line-height: 22px;
+		margin-top: 15px;					
+	}
+
+	button {
+		background: none;
+		border-radius: 50px;
+		border: 0;
+		color: $white;
+		cursor: pointer;
+		font-family: $headline-font-stack;
+		font-size: 15px;
+		height: 45px;
+		letter-spacing: 1px;
+		max-width: 150px;
+		min-width: 100px;		
+		overflow: hidden;;
+		position: relative;
+		text-transform: uppercase;
+		transition: .2s ease-in;
+		width: 50%;
+
+		&:hover {	
+			-webkit-transition: .2s ease-in;				
+			transition: .2s ease-in;				
+		}	
+
+
+		@media screen and (min-width: 768px) {
+			margin: 0 10px 10px 10px;
+
+			&[title=home] {
+				float: right;
+			}
+
+			&[title=contact] {
+				float: left;
+			}
+		}
+
+		a {
+			color: #1E5F80;
+			height: 100%;
+			left: 0;
+			padding-top: 12px;
+			position: absolute;
+			top: 0;
+			transition: .2s ease-in;
+			width: 100%;
+
+			&:hover {
+				color: $accent-blue;
+				transition: .2s ease-in;
+			}
+		}
+
+		p {
+			position: absolute;
+			text-align: center;
+			top: 15px;
+			width: 100%;
+			z-index: 1;
+		}
+
+	}	
+
+	.triangle {
+		-webkit-transform: rotate(-90deg) skewX(-30deg) scale(1,.866);
+		background-color: $accent-blue;
+		border-top-right-radius: 50%;			
+		display: inline-block;
+		height: 8px;
+		margin-bottom: 4px;
+		position: relative;
+		text-align: left;
+		transform: rotate(-90deg) skewX(-30deg) scale(1,.866);
+		width:  8px;
+
+		&:before,
+		&:after {
+			background-color: inherit;				
+			border-top-right-radius: 50%;				
+			content: '';
+			height: 8px;
+			position: absolute;
+			width:  8px;
+		}
+
+		&:before {
+			-webkit-transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+			transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+		}
+
+		&:after {
+			-webkit-transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+			transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+		}
+	}			
+}

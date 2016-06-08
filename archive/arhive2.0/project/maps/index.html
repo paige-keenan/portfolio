@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bands Near You</title>
+		<link rel="shortcut icon" href="media/img/favicon.png">
+		<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="media/css/main.css" />
+	    <script type="text/javascript"
+	      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc7yqyAUd9LOD5yb6PD9oEHIdvydSoriU">
+	    </script>
+	 
+	</head>
+	<body>
+	<div id="map-canvas"></div>
+		<div class='content'>
+				<div class='content-container'>
+				<div class="searcher">
+					<h1>Welcome</h1>
+					<section>
+						<h2 class='number'> 1 </h2>
+						<h2>Type the name of your city:</h2>
+					</section>	
+					<form name="search" class="middle">
+						<input type="text" />
+						<button type="submit">Search</button>
+						<div class="results">
+							<ul></ul>
+						</div>
+					</form>
+					<section>
+						<h2 class='number'> 2 </h2>
+						<h2>Buy tickets to the bands closest to you!</h2>
+					</section>	
+				</div>
+
+				<div class='band-info'>
+					<h1>Tickets</h1>
+					<ul></ul>
+				</div>
+			</div>	
+		</div>	
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="media/js/layout.js"></script>
+	</body>
+</html>

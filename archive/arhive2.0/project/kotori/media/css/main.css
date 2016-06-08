@@ -1,0 +1,32 @@
+body {
+	text-align: center;
+}
+
+h1 {
+	color: #FB3A3A;
+	font-family: 'Fjalla One', Helvetica, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 45px;
+}
+
+p {
+	color: #FB3A3A;
+	font-family: 'Ubuntu', Helvetica, sans-serif;
+}
+
+a {
+	color: #FB3A3A;
+    text-decoration: underline;
+}
+
+div.content {
+	width: 960px;
+	margin: 0 auto;
+}
+
+div#unityPlayer {
+	cursor: default;
+	height: 600px;
+	width: 960px;
+}

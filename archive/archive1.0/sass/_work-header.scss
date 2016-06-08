@@ -1,0 +1,64 @@
+.work__header {
+	animation: none;
+	-webkit-animation: none;
+	background: none;
+	height: 250px;
+	top: 0;
+	z-index: 1;
+
+	@media screen and (min-width: 768px) {
+		height: 396px;
+	}
+
+	&::before {
+		background: none;
+	}
+
+	h1 {
+		padding-top: 35px;
+
+		@media screen and (min-width: 768px) {
+			padding-top: 100px;
+		}
+	}
+
+	&__proj-1 {
+		background: url('../images/bridgestone.jpg') center center;
+		background-size: cover;
+	}
+
+	&__proj-2 {
+		background: url('../images/maps.jpg') center center;
+		background-size: cover;
+	}
+
+	&__proj-3 {
+		background: url('../images/humane-society-hero.jpg') center center;
+		background-size: cover;
+	}
+
+	&__proj-4 {
+		background: url('../images/red-cross.jpg') center center;
+		background-size: cover;
+	}
+
+	&__proj-5 {
+		background: url('../images/flamingo.jpg') center center;
+		background-size: cover;
+	}
+
+	&__proj-6 {
+		background: url('../images/100-girls-of-code.jpg') center center;
+		background-size: cover;
+	}		
+
+	&__proj-7 {
+		background: url('../images/kotori.jpg') center center;
+		background-size: cover;
+	}
+
+	&__proj-8 {
+		background: url('../images/courtney-portfolio.jpg') center center;
+		background-size: cover;
+	}					
+}
