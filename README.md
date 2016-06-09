@@ -7,7 +7,9 @@ This is the code base of my personal portfolio. It's evolved a lot over the year
 
 ### To Run Project Locally
 This is a ```React``` based project
-Assuming you have [npm](https://www.npmjs.com/), ```npm install``` this bad boy
+Assuming you have [npm](https://www.npmjs.com/), 
+
+```npm install``` this bad boy
 
 ### To Simply View Site as You Would on the Web
 * Clone repo
