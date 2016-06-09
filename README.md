@@ -1,22 +1,14 @@
-# React Boiler Plate
-Simple boiler plate to get you started on a React project with livereload capabilities. 
-
-### Capabilities: 
-* Livereload all content when changes are detected
-* Write styles in SASS
+# Paige Keenan - Personal Portfolio
+This is the code base of my personal portfolio. It's evolved a lot over the years. My work is a product of what is the best product *right now*, what is the best technology I can learn and should build this in? Right now it's [React](https://facebook.github.io/react/) because this seems like a fun project to really learn within and master it. Who knows what it will be written in a year from now. Navigate to the ```archive``` directory to see my old sites and what code practices were trending a year ago.
 
 ### Dependencies:
 * [Babel](https://babeljs.io/)
 * [Webpack](https://webpack.github.io/)
 
-### Serving your code for development:
-* Clone repo
-* Run ```npm install```
-* Run ```webpack-dev-server``` (For additonal server options, see: [https://webpack.github.io/docs/usage.html](https://webpack.github.io/docs/usage.html) Eg:```webpack-dev-server --progress --colors```)
+### To Run Project Locally
+This is a ```React``` based project
+* Assuming you have (npm)[https://www.npmjs.com/], ```npm install``` this bad boy
 
-### Building your code for production:
+### To Simply View Site as You Would on the Web
 * Clone repo
-* Run ```npm install```
-* Run ```webpack``` and navigate to ```src``` folder to view all production code.
-
-All development code is written in the ```app``` directory and all depolyment code is located in the ```src``` directory.
+* Open up ```index.html``` in your preferred browser
