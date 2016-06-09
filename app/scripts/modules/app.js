@@ -11,7 +11,9 @@ export default React.createClass({
     return (
       <section>
         <Header />
-        <List />
+        <nav>
+        	<List />
+        </nav>	
       </section>
     )
   }
