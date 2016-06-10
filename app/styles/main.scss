@@ -1,8 +1,9 @@
 // Variables
 // =====================
-$large-font: 'Open Sans', sans-serif;
-$small-font: 'Inconsolata', sans-serif;
-$black:      #000;
+$large-font:       'Open Sans', sans-serif;
+$small-font:       'Inconsolata', sans-serif;
+$black:            #000;
+$background-color: #fdf8f3;
 
 // Mixins
 // =====================
@@ -36,6 +37,7 @@ $black:      #000;
 body {
 	margin: 0 auto;
 	padding: 0;
+	background: $background-color;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 
@@ -72,6 +74,31 @@ header {
 	p {
 		font-size: 20px;
 		font-weight: bold;
+		display: block;
+	}
+}
+
+nav {
+	margin-top: 20px;
+
+	ul {
+		@include container;
+		padding: 0 5%;
+	}
+
+	li {
+		list-style: none;
+	}
+
+	a {
+		@include headline-font;
+		color: $black;
+		font-size: 15px;
+		padding: 5px 10px 25px 0;
+		margin: 0;
+		display: inline-block;
+		text-transform: lowercase;
+		text-decoration: none;
 	}
 }
 

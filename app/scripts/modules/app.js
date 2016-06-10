@@ -1,10 +1,11 @@
 // Home Page
 // =============================
 
-import React  from 'react'
-import {Link} from 'react-router'
-import Header from './header';
-import List   from './list';
+import React     from 'react'
+import {Link}    from 'react-router'
+import Header    from './header';
+import List      from './list';
+import NewWork   from './new-work';
 
 export default React.createClass({
   render() {
@@ -14,6 +15,9 @@ export default React.createClass({
         <nav>
         	<List />
         </nav>	
+        <section>
+          <NewWork />
+        </section>
       </section>
     )
   }
