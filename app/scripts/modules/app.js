@@ -6,6 +6,7 @@ import {Link}    from 'react-router'
 import Header    from './header';
 import List      from './list';
 import NewWork   from './new-work';
+import OldWork   from './old-work';
 
 export default React.createClass({
   render() {
@@ -15,9 +16,10 @@ export default React.createClass({
         <nav>
         	<List />
         </nav>	
-        <section>
+        <main>
           <NewWork />
-        </section>
+          <OldWork />
+        </main>
       </section>
     )
   }
