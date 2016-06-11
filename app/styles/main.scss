@@ -61,16 +61,6 @@ header {
 	position: relative;
 	padding: 50px 5% 15px;
 
-	&:after {
-		content: '';
-		width: 40px;
-		height: 3px;
-		background: $black;
-		position: absolute;
-		bottom: 0;
-		left: 5%;
-	}
-
 	p {
 		font-size: 20px;
 		font-weight: bold;
@@ -88,6 +78,7 @@ nav {
 
 	li {
 		list-style: none;
+		margin: 20px 0;
 	}
 
 	a {
@@ -99,6 +90,15 @@ nav {
 		display: inline-block;
 		text-transform: lowercase;
 		text-decoration: none;
+
+	    border: 2px solid black;
+	    border-radius: 25px;
+	    padding: 5px 10px;		
+
+
+	    // border-bottom: 2px solid black;
+	    // border-radius: 25px;
+	    // padding: 5px 0px 5px 0;	    
 	}
 }
 
