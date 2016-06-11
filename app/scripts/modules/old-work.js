@@ -16,7 +16,7 @@ export default class OldWork extends React.Component {
     super(props);
     this.state = {
       title: 'Old Work',
-      isOpen: true
+      isOpen: false
     }
   } 
 
