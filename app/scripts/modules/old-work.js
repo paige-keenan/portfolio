@@ -6,7 +6,7 @@ import DropDown from './drop-down.js'
 import Project  from './project.js'
 
 const nav_data = {
-  project1: {title: 'Firestone Tire',   department: 'Development', image: '', imageAlt: 'Large tire image'},
+  project1: {title: 'Firestone Tire',   department: 'Development', image: '', imageAlt: 'Car driving down road'},
   project2: {title: 'Bridgestone Tire', department: 'Development', image: '', imageAlt: 'lksjdf'}
 }
 

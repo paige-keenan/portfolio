@@ -14,7 +14,7 @@ export default React.createClass({
       <section>
         <Header />
         <nav>
-        	<List />
+
         </nav>	
         <main>
           <NewWork />

@@ -16,9 +16,12 @@ export default class Link_Item extends React.Component {
 	const link = this.props.details;
 
     return(  
-
 		<section>
-			{link.title}
+			<h3>{link.title}</h3>
+			<p>{link.department}</p>
+			<figure>
+				<img src={link.image} alt={link.imageAlt} />
+			</figure>	
 		</section>
     );  
   }
