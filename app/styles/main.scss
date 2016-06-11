@@ -4,6 +4,7 @@ $large-font:       'Open Sans', sans-serif;
 $small-font:       'Inconsolata', sans-serif;
 $black:            #000;
 $background-color: #fdf8f3;
+$gray-white:	   #f7f3f0;
 
 // Mixins
 // =====================
@@ -20,6 +21,7 @@ $background-color: #fdf8f3;
 	font-family: $small-font;
 	font-size: 16px;
 	margin: 0 0 5px 0;
+	letter-spacing: 1px;
 }
 
 @mixin container {
@@ -29,6 +31,13 @@ $background-color: #fdf8f3;
 	@media screen and (min-width:768px) {
 
 	}
+}
+
+@mixin basic-button {
+	border: 0;
+	background: none;
+	margin: 0;
+	padding: 0;
 }
 
 
@@ -44,6 +53,12 @@ body {
 	h1 {
 		@include headline-font;
 		display: inline-block;
+		font-size: 35px;
+	}
+
+	h3 {
+		@include headline-font;
+		font-size: 20px;
 	}
 
 	h4 {
@@ -59,7 +74,8 @@ body {
 header {
 	@include container;
 	position: relative;
-	padding: 50px 5% 15px;
+	padding: 75px 5%;
+	text-align: center;
 
 	p {
 		font-size: 20px;
@@ -122,6 +138,7 @@ main {
 	}
 
 	header {
+		width: 100%;
 		margin: 0;
 		padding: 0;
 	}
@@ -129,5 +146,86 @@ main {
 	button {
 		@include headline-font;
 	}	
+
+	section {
+		position: relative;
+
+		// Closed Work State
+		&[data-is-active=false] {
+			button {
+				&:before {
+					content: '';
+					position: absolute;
+					left: 30px;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+					background: $black;
+					width: 20px;
+					height: 4px;
+				}
+
+				&:after {
+					content: '';
+					position: absolute;
+					left: 38px;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+					background: $black;
+					width: 4px;
+					height: 20px;
+				}
+			}
+			main {
+				display: none;
+			}			
+		}
+
+
+		// Opened Work State
+		&[data-is-active=true] {
+			button {
+				&:before {
+					content: '';
+					position: absolute;
+					left: 30px;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+					background: $black;
+					width: 20px;
+					height: 4px;
+				}
+
+			}
+			// height: 0;
+			// overflow: hidden;
+		}			
+
+		button {
+			@include basic-button;
+			display: block;
+		    padding: 20px 60px;
+		    border-top: 1px solid #ccc;
+		    font-family: $large-font;
+		    width: 100%;
+		    text-align: left;
+		    background: $gray-white;
+		}
+
+		h3, p {
+			@include container;
+			text-transform: none;
+		}
+
+		h3 {
+			margin: 10px 0 10px;
+		}			
+
+		p {
+			margin: 0 0 10px;
+		}
+	}
 }
 
