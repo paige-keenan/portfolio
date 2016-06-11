@@ -8,7 +8,7 @@ import Project  from './project.js'
 const nav_data = {
 	project1: {title: "Firestone Tire",              department: "Development", image: "media/images/firestone-hero.jpg",   imageAlt: "Car driving down road"},
 	project2: {title: "Bridgestone Tire",            department: "Development", image: "media/images/bridgestone-hero.jpg", imageAlt: "lksjdfv"},
-	project3: {title: "Jeni\'s Splendid Ice Creams", department: 'Development', image: "media/images/jenis-hero.jpg", imageAlt: "lksjdf"}
+	project3: {title: "Jeni\'s Splendid Ice Creams App", department: 'Development & Design', image: "media/images/jenis-hero.jpg", imageAlt: "lksjdf"}
 }
 
 export default class NewWork extends React.Component { 
