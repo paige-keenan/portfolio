@@ -17,11 +17,11 @@ export default class Link_Item extends React.Component {
 
     return(  
 		<section>
-			<h3>{link.title}</h3>
-			<p>{link.department}</p>
 			<figure>
 				<img src={link.image} alt={link.imageAlt} />
 			</figure>	
+			<h3>{link.title}</h3>
+			<p>{link.department}</p>			
 		</section>
     );  
   }
@@ -51,7 +51,7 @@ export default class Project extends React.Component {
   render() {
     return (
       <main>
-		{Object.keys(this.state.linkInfo).map(this.render_link_info)} 
+		    {Object.keys(this.state.linkInfo).map(this.render_link_info)} 
       </main>
     );
   }
