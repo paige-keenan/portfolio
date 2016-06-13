@@ -12,10 +12,7 @@ export default React.createClass({
   render() {
     return (
       <section>
-        <Header />
-        <nav>
-
-        </nav>	
+        <Header />	
         <main>
           <NewWork />
           <OldWork />
