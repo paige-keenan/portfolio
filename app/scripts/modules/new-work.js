@@ -17,7 +17,8 @@ export default class NewWork extends React.Component {
     super(props);
     this.state = {
       title: 'New Work',
-      isOpen: true
+      isOpen: true,
+      id: 'new-work'
     }
   }	
 
@@ -35,9 +36,10 @@ export default class NewWork extends React.Component {
   render() {
     return (
     	<section
+        id={this.state.id}
     		data-is-active={this.state.isOpen ? true : false}>
     		<DropDown 
-    			data={this.state.title}
+    			data={this.state.title}    			
     			clickEvent={this.handle_click.bind(this)}/>
     		<Project
     			data={nav_data}/>
