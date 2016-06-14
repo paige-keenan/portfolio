@@ -25,8 +25,8 @@ $gray-white:	   #f7f3f0;
 }
 
 @mixin container {
-	width: 90%;
-	padding: 0 5%;
+	width: 100%;
+	padding: 0 20px;
 	margin: 0;
 	@media screen and (min-width:768px) {
 
@@ -43,17 +43,32 @@ $gray-white:	   #f7f3f0;
 
 // Styles
 // =============================
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;	
+}
+
 body {
 	margin: 0 auto;
 	padding: 0;
 	background: $background-color;
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 
 	h1 {
-		@include headline-font;
+		font-family: $large-font;
 		display: inline-block;
-		font-size: 35px;
+		font-size: 30px;
+		margin: 0;
+		letter-spacing: 1px;
+		line-height: 30px;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		@include headline-font;
+		font-size: 20px;
+		text-transform: none;
+		margin: 0;
+		font-weight: 400;
 	}
 
 	h3 {
@@ -66,26 +81,50 @@ body {
 	}
 
 	p {
-		@include paragraph-font;
+		font-family: $large-font;
 		display: inline-block;
+		font-weight: 200;
+		line-height: 25px;
+		letter-spacing: .4px;
 	}
 }
 
 header {
 	@include container;
 	position: relative;
-	padding: 75px 5%;
-	text-align: center;
+	padding: 40px 20px;
 
 	@media screen and (min-width:768px) {
 		width: 300px;
-		background: red;
+		left: 0;
+		top: 50%;
+    	transform: translateY(-50%);
+		position: fixed;
+		padding: 40px 30px;
 	}	
 
+	h2 {
+	    margin: 20px 0;
+	    line-height: 25px;	
+	}
+
 	p {
-		font-size: 20px;
-		font-weight: bold;
+		font-size: 14px;
 		display: block;
+	}
+
+	section {
+		@media screen and (min-width:768px) {
+			display: none;
+		}
+	}
+
+	nav {
+		display: none;
+
+		@media screen and (min-width:768px) {
+			display: inline-block;
+		}		
 	}
 }
 
@@ -94,32 +133,45 @@ nav {
 
 	ul {
 		@include container;
-		padding: 0 5%;
+		padding: 0;
 	}
 
 	li {
 		list-style: none;
-		margin: 20px 0;
+		margin: 10px 0;
+
+		a {
+			padding-left: 20px;
+			position: relative;
+
+			&.active {
+				background: $black;
+				color: $background-color;
+			}
+		}
+	}
+
+	li h3 a {
+		padding: 5px;
+		margin: 20px 0 0;
 	}
 
 	a {
-		@include headline-font;
+		font-family: $small-font;
 		color: $black;
-		font-size: 15px;
-		padding: 5px 10px 25px 0;
 		margin: 0;
 		display: inline-block;
-		text-transform: lowercase;
 		text-decoration: none;
 
-	    border: 2px solid black;
-	    border-radius: 25px;
-	    padding: 5px 10px;		
+		&:hover {
+			text-decoration: underline;
+		}
 
-
-	    // border-bottom: 2px solid black;
-	    // border-radius: 25px;
-	    // padding: 5px 0px 5px 0;	    
+		h3 {
+			font-family: $small-font;
+			font-size: 20px;
+			text-transform: uppercase;
+		}    
 	}
 }
 
@@ -131,16 +183,59 @@ main {
 		overflow: hidden;
 		margin: 0 auto;
 
+		@media screen and (min-width:768px) {
+			width: 400px;
+			height: 250px;
+			margin: 0;
+			background-color: gray;
+		}
+
 		img {
 		    position: absolute;
 		    left: 50%;
 		    bottom: 0;
-		    height: 100%;
+		    width: 100%;
 		    top: 0;
 		    margin: 0;
 		    transform: translate(-50%, 0);
+
+			@media screen and (min-width:768px) {
+				height: auto;
+				width: 100%;
+				left: 0;
+				transform: translate(0, 0);
+			}		    
 		}
 	}
+
+	main {
+		> section {
+			position: relative;
+
+			@media screen and (min-width:768px) {
+				display: inline-block;
+
+				&:hover figcaption {
+					opacity: 1;
+					transition: .3s ease-in;
+				}
+			}
+
+		}	
+
+		figcaption {
+			@media screen and (min-width:768px) {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				background: $black;
+				color: $background-color;
+				max-width: 300px;
+				opacity: 0;
+				transition: .15s ease-out;
+			}
+		}
+	}	
 
 	header {
 		width: 100%;
@@ -148,9 +243,16 @@ main {
 		padding: 0;
 
 		@media screen and (min-width:768px) {
-			width: 300px;
-			background: red;
+			display: none;
 		}
+	}
+
+	.active {
+		main {
+			@media screen and (min-width:768px) {
+				display: block !important;
+			}	
+		}		
 	}
 
 	main {
@@ -159,7 +261,7 @@ main {
 			top: 0;
 			right: 0;
 			width: calc(100% - 300px);
-			background: orange;
+			// transform: translateX(800px);
 		}
 	}
 
@@ -219,6 +321,12 @@ main {
 				}
 
 			}
+
+			main {
+				@media screen and (min-width:768px) {
+					display: none;
+				}
+			}
 		}			
 
 		button {
@@ -230,24 +338,37 @@ main {
 		    font-family: $large-font;
 		    width: 100%;
 		    text-align: left;
+		    font-size: 20px;
 		    background: $gray-white;
 		}
 
-		h3, p {
+		figcaption {
 			text-transform: none;
 			margin: 0;
-			width: 90%;
+			width: 100%;
+			padding: 20px 20px 0 20px;
+
+			@media screen and (min-width:768px) {
+				width: auto;
+				padding: 20px;
+			}
 		}
 
 		h3 {
 			text-transform: uppercase;
-			padding: 20px 0 5px 20px;
+			padding: 0;
+			margin: 0;
 		}			
 
 		p {
 			font-family: $large-font;
-			padding: 0 0 40px 20px;
+			padding: 0 0 40px 0;
+			margin: 0;
 			font-size: 12px;
+
+			@media screen and (min-width:768px) {
+				padding: 0;
+			}
 		}
 	}
 }
