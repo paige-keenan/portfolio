@@ -15,6 +15,7 @@ export default class DropDown extends React.Component {
     return (
     	<header>
     		<button 
+    			href={this.props.dataUrl}
     			onClick={this.props.clickEvent}>
     			{this.props.data}
     		</button>

@@ -4,12 +4,6 @@
 import React from 'react';
 
 export default class Link_Item extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    }
-  }
-
 
   // Nav List Item Renderer
   render() {
@@ -20,13 +14,14 @@ export default class Link_Item extends React.Component {
 			<figure>
 				<img src={link.image} alt={link.imageAlt} />
 			</figure>	
-			<h3>{link.title}</h3>
-			<p>{link.department}</p>			
+      <figcaption>
+			 <h3>{link.title}</h3>
+			 <p>{link.department}</p>			
+      </figcaption> 
 		</section>
     );  
   }
 }
-
 
 
 export default class Project extends React.Component { 
