@@ -4,6 +4,7 @@
 import React    from 'react';
 import DropDown from './drop-down.js'
 import Project  from './project.js'
+import DemoItem from './demo-item.js'
 
 export default class NewWork extends React.Component { 
 
@@ -32,13 +33,11 @@ export default class NewWork extends React.Component {
     return (
     	<section
         id={this.state.id}
-        className='active'
     		data-is-active={this.state.isOpen ? true : false}>
     		<DropDown 
     			data={this.state.title}   		
     			clickEvent={this.handle_click.bind(this)}/>
-    		<Project
-    			data={this.props.data}/>
+        <DemoItem />
     	</section>	
     );
   }
