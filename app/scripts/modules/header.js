@@ -20,7 +20,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <header>
-        <h1>Erin Stevens</h1>
+        <h1>Paige Keenan</h1>
         <section>
 	        <h2>I'm a Front-end Developer at Razorfish in Atlanta, GA.</h2>
 	        <p>My goal is to farther my craft everyday.</p>
