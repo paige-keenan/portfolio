@@ -7,7 +7,10 @@ export default class About extends React.Component {
 
   render() {
     return (
-    	<section id='about'>
+    	<section 
+            id='about'
+            data-modal-is-open={this.props.data ? true : false}
+            onClick={this.props.clickEvent}>
     		<header>
         		<h2>Hello.</h2>  
         		<h3>I'm Paige Keenan, and I'm a Front End Developer at Razorfish in Atlanta, GA.</h3>
