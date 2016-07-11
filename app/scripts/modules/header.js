@@ -31,19 +31,11 @@ export default class Header extends React.Component {
 	    <nav>
 	    	<ul>
 	    		<li><h3><a className='active' href='new-work' onClick={this.handle_click.bind(this)}>New Work</a></h3></li>
-	    		<li><a href='#'>Firestone Tire</a></li>
-	    		<li><a href='#'>Bridgestone Tire</a></li>
-	    		<li><a href='#'>Jeni's Splendid Ice Creams App</a></li>
-
 	    		<li><h3><a href='old-work' onClick={this.handle_click.bind(this)}>Old Work</a></h3></li>
-	    		<li><a href='#'>Google Maps & Bands in Town API Integration</a></li>
-	    		<li><a href='#'>Atlanta Humane Society</a></li>
-	    		<li><a href='#'>Kotori</a></li>	
-
 	    		<li><h3><a href='demos' onClick={this.handle_click.bind(this)}>Demos</a></h3></li>
-
 	    		<li><h3><a href='contact' onClick={this.handle_click.bind(this)}>Résumé</a></h3></li>
 	    	</ul>
+	    	<a href='about'>About</a>
 	    </nav>    
       </header>
     );

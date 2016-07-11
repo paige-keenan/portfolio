@@ -9,6 +9,7 @@ import NewWork   from './new-work';
 import OldWork   from './old-work';
 import Contact   from './contact';
 import Demos     from './demos';
+import About     from './about';
 
 const nav_data_old = {
   project1: {title: 'Google Maps & Bands in Town API Integration',   department: 'Web Development',          image: 'media/images/maps-hero.jpg',           imageAlt: 'Map of Austin'},
@@ -31,6 +32,7 @@ export default React.createClass({
             data-new={nav_data_new}
             data-old={nav_data_old}/>	
         <main>
+          <About />
           <NewWork 
             data={nav_data_new}/>
           <OldWork 

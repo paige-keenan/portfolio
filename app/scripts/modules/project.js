@@ -46,7 +46,9 @@ export default class Project extends React.Component {
   render() {
     return (
       <main>
-		    {Object.keys(this.state.linkInfo).map(this.render_link_info)} 
+        <section>
+		      {Object.keys(this.state.linkInfo).map(this.render_link_info)} 
+        </section>  
       </main>
     );
   }

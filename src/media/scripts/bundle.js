@@ -65,13 +65,13 @@
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _about = __webpack_require__(237);
+	var _about = __webpack_require__(240);
 
 	var _about2 = _interopRequireDefault(_about);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(238); // Router
+	__webpack_require__(241); // Router
 	// =============================
 
 	(0, _reactDom.render)(_react2.default.createElement(
@@ -25715,10 +25715,30 @@
 
 	var _oldWork2 = _interopRequireDefault(_oldWork);
 
+	var _contact = __webpack_require__(237);
+
+	var _contact2 = _interopRequireDefault(_contact);
+
+	var _demos = __webpack_require__(238);
+
+	var _demos2 = _interopRequireDefault(_demos);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Home Page
 	// =============================
+
+	var nav_data_old = {
+	  project1: { title: 'Google Maps & Bands in Town API Integration', department: 'Web Development', image: 'media/images/maps-hero.jpg', imageAlt: 'Map of Austin' },
+	  project2: { title: 'Atlanta Humane Society', department: 'Web Development & Design', image: 'media/images/humane-society-hero.jpg', imageAlt: 'Puppies and Kittens on Lawn' },
+	  project3: { title: 'Kotori', department: 'Game Development', image: 'media/images/kotori-hero.jpg', imageAlt: 'Video game character jumping' }
+	};
+
+	var nav_data_new = {
+	  project1: { title: "Firestone Tire", department: "Web Development", image: "media/images/firestone-hero.jpg", imageAlt: "Car driving down road" },
+	  project2: { title: "Bridgestone Tire", department: "Web Development", image: "media/images/bridgestone-hero.jpg", imageAlt: "Tire surrounded by city" },
+	  project3: { title: "Jeni\'s Splendid Ice Creams App", department: 'App Development & Design', image: "media/images/jenis-hero.jpg", imageAlt: "Hand holding ice cream" }
+	};
 
 	exports.default = _react2.default.createClass({
 	  displayName: 'app',
@@ -25726,12 +25746,19 @@
 	    return _react2.default.createElement(
 	      'section',
 	      null,
-	      _react2.default.createElement(_header2.default, null),
+	      _react2.default.createElement(_header2.default, {
+	        'data-new': nav_data_new,
+	        'data-old': nav_data_old }),
 	      _react2.default.createElement(
 	        'main',
 	        null,
-	        _react2.default.createElement(_newWork2.default, null),
-	        _react2.default.createElement(_oldWork2.default, null)
+	        _react2.default.createElement(_newWork2.default, {
+	          data: nav_data_new }),
+	        _react2.default.createElement(_oldWork2.default, {
+	          data: nav_data_old }),
+	        _react2.default.createElement(_demos2.default, {
+	          data: nav_data_new }),
+	        _react2.default.createElement(_contact2.default, null)
 	      )
 	    );
 	  }
@@ -25744,7 +25771,7 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25763,69 +25790,134 @@
 	// =============================
 
 	var Header = function (_React$Component) {
-	  _inherits(Header, _React$Component);
+		_inherits(Header, _React$Component);
 
-	  function Header() {
-	    _classCallCheck(this, Header);
+		function Header() {
+			_classCallCheck(this, Header);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Header).apply(this, arguments));
-	  }
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(Header).apply(this, arguments));
+		}
 
-	  _createClass(Header, [{
-	    key: "handle_click",
+		_createClass(Header, [{
+			key: "handle_click",
 
 
-	    // All Click Functions Declared Here
-	    value: function handle_click(event) {
-	      event.preventDefault();
-	      var siblings = document.querySelectorAll(".active");
-	      [].forEach.call(siblings, function (el) {
-	        el.classList.remove("active");
-	      });
-	      var currentId = event.target.getAttribute('href');
-	      document.getElementById(currentId).setAttribute('class', 'active');
-	    }
-	  }, {
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "header",
-	        null,
-	        _react2.default.createElement(
-	          "h1",
-	          null,
-	          "Paige Keenan"
-	        ),
-	        _react2.default.createElement(
-	          "h2",
-	          null,
-	          "I'm a Front-end Developer at Razorfish in Atlanta, GA."
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "My goal is to farther my craft everyday."
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "I want to work on projects that push me and force me out of my comfort zone."
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "I want to be a team player and a solid teammate on all projects I work on."
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "My work below illustrates these pursuits."
-	        )
-	      );
-	    }
-	  }]);
+			// All Click Functions Declared Here
+			value: function handle_click(event) {
+				event.preventDefault();
+				var siblings = document.querySelectorAll(".active");
+				[].forEach.call(siblings, function (el) {
+					el.classList.remove("active");
+				});
+				var currentId = event.target.getAttribute('href');
+				event.target.setAttribute('class', 'active');
+				document.getElementById(currentId).setAttribute('class', 'active');
+			}
+		}, {
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"header",
+					null,
+					_react2.default.createElement(
+						"h1",
+						null,
+						"Paige Keenan"
+					),
+					_react2.default.createElement(
+						"section",
+						null,
+						_react2.default.createElement(
+							"h2",
+							null,
+							"I'm a Front-end Developer at Razorfish in Atlanta, GA."
+						),
+						_react2.default.createElement(
+							"p",
+							null,
+							"My goal is to farther my craft everyday."
+						),
+						_react2.default.createElement(
+							"p",
+							null,
+							"I want to work on projects that push me and force me out of my comfort zone."
+						),
+						_react2.default.createElement(
+							"p",
+							null,
+							"I want to be a team player and a solid teammate on all projects I work on."
+						),
+						_react2.default.createElement(
+							"p",
+							null,
+							"My work below illustrates these pursuits."
+						)
+					),
+					_react2.default.createElement(
+						"nav",
+						null,
+						_react2.default.createElement(
+							"ul",
+							null,
+							_react2.default.createElement(
+								"li",
+								null,
+								_react2.default.createElement(
+									"h3",
+									null,
+									_react2.default.createElement(
+										"a",
+										{ className: "active", href: "new-work", onClick: this.handle_click.bind(this) },
+										"New Work"
+									)
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								_react2.default.createElement(
+									"h3",
+									null,
+									_react2.default.createElement(
+										"a",
+										{ href: "old-work", onClick: this.handle_click.bind(this) },
+										"Old Work"
+									)
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								_react2.default.createElement(
+									"h3",
+									null,
+									_react2.default.createElement(
+										"a",
+										{ href: "demos", onClick: this.handle_click.bind(this) },
+										"Demos"
+									)
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								_react2.default.createElement(
+									"h3",
+									null,
+									_react2.default.createElement(
+										"a",
+										{ href: "contact", onClick: this.handle_click.bind(this) },
+										"Résumé"
+									)
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
 
-	  return Header;
+		return Header;
 	}(_react2.default.Component);
 
 	exports.default = Header;
@@ -25932,12 +26024,6 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // New Work component
 	// =============================
 
-	var nav_data = {
-	  project1: { title: "Firestone Tire", department: "Web Development", image: "media/images/firestone-hero.jpg", imageAlt: "Car driving down road" },
-	  project2: { title: "Bridgestone Tire", department: "Web Development", image: "media/images/bridgestone-hero.jpg", imageAlt: "Tire surrounded by city" },
-	  project3: { title: "Jeni\'s Splendid Ice Creams App", department: 'App Development & Design', image: "media/images/jenis-hero.jpg", imageAlt: "Hand holding ice cream" }
-	};
-
 	var NewWork = function (_React$Component) {
 	  _inherits(NewWork, _React$Component);
 
@@ -25977,12 +26063,13 @@
 	        'section',
 	        {
 	          id: this.state.id,
+	          className: 'active',
 	          'data-is-active': this.state.isOpen ? true : false },
 	        _react2.default.createElement(_dropDown2.default, {
 	          data: this.state.title,
 	          clickEvent: this.handle_click.bind(this) }),
 	        _react2.default.createElement(_project2.default, {
-	          data: nav_data })
+	          data: this.props.data })
 	      );
 	    }
 	  }]);
@@ -26042,6 +26129,7 @@
 	        _react2.default.createElement(
 	          'button',
 	          {
+	            href: this.props.dataUrl,
 	            onClick: this.props.clickEvent },
 	          this.props.data
 	        )
@@ -26082,20 +26170,17 @@
 	var Link_Item = function (_React$Component) {
 	  _inherits(Link_Item, _React$Component);
 
-	  function Link_Item(props) {
+	  function Link_Item() {
 	    _classCallCheck(this, Link_Item);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Link_Item).call(this, props));
-
-	    _this.state = {};
-	    return _this;
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Link_Item).apply(this, arguments));
 	  }
-
-	  // Nav List Item Renderer
-
 
 	  _createClass(Link_Item, [{
 	    key: 'render',
+
+
+	    // Nav List Item Renderer
 	    value: function render() {
 	      var link = this.props.details;
 
@@ -26108,14 +26193,18 @@
 	          _react2.default.createElement('img', { src: link.image, alt: link.imageAlt })
 	        ),
 	        _react2.default.createElement(
-	          'h3',
+	          'figcaption',
 	          null,
-	          link.title
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          link.department
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            link.title
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            link.department
+	          )
 	        )
 	      );
 	    }
@@ -26154,7 +26243,11 @@
 	      return _react2.default.createElement(
 	        'main',
 	        null,
-	        Object.keys(this.state.linkInfo).map(this.render_link_info)
+	        _react2.default.createElement(
+	          'section',
+	          null,
+	          Object.keys(this.state.linkInfo).map(this.render_link_info)
+	        )
 	      );
 	    }
 	  }]);
@@ -26196,12 +26289,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // New Work component
 	// =============================
-
-	var nav_data = {
-	  project1: { title: 'Google Maps & Bands in Town API Integration', department: 'Web Development', image: 'media/images/maps-hero.jpg', imageAlt: 'Map of Austin' },
-	  project2: { title: 'Atlanta Humane Society', department: 'Web Development & Design', image: 'media/images/humane-society-hero.jpg', imageAlt: 'Puppies and Kittens on Lawn' },
-	  project3: { title: 'Kotori', department: 'Game Development', image: 'media/images/kotori-hero.jpg', imageAlt: 'Video game character jumping' }
-	};
 
 	var OldWork = function (_React$Component) {
 	  _inherits(OldWork, _React$Component);
@@ -26247,7 +26334,7 @@
 	          data: this.state.title,
 	          clickEvent: this.handle_click.bind(this) }),
 	        _react2.default.createElement(_project2.default, {
-	          data: nav_data })
+	          data: this.props.data })
 	      );
 	    }
 	  }]);
@@ -26259,6 +26346,612 @@
 
 /***/ },
 /* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _dropDown = __webpack_require__(234);
+
+	var _dropDown2 = _interopRequireDefault(_dropDown);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // Contact component
+	// =============================
+
+	var Contact = function (_React$Component) {
+	  _inherits(Contact, _React$Component);
+
+	  function Contact(props) {
+	    _classCallCheck(this, Contact);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Contact).call(this, props));
+
+	    _this.state = {
+	      title: 'Résumé',
+	      isOpen: false,
+	      id: 'contact'
+	    };
+	    return _this;
+	  }
+
+	  // Toggle Menu Function
+
+
+	  _createClass(Contact, [{
+	    key: 'toggle_menu',
+	    value: function toggle_menu(event) {
+	      this.setState({ isOpen: !this.state.isOpen });
+	    }
+
+	    // All Click Functions Declared Here
+
+	  }, {
+	    key: 'handle_click',
+	    value: function handle_click(event) {
+	      this.toggle_menu(this);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'section',
+	        {
+	          id: this.state.id,
+	          'data-is-active': this.state.isOpen ? true : false },
+	        _react2.default.createElement(_dropDown2.default, {
+	          data: this.state.title,
+	          clickEvent: this.handle_click.bind(this) }),
+	        _react2.default.createElement(
+	          'main',
+	          null,
+	          _react2.default.createElement(
+	            'section',
+	            null,
+	            _react2.default.createElement(
+	              'header',
+	              null,
+	              _react2.default.createElement(
+	                'h1',
+	                null,
+	                'Paige Keenan'
+	              ),
+	              _react2.default.createElement(
+	                'h3',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: 'tel:8179955467' },
+	                  '(817)995-5467'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'h3',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: 'mailto:paigeinteractive@gmail.com' },
+	                  'PaigeInteractive@gmail.com'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'h3',
+	                null,
+	                'Github: ',
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: 'http://github.com/paige-keenan', target: '_blank' },
+	                  '@paige-keenan'
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'section',
+	              null,
+	              _react2.default.createElement(
+	                'article',
+	                null,
+	                _react2.default.createElement(
+	                  'h2',
+	                  null,
+	                  'Experience'
+	                ),
+	                _react2.default.createElement(
+	                  'section',
+	                  null,
+	                  _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    'Razorfish'
+	                  ),
+	                  _react2.default.createElement(
+	                    'h4',
+	                    null,
+	                    'ATLANTA, GA — ',
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: 'http://www.razorfish.com/', target: '_blank' },
+	                      'Learn More'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'h5',
+	                    null,
+	                    'Presentation Layer Engineer: January 2016 - Present'
+	                  ),
+	                  _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'In this role, I have provided maintenance work on Bridgestone Tire\'s website, been a core member of the development team that launched Firestone Tire\'s latest rendition of their website, and joined the team of a large banking website where my role includes maintenance and configuring unit tests to better expedite and ensure quality code.'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'section',
+	                  null,
+	                  _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    'Razorfish'
+	                  ),
+	                  _react2.default.createElement(
+	                    'h4',
+	                    null,
+	                    'ATLANTA, GA — ',
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: 'http://www.razorfish.com/', target: '_blank' },
+	                      'Learn More'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'h5',
+	                    null,
+	                    'Associate Presentation Layer Engineer: September 2014 - January 2016'
+	                  ),
+	                  _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'As an associate level developer, I worked on the maintenance and measurements tracks of Bridgestone Tire\'s and Firestone Tire\'s websites, assisted in the complete redesign and infrastructure of Bridgestone Tire\'s latest rendition of their website, and worked on seasonal promotions under the Bridgestone Tire / Firestone Tire umbrella.'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'section',
+	                  null,
+	                  _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    '100 Girls of Code'
+	                  ),
+	                  _react2.default.createElement(
+	                    'h4',
+	                    null,
+	                    'ATLANTA, GA — ',
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: 'http://www.100girlsofcode.com/', target: '_blank' },
+	                      'Learn More'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'h5',
+	                    null,
+	                    'Atlanta Chapter Co-Founder: April 2015 - January 2016'
+	                  ),
+	                  _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'My role included creation of lesson plans for girls aged 8 through 18 - lessons varying by age group, scouting of locations to host monthly web development learning camps, teaching an all female group of code-savy instructurs the monthly lesson plan, and being the lead instructor of each camp we hosted. Lesson plans taught included: HTML / CSS, basic computer science fundamentals, critical thinking excercises, Unity game development, Scratch software, CSS animations, intro to Python, and more.'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'section',
+	                  null,
+	                  _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    'JENI\'S SPLENDID ICE CREAMS'
+	                  ),
+	                  _react2.default.createElement(
+	                    'h4',
+	                    null,
+	                    'ATLANTA, GA — ',
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: 'https://jenis.com/', target: '_blank' },
+	                      'Learn More'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'h5',
+	                    null,
+	                    'Ice Cream Ambassador: September 2013 - September 2014'
+	                  ),
+	                  _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'I scooped ice cream and taught people the importance of quality ingredients in order to make superior ice creams to endless lines of customers and absolutely loved it. You can ask me anything about ice cream. I know too much about ice cream.'
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'article',
+	                null,
+	                _react2.default.createElement(
+	                  'h2',
+	                  null,
+	                  'Education'
+	                ),
+	                _react2.default.createElement(
+	                  'section',
+	                  null,
+	                  _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    'THE CREATIVE CIRCUS'
+	                  ),
+	                  _react2.default.createElement(
+	                    'h4',
+	                    null,
+	                    'ATLANTA, GA — ',
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: 'http://creativecircus.edu/', target: '_blank' },
+	                      'Learn More'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'h5',
+	                    null,
+	                    'Interactive Development Student: October 2013 - September 2014'
+	                  ),
+	                  _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'I learned the core concepts of front end development at an advertising school focused on both creating great designers and sought after developers. While at school, I learned basic front end, the Adobe Suite, frameworks including Angular JS, Vanilla JavaScript, Unity game development, and multiple animation libraries.'
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'article',
+	                null,
+	                _react2.default.createElement(
+	                  'h2',
+	                  null,
+	                  'Skills'
+	                ),
+	                _react2.default.createElement(
+	                  'h3',
+	                  null,
+	                  'Languages'
+	                ),
+	                _react2.default.createElement(
+	                  'section',
+	                  null,
+	                  _react2.default.createElement(
+	                    'ul',
+	                    null,
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'HTML5'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Jade'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'CSS3'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'SCSS / SASS'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'JavaScript'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'CoffeeScript'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'React JS'
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'section',
+	                  null,
+	                  _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    'frameworks'
+	                  ),
+	                  _react2.default.createElement(
+	                    'ul',
+	                    null,
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Angular JS'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Backbone'
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'section',
+	                  null,
+	                  _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    'CMS Expertise'
+	                  ),
+	                  _react2.default.createElement(
+	                    'ul',
+	                    null,
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Adobe AEM'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Wordpress'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Shopify'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Squarespace'
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'section',
+	                  null,
+	                  _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    'Tools'
+	                  ),
+	                  _react2.default.createElement(
+	                    'ul',
+	                    null,
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Sublime'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Git'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Grunt / Gulp'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Node JS'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Underscore'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Handlebars'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Creative Suite'
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'JIRA'
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Contact;
+	}(_react2.default.Component);
+
+	exports.default = Contact;
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _dropDown = __webpack_require__(234);
+
+	var _dropDown2 = _interopRequireDefault(_dropDown);
+
+	var _project = __webpack_require__(235);
+
+	var _project2 = _interopRequireDefault(_project);
+
+	var _demoItem = __webpack_require__(239);
+
+	var _demoItem2 = _interopRequireDefault(_demoItem);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // New Work component
+	// =============================
+
+	var NewWork = function (_React$Component) {
+	  _inherits(NewWork, _React$Component);
+
+	  function NewWork(props) {
+	    _classCallCheck(this, NewWork);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NewWork).call(this, props));
+
+	    _this.state = {
+	      title: 'Demos',
+	      isOpen: false,
+	      id: 'demos'
+	    };
+	    return _this;
+	  }
+
+	  // Toggle Menu Function
+
+
+	  _createClass(NewWork, [{
+	    key: 'toggle_menu',
+	    value: function toggle_menu(event) {
+	      this.setState({ isOpen: !this.state.isOpen });
+	    }
+
+	    // All Click Functions Declared Here
+
+	  }, {
+	    key: 'handle_click',
+	    value: function handle_click(event) {
+	      this.toggle_menu(this);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'section',
+	        {
+	          id: this.state.id,
+	          'data-is-active': this.state.isOpen ? true : false },
+	        _react2.default.createElement(_dropDown2.default, {
+	          data: this.state.title,
+	          clickEvent: this.handle_click.bind(this) }),
+	        _react2.default.createElement(_demoItem2.default, null)
+	      );
+	    }
+	  }]);
+
+	  return NewWork;
+	}(_react2.default.Component);
+
+	exports.default = NewWork;
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // Demo Item component
+	// =============================
+
+	var DemoItem = function (_React$Component) {
+	  _inherits(DemoItem, _React$Component);
+
+	  function DemoItem(props) {
+	    _classCallCheck(this, DemoItem);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(DemoItem).call(this, props));
+
+	    _this.state = {};
+	    return _this;
+	  }
+
+	  _createClass(DemoItem, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'main',
+	        null,
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'Paige'
+	        )
+	      );
+	    }
+	  }]);
+
+	  return DemoItem;
+	}(_react2.default.Component);
+
+	exports.default = DemoItem;
+
+/***/ },
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26286,16 +26979,16 @@
 	// =============================
 
 /***/ },
-/* 238 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(239);
+	var content = __webpack_require__(242);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(241)(content, {});
+	var update = __webpack_require__(244)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26312,21 +27005,21 @@
 	}
 
 /***/ },
-/* 239 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(240)();
+	exports = module.exports = __webpack_require__(243)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "* {\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\nbody {\n  margin: 0 auto;\n  padding: 0;\n  background: #fdf8f3; }\n  body h1 {\n    font-family: \"Open Sans\", sans-serif;\n    display: inline-block;\n    font-size: 30px;\n    margin: 0;\n    letter-spacing: 1px;\n    line-height: 30px;\n    text-transform: uppercase; }\n  body h2 {\n    font-family: \"Inconsolata\", sans-serif;\n    text-transform: uppercase;\n    font-size: 30px;\n    letter-spacing: 1.5px;\n    font-weight: 800;\n    margin: 10px 0 5px;\n    font-size: 20px;\n    text-transform: none;\n    margin: 0;\n    font-weight: 400; }\n  body h3 {\n    font-family: \"Inconsolata\", sans-serif;\n    text-transform: uppercase;\n    font-size: 30px;\n    letter-spacing: 1.5px;\n    font-weight: 800;\n    margin: 10px 0 5px;\n    font-size: 20px; }\n  body h4 {\n    font-family: \"Inconsolata\", sans-serif;\n    font-size: 16px;\n    margin: 0 0 5px 0;\n    letter-spacing: 1px; }\n  body p {\n    font-family: \"Open Sans\", sans-serif;\n    display: inline-block;\n    font-weight: 200;\n    line-height: 25px;\n    letter-spacing: .4px; }\n\nheader {\n  width: 100%;\n  padding: 0 20px;\n  margin: 0;\n  position: relative;\n  padding: 40px 20px; }\n  @media screen and (min-width: 768px) {\n    header {\n      width: 300px;\n      background: red; } }\n  header h2 {\n    margin: 20px 0;\n    line-height: 25px; }\n  header p {\n    font-size: 14px;\n    display: block; }\n\nnav {\n  margin-top: 20px; }\n  nav ul {\n    width: 100%;\n    padding: 0 20px;\n    margin: 0;\n    padding: 0 5%; }\n  nav li {\n    list-style: none;\n    margin: 20px 0; }\n  nav a {\n    font-family: \"Inconsolata\", sans-serif;\n    text-transform: uppercase;\n    font-size: 30px;\n    letter-spacing: 1.5px;\n    font-weight: 800;\n    margin: 10px 0 5px;\n    color: #000;\n    font-size: 15px;\n    padding: 5px 10px 25px 0;\n    margin: 0;\n    display: inline-block;\n    text-transform: lowercase;\n    text-decoration: none;\n    border: 2px solid black;\n    border-radius: 25px;\n    padding: 5px 10px; }\n\nmain figure {\n  position: relative;\n  width: 100%;\n  height: 300px;\n  overflow: hidden;\n  margin: 0 auto; }\n  main figure img {\n    position: absolute;\n    left: 50%;\n    bottom: 0;\n    height: 100%;\n    top: 0;\n    margin: 0;\n    transform: translate(-50%, 0); }\n\nmain header {\n  width: 100%;\n  margin: 0;\n  padding: 0; }\n  @media screen and (min-width: 768px) {\n    main header {\n      width: 300px;\n      background: red; } }\n\n@media screen and (min-width: 768px) {\n  main main {\n    position: absolute;\n    top: 0;\n    right: 0;\n    width: calc(100% - 300px);\n    background: orange; } }\n\nmain button {\n  font-family: \"Inconsolata\", sans-serif;\n  text-transform: uppercase;\n  font-size: 30px;\n  letter-spacing: 1.5px;\n  font-weight: 800;\n  margin: 10px 0 5px; }\n\nmain section[data-is-active=false] button:before {\n  content: '';\n  position: absolute;\n  left: 30px;\n  top: 0;\n  bottom: 0;\n  margin: auto;\n  background: #000;\n  width: 20px;\n  height: 4px; }\n\nmain section[data-is-active=false] button:after {\n  content: '';\n  position: absolute;\n  left: 38px;\n  top: 0;\n  bottom: 0;\n  margin: auto;\n  background: #000;\n  width: 4px;\n  height: 20px; }\n\nmain section[data-is-active=false] main {\n  display: none; }\n\nmain section[data-is-active=true] button:before {\n  content: '';\n  position: absolute;\n  left: 30px;\n  top: 0;\n  bottom: 0;\n  margin: auto;\n  background: #000;\n  width: 20px;\n  height: 4px; }\n\nmain section button {\n  border: 0;\n  background: none;\n  margin: 0;\n  padding: 0;\n  display: block;\n  position: relative;\n  padding: 20px 60px;\n  border-top: 1px solid #ccc;\n  font-family: \"Open Sans\", sans-serif;\n  width: 100%;\n  text-align: left;\n  font-size: 20px;\n  background: #f7f3f0; }\n\nmain section h3, main section p {\n  text-transform: none;\n  margin: 0;\n  width: 90%; }\n\nmain section h3 {\n  text-transform: uppercase;\n  padding: 20px 0 5px 20px; }\n\nmain section p {\n  font-family: \"Open Sans\", sans-serif;\n  padding: 0 0 40px 20px;\n  font-size: 12px; }\n", ""]);
+	exports.push([module.id, "* {\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\nbody {\n  margin: 0 auto;\n  padding: 0;\n  background: #fdf8f3; }\n  body h1 {\n    font-family: \"Open Sans\", sans-serif;\n    display: inline-block;\n    font-size: 30px;\n    margin: 0;\n    letter-spacing: 1px;\n    line-height: 30px;\n    text-transform: uppercase; }\n    @media screen and (min-width: 768px) {\n      body h1 {\n        padding-bottom: 20px;\n        position: relative;\n        display: none; } }\n  body h2 {\n    font-family: \"Inconsolata\", sans-serif;\n    text-transform: uppercase;\n    font-size: 30px;\n    letter-spacing: 1.5px;\n    font-weight: 800;\n    margin: 10px 0 5px;\n    font-size: 20px;\n    text-transform: none;\n    margin: 0;\n    font-weight: 400; }\n  body h3 {\n    font-family: \"Inconsolata\", sans-serif;\n    text-transform: uppercase;\n    font-size: 30px;\n    letter-spacing: 1.5px;\n    font-weight: 800;\n    margin: 10px 0 5px;\n    font-size: 20px; }\n  body h4 {\n    font-family: \"Inconsolata\", sans-serif;\n    text-transform: uppercase;\n    font-size: 30px;\n    letter-spacing: 1.5px;\n    font-weight: 800;\n    margin: 10px 0 5px; }\n  body p {\n    font-family: \"Open Sans\", sans-serif;\n    display: inline-block;\n    font-weight: 200;\n    line-height: 25px;\n    letter-spacing: .4px; }\n\nheader {\n  width: 100%;\n  padding: 0 20px;\n  margin: 0;\n  position: relative;\n  padding: 40px 20px; }\n  @media screen and (min-width: 768px) {\n    header {\n      width: 225px;\n      left: 0;\n      top: 50%;\n      transform: translateY(-50%);\n      position: fixed;\n      padding: 40px 30px; } }\n  header h2 {\n    margin: 20px 0;\n    line-height: 25px; }\n  header p {\n    font-size: 14px;\n    display: block; }\n  @media screen and (min-width: 768px) {\n    header section {\n      display: none; } }\n  header nav {\n    display: none; }\n    @media screen and (min-width: 768px) {\n      header nav {\n        display: inline-block;\n        width: 100%; } }\n\nnav {\n  margin-top: 20px; }\n  nav ul {\n    width: 100%;\n    padding: 0 20px;\n    margin: 0;\n    padding: 0; }\n  nav li {\n    list-style: none;\n    margin: 10px 0; }\n    nav li:first-of-type {\n      margin: 0; }\n    nav li a {\n      padding-left: 20px;\n      position: relative; }\n      nav li a.active {\n        background: #000;\n        color: #fdf8f3; }\n  nav li:first-of-type h3 a {\n    margin: 0; }\n  nav li h3 a {\n    padding: 5px;\n    margin: 20px 0 0; }\n  nav a {\n    font-family: \"Open Sans\", sans-serif;\n    color: #000;\n    margin: 0;\n    display: inline-block;\n    text-decoration: none; }\n    nav a:hover {\n      text-decoration: underline; }\n    nav a h3 {\n      font-family: \"Inconsolata\", sans-serif;\n      font-size: 20px;\n      text-transform: uppercase; }\n\n@media screen and (min-width: 768px) {\n  main {\n    margin-left: 225px;\n    background: #f7f3f0;\n    min-height: 100vh; } }\n\nmain figure {\n  position: relative;\n  width: 100%;\n  height: 300px;\n  overflow: hidden;\n  margin: 0 auto; }\n  @media screen and (min-width: 768px) {\n    main figure {\n      width: 400px;\n      height: 250px;\n      margin: 0;\n      background-color: gray; } }\n  main figure img {\n    position: absolute;\n    left: 50%;\n    bottom: 0;\n    height: 100%;\n    top: 0;\n    margin: 0;\n    transform: translate(-50%, 0); }\n    @media screen and (min-width: 768px) {\n      main figure img {\n        height: auto;\n        width: 120%;\n        left: 0;\n        transform: translate(-10%, 0); } }\n\nmain main > section {\n  position: relative; }\n  @media screen and (min-width: 768px) {\n    main main > section {\n      display: block;\n      margin: 0 auto; } }\n\n@media screen and (min-width: 768px) {\n  main main figcaption {\n    background: rgba(0, 0, 0, 0.6);\n    color: #fdf8f3;\n    max-width: 300px; } }\n\nmain header {\n  width: 100%;\n  margin: 0;\n  padding: 0; }\n  @media screen and (min-width: 768px) {\n    main header {\n      display: none; } }\n\n@media screen and (min-width: 768px) {\n  main .active main {\n    display: block !important; } }\n\n@media screen and (min-width: 768px) {\n  main main {\n    position: relative;\n    padding: 0;\n    margin-left: 0; } }\n\nmain button {\n  font-family: \"Inconsolata\", sans-serif;\n  text-transform: uppercase;\n  font-size: 30px;\n  letter-spacing: 1.5px;\n  font-weight: 800;\n  margin: 10px 0 5px; }\n\nmain section {\n  position: relative; }\n  main section[data-is-active=false] button:before {\n    content: '';\n    position: absolute;\n    left: 30px;\n    top: 0;\n    bottom: 0;\n    margin: auto;\n    background: #000;\n    width: 20px;\n    height: 4px; }\n  main section[data-is-active=false] button:after {\n    content: '';\n    position: absolute;\n    left: 38px;\n    top: 0;\n    bottom: 0;\n    margin: auto;\n    background: #000;\n    width: 4px;\n    height: 20px; }\n  main section[data-is-active=false] main {\n    display: none; }\n  main section[data-is-active=true] button:before {\n    content: '';\n    position: absolute;\n    left: 30px;\n    top: 0;\n    bottom: 0;\n    margin: auto;\n    background: #000;\n    width: 20px;\n    height: 4px; }\n  @media screen and (min-width: 768px) {\n    main section[data-is-active=true] main {\n      display: none; } }\n  main section button {\n    border: 0;\n    background: none;\n    margin: 0;\n    padding: 0;\n    display: block;\n    position: relative;\n    padding: 20px 60px;\n    border-top: 1px solid #ccc;\n    font-family: \"Open Sans\", sans-serif;\n    width: 100%;\n    text-align: left;\n    font-size: 20px;\n    background: #f7f3f0; }\n  main section figcaption {\n    text-transform: none;\n    margin: 0;\n    width: 100%;\n    padding: 20px 20px 0 20px; }\n    @media screen and (min-width: 768px) {\n      main section figcaption {\n        width: auto;\n        padding: 20px; } }\n  main section h3 {\n    text-transform: uppercase;\n    padding: 0;\n    margin: 0; }\n  main section p {\n    font-family: \"Open Sans\", sans-serif;\n    padding: 0 0 40px 0;\n    margin: 0;\n    font-size: 12px; }\n    @media screen and (min-width: 768px) {\n      main section p {\n        padding: 0; } }\n\n#contact h1 {\n  margin-bottom: 20px; }\n  @media screen and (min-width: 768px) {\n    #contact h1 {\n      display: none; } }\n\n#contact h2 {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 16px;\n  margin: 0 0 5px 0;\n  letter-spacing: 2px;\n  font-weight: 800;\n  text-transform: uppercase;\n  position: relative;\n  font-size: 25px;\n  padding: 0 0 15px 0;\n  margin-bottom: 50px;\n  text-align: center; }\n  #contact h2:after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: 0 auto;\n    width: 100px;\n    height: 4px;\n    background: #62b6ff; }\n\n#contact h3 {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 16px;\n  margin: 0 0 5px 0;\n  letter-spacing: 2px;\n  font-size: 15px; }\n\n#contact h4 {\n  font-weight: 200;\n  font-size: 15px;\n  margin: 2px 0 5px; }\n  #contact h4 a {\n    color: #000; }\n\n#contact h5 {\n  font-family: \"Inconsolata\", sans-serif;\n  font-size: 13px;\n  font-weight: 200;\n  margin: 0;\n  line-height: 17px;\n  color: #3c3c3c; }\n\n#contact p {\n  font-size: 15px;\n  margin-top: 20px;\n  color: #3c3c3c; }\n  @media screen and (min-width: 768px) {\n    #contact p {\n      margin-bottom: 50px; } }\n\n#contact ul {\n  margin: 0 0 30px 0;\n  padding: 0 0 0 5%;\n  display: inline-block; }\n\n#contact li {\n  font-family: \"Inconsolata\", sans-serif;\n  text-transform: uppercase;\n  font-size: 30px;\n  letter-spacing: 1.5px;\n  font-weight: 800;\n  margin: 10px 0 5px;\n  font-size: 13px;\n  font-weight: 200;\n  color: #3c3c3c; }\n\n#contact main {\n  width: 100%;\n  padding: 0 20px;\n  margin: 0; }\n  @media screen and (min-width: 768px) {\n    #contact main {\n      padding: 0 50px; } }\n  #contact main > section {\n    display: block;\n    max-width: 800px;\n    margin: 0 auto; }\n    #contact main > section > section {\n      display: inline-block; }\n  #contact main header {\n    margin: 50px 0 100px; }\n    @media screen and (min-width: 768px) {\n      #contact main header {\n        display: inline-block;\n        position: relative;\n        margin: 50px 0 0;\n        padding-top: 150px; } }\n    #contact main header a {\n      color: #000;\n      margin: 0 0 10px;\n      display: inline-block;\n      text-decoration: none; }\n      #contact main header a:hover {\n        text-decoration: underline; }\n    #contact main header h3 {\n      font-size: 13px; }\n\n#contact section section {\n  margin-bottom: 50px;\n  position: relative; }\n  #contact section section:after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: 0 auto;\n    width: 30px;\n    height: 2px;\n    background: #62b6ff; }\n\n#contact section:last-child:after {\n  display: none; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 240 */
+/* 243 */
 /***/ function(module, exports) {
 
 	/*
@@ -26382,7 +27075,7 @@
 
 
 /***/ },
-/* 241 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
