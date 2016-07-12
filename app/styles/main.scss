@@ -454,7 +454,7 @@ main {
 		text-transform: uppercase;		
 		position: relative;
 		font-size: 25px;
-		padding: 0 0 15px 0;
+		padding: 0 0 10px 0;
 		margin-bottom: 50px;
 		text-align: center;
 
@@ -521,13 +521,6 @@ main {
 		@include container;
 
 		@media screen and (min-width:768px) {
-			// width: calc(100% - 400px);
-			// right: auto;
-			// left: 400px;
-			// // max-width: 800px;
-			// top: 0;
-			// height: 100%;
-			// background: $gray-white;
 			padding: 50px 50px;
 		}
 
@@ -619,15 +612,21 @@ main {
 	    padding: 0;
 	    top: 50%;
 	    left: 50%;
+	    border-radius: 100%;
+	    width: 50px;
+	    height: 50px;
 	    transform: translate(-50%, -50%) scale(0);
-	    transition: .3s transform ease-out;
+	    transition: .3s transform, border-radius ease-out;
 	}
 
 	&[data-modal-is-open=true] {
 		top: 50%;
 		left: 50%;
+		border-radius: 0;
+		width: 100%;
+		height: 100vh;
 		transform: translate(-50%, -50%) scale(1);
-		transition: .15s transform ease-in;
+		transition: .15s transform, border-radius ease-in;
 	} 
 
 	header {
