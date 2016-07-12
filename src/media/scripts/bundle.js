@@ -65,7 +65,7 @@
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _about = __webpack_require__(240);
+	var _about = __webpack_require__(232);
 
 	var _about2 = _interopRequireDefault(_about);
 
@@ -25703,23 +25703,23 @@
 
 	var _header2 = _interopRequireDefault(_header);
 
-	var _list = __webpack_require__(232);
+	var _list = __webpack_require__(233);
 
 	var _list2 = _interopRequireDefault(_list);
 
-	var _newWork = __webpack_require__(233);
+	var _newWork = __webpack_require__(234);
 
 	var _newWork2 = _interopRequireDefault(_newWork);
 
-	var _oldWork = __webpack_require__(236);
+	var _oldWork = __webpack_require__(237);
 
 	var _oldWork2 = _interopRequireDefault(_oldWork);
 
-	var _contact = __webpack_require__(237);
+	var _contact = __webpack_require__(238);
 
 	var _contact2 = _interopRequireDefault(_contact);
 
-	var _demos = __webpack_require__(238);
+	var _demos = __webpack_require__(239);
 
 	var _demos2 = _interopRequireDefault(_demos);
 
@@ -25768,10 +25768,196 @@
 /* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+			value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _about = __webpack_require__(232);
+
+	var _about2 = _interopRequireDefault(_about);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // Header component
+	// =============================
+
+	var Header = function (_React$Component) {
+			_inherits(Header, _React$Component);
+
+			function Header(props) {
+					_classCallCheck(this, Header);
+
+					var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Header).call(this, props));
+
+					_this.state = {
+							isActive: false
+					};
+					return _this;
+			}
+
+			// All Click Functions Declared Here
+
+
+			_createClass(Header, [{
+					key: 'handle_click',
+					value: function handle_click(event) {
+							event.preventDefault();
+							var siblings = document.querySelectorAll(".active");
+							[].forEach.call(siblings, function (el) {
+									el.classList.remove("active");
+							});
+							var currentId = event.target.getAttribute('href');
+							event.target.setAttribute('class', 'active');
+							document.getElementById(currentId).setAttribute('class', 'active');
+					}
+			}, {
+					key: 'handle_about_click',
+					value: function handle_about_click(event) {
+							this.setState({ isActive: !this.state.isActive });
+					}
+			}, {
+					key: 'render',
+					value: function render() {
+							return _react2.default.createElement(
+									'header',
+									null,
+									_react2.default.createElement(
+											'main',
+											null,
+											_react2.default.createElement(
+													'h1',
+													null,
+													'Paige Keenan'
+											),
+											_react2.default.createElement(
+													'section',
+													null,
+													_react2.default.createElement(
+															'h2',
+															null,
+															'I\'m a Front-end Developer at Razorfish in Atlanta, GA.'
+													),
+													_react2.default.createElement(
+															'p',
+															null,
+															'My goal is to farther my craft everyday.'
+													),
+													_react2.default.createElement(
+															'p',
+															null,
+															'I want to work on projects that push me and force me out of my comfort zone.'
+													),
+													_react2.default.createElement(
+															'p',
+															null,
+															'I want to be a team player and a solid teammate on all projects I work on.'
+													),
+													_react2.default.createElement(
+															'p',
+															null,
+															'My work below illustrates these pursuits.'
+													)
+											),
+											_react2.default.createElement(
+													'nav',
+													null,
+													_react2.default.createElement(
+															'ul',
+															null,
+															_react2.default.createElement(
+																	'li',
+																	null,
+																	_react2.default.createElement(
+																			'h3',
+																			null,
+																			_react2.default.createElement(
+																					'a',
+																					{ className: 'active', href: 'new-work', onClick: this.handle_click.bind(this) },
+																					'New Work'
+																			)
+																	)
+															),
+															_react2.default.createElement(
+																	'li',
+																	null,
+																	_react2.default.createElement(
+																			'h3',
+																			null,
+																			_react2.default.createElement(
+																					'a',
+																					{ href: 'old-work', onClick: this.handle_click.bind(this) },
+																					'Old Work'
+																			)
+																	)
+															),
+															_react2.default.createElement(
+																	'li',
+																	null,
+																	_react2.default.createElement(
+																			'h3',
+																			null,
+																			_react2.default.createElement(
+																					'a',
+																					{ href: 'demos', onClick: this.handle_click.bind(this) },
+																					'Demos'
+																			)
+																	)
+															),
+															_react2.default.createElement(
+																	'li',
+																	null,
+																	_react2.default.createElement(
+																			'h3',
+																			null,
+																			_react2.default.createElement(
+																					'a',
+																					{ href: 'contact', onClick: this.handle_click.bind(this) },
+																					'Résumé'
+																			)
+																	)
+															)
+													),
+													_react2.default.createElement(
+															'a',
+															{
+																	href: '#',
+																	onClick: this.handle_about_click.bind(this) },
+															'About'
+													)
+											)
+									),
+									_react2.default.createElement(_about2.default, {
+											data: this.state.isActive,
+											clickEvent: this.handle_about_click.bind(this) })
+							);
+					}
+			}]);
+
+			return Header;
+	}(_react2.default.Component);
+
+	exports.default = Header;
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25786,144 +25972,71 @@
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // Header component
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // About Page
 	// =============================
 
-	var Header = function (_React$Component) {
-		_inherits(Header, _React$Component);
+	var About = function (_React$Component) {
+	  _inherits(About, _React$Component);
 
-		function Header() {
-			_classCallCheck(this, Header);
+	  function About() {
+	    _classCallCheck(this, About);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Header).apply(this, arguments));
-		}
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(About).apply(this, arguments));
+	  }
 
-		_createClass(Header, [{
-			key: "handle_click",
+	  _createClass(About, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'section',
+	        {
+	          id: 'about',
+	          'data-modal-is-open': this.props.data ? true : false,
+	          onClick: this.props.clickEvent },
+	        _react2.default.createElement(
+	          'header',
+	          null,
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'Hello.'
+	          ),
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            'I\'m Paige Keenan, and I\'m a Front End Developer at Razorfish in Atlanta, GA.'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'main',
+	          null,
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'I was raised in Texas. It\'s there that I learned that when you give your word there are no takebacks, that true joy is sitting in a swing on the front porch or taking a dip in Barton Springs, and to always say "Please," "Thank You," and "Yes ma\'am."'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Within web development, I\'m passionate about animations, clean code, and out there designs with smart UX.'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Outside of web development, I enjoy running, rock climbing, and candle making in my kitchen.'
+	          )
+	        )
+	      );
+	    }
+	  }]);
 
-
-			// All Click Functions Declared Here
-			value: function handle_click(event) {
-				event.preventDefault();
-				var siblings = document.querySelectorAll(".active");
-				[].forEach.call(siblings, function (el) {
-					el.classList.remove("active");
-				});
-				var currentId = event.target.getAttribute('href');
-				event.target.setAttribute('class', 'active');
-				document.getElementById(currentId).setAttribute('class', 'active');
-			}
-		}, {
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"header",
-					null,
-					_react2.default.createElement(
-						"h1",
-						null,
-						"Paige Keenan"
-					),
-					_react2.default.createElement(
-						"section",
-						null,
-						_react2.default.createElement(
-							"h2",
-							null,
-							"I'm a Front-end Developer at Razorfish in Atlanta, GA."
-						),
-						_react2.default.createElement(
-							"p",
-							null,
-							"My goal is to farther my craft everyday."
-						),
-						_react2.default.createElement(
-							"p",
-							null,
-							"I want to work on projects that push me and force me out of my comfort zone."
-						),
-						_react2.default.createElement(
-							"p",
-							null,
-							"I want to be a team player and a solid teammate on all projects I work on."
-						),
-						_react2.default.createElement(
-							"p",
-							null,
-							"My work below illustrates these pursuits."
-						)
-					),
-					_react2.default.createElement(
-						"nav",
-						null,
-						_react2.default.createElement(
-							"ul",
-							null,
-							_react2.default.createElement(
-								"li",
-								null,
-								_react2.default.createElement(
-									"h3",
-									null,
-									_react2.default.createElement(
-										"a",
-										{ className: "active", href: "new-work", onClick: this.handle_click.bind(this) },
-										"New Work"
-									)
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								_react2.default.createElement(
-									"h3",
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: "old-work", onClick: this.handle_click.bind(this) },
-										"Old Work"
-									)
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								_react2.default.createElement(
-									"h3",
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: "demos", onClick: this.handle_click.bind(this) },
-										"Demos"
-									)
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								_react2.default.createElement(
-									"h3",
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: "contact", onClick: this.handle_click.bind(this) },
-										"Résumé"
-									)
-								)
-							)
-						)
-					)
-				);
-			}
-		}]);
-
-		return Header;
+	  return About;
 	}(_react2.default.Component);
 
-	exports.default = Header;
+	exports.default = About;
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25992,7 +26105,7 @@
 	exports.default = List;
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26007,11 +26120,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _dropDown = __webpack_require__(234);
+	var _dropDown = __webpack_require__(235);
 
 	var _dropDown2 = _interopRequireDefault(_dropDown);
 
-	var _project = __webpack_require__(235);
+	var _project = __webpack_require__(236);
 
 	var _project2 = _interopRequireDefault(_project);
 
@@ -26080,7 +26193,7 @@
 	exports.default = NewWork;
 
 /***/ },
-/* 234 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26095,7 +26208,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _project = __webpack_require__(235);
+	var _project = __webpack_require__(236);
 
 	var _project2 = _interopRequireDefault(_project);
 
@@ -26143,7 +26256,7 @@
 	exports.default = DropDown;
 
 /***/ },
-/* 235 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26187,11 +26300,7 @@
 	      return _react2.default.createElement(
 	        'section',
 	        null,
-	        _react2.default.createElement(
-	          'figure',
-	          null,
-	          _react2.default.createElement('img', { src: link.image, alt: link.imageAlt })
-	        ),
+	        _react2.default.createElement('figure', { style: { backgroundImage: 'url(' + link.image + ')' } }),
 	        _react2.default.createElement(
 	          'figcaption',
 	          null,
@@ -26258,7 +26367,7 @@
 	exports.default = Project;
 
 /***/ },
-/* 236 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26273,11 +26382,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _dropDown = __webpack_require__(234);
+	var _dropDown = __webpack_require__(235);
 
 	var _dropDown2 = _interopRequireDefault(_dropDown);
 
-	var _project = __webpack_require__(235);
+	var _project = __webpack_require__(236);
 
 	var _project2 = _interopRequireDefault(_project);
 
@@ -26345,7 +26454,7 @@
 	exports.default = OldWork;
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26360,7 +26469,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _dropDown = __webpack_require__(234);
+	var _dropDown = __webpack_require__(235);
 
 	var _dropDown2 = _interopRequireDefault(_dropDown);
 
@@ -26804,7 +26913,7 @@
 	exports.default = Contact;
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26819,15 +26928,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _dropDown = __webpack_require__(234);
+	var _dropDown = __webpack_require__(235);
 
 	var _dropDown2 = _interopRequireDefault(_dropDown);
 
-	var _project = __webpack_require__(235);
+	var _project = __webpack_require__(236);
 
 	var _project2 = _interopRequireDefault(_project);
 
-	var _demoItem = __webpack_require__(239);
+	var _demoItem = __webpack_require__(240);
 
 	var _demoItem2 = _interopRequireDefault(_demoItem);
 
@@ -26894,7 +27003,7 @@
 	exports.default = NewWork;
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26951,34 +27060,6 @@
 	exports.default = DemoItem;
 
 /***/ },
-/* 240 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _react2.default.createClass({
-	  displayName: 'about',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      'About'
-	    );
-	  }
-	}); // About Page
-	// =============================
-
-/***/ },
 /* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -27013,7 +27094,7 @@
 
 
 	// module
-	exports.push([module.id, "* {\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\nbody {\n  margin: 0 auto;\n  padding: 0;\n  background: #fdf8f3; }\n  body h1 {\n    font-family: \"Open Sans\", sans-serif;\n    display: inline-block;\n    font-size: 30px;\n    margin: 0;\n    letter-spacing: 1px;\n    line-height: 30px;\n    text-transform: uppercase; }\n    @media screen and (min-width: 768px) {\n      body h1 {\n        padding-bottom: 20px;\n        position: relative;\n        display: none; } }\n  body h2 {\n    font-family: \"Inconsolata\", sans-serif;\n    text-transform: uppercase;\n    font-size: 30px;\n    letter-spacing: 1.5px;\n    font-weight: 800;\n    margin: 10px 0 5px;\n    font-size: 20px;\n    text-transform: none;\n    margin: 0;\n    font-weight: 400; }\n  body h3 {\n    font-family: \"Inconsolata\", sans-serif;\n    text-transform: uppercase;\n    font-size: 30px;\n    letter-spacing: 1.5px;\n    font-weight: 800;\n    margin: 10px 0 5px;\n    font-size: 20px; }\n  body h4 {\n    font-family: \"Inconsolata\", sans-serif;\n    text-transform: uppercase;\n    font-size: 30px;\n    letter-spacing: 1.5px;\n    font-weight: 800;\n    margin: 10px 0 5px; }\n  body p {\n    font-family: \"Open Sans\", sans-serif;\n    display: inline-block;\n    font-weight: 200;\n    line-height: 25px;\n    letter-spacing: .4px; }\n\nheader {\n  width: 100%;\n  padding: 0 20px;\n  margin: 0;\n  position: relative;\n  padding: 40px 20px; }\n  @media screen and (min-width: 768px) {\n    header {\n      width: 225px;\n      left: 0;\n      top: 50%;\n      transform: translateY(-50%);\n      position: fixed;\n      padding: 40px 30px; } }\n  header h2 {\n    margin: 20px 0;\n    line-height: 25px; }\n  header p {\n    font-size: 14px;\n    display: block; }\n  @media screen and (min-width: 768px) {\n    header section {\n      display: none; } }\n  header nav {\n    display: none; }\n    @media screen and (min-width: 768px) {\n      header nav {\n        display: inline-block;\n        width: 100%; } }\n\nnav {\n  margin-top: 20px; }\n  nav ul {\n    width: 100%;\n    padding: 0 20px;\n    margin: 0;\n    padding: 0; }\n  nav li {\n    list-style: none;\n    margin: 10px 0; }\n    nav li:first-of-type {\n      margin: 0; }\n    nav li a {\n      padding-left: 20px;\n      position: relative; }\n      nav li a.active {\n        background: #000;\n        color: #fdf8f3; }\n  nav li:first-of-type h3 a {\n    margin: 0; }\n  nav li h3 a {\n    padding: 5px;\n    margin: 20px 0 0; }\n  nav a {\n    font-family: \"Open Sans\", sans-serif;\n    color: #000;\n    margin: 0;\n    display: inline-block;\n    text-decoration: none; }\n    nav a:hover {\n      text-decoration: underline; }\n    nav a h3 {\n      font-family: \"Inconsolata\", sans-serif;\n      font-size: 20px;\n      text-transform: uppercase; }\n\n@media screen and (min-width: 768px) {\n  main {\n    margin-left: 225px;\n    background: #f7f3f0;\n    min-height: 100vh; } }\n\nmain figure {\n  position: relative;\n  width: 100%;\n  height: 300px;\n  overflow: hidden;\n  margin: 0 auto; }\n  @media screen and (min-width: 768px) {\n    main figure {\n      width: 400px;\n      height: 250px;\n      margin: 0;\n      background-color: gray; } }\n  main figure img {\n    position: absolute;\n    left: 50%;\n    bottom: 0;\n    height: 100%;\n    top: 0;\n    margin: 0;\n    transform: translate(-50%, 0); }\n    @media screen and (min-width: 768px) {\n      main figure img {\n        height: auto;\n        width: 120%;\n        left: 0;\n        transform: translate(-10%, 0); } }\n\nmain main > section {\n  position: relative; }\n  @media screen and (min-width: 768px) {\n    main main > section {\n      display: block;\n      margin: 0 auto; } }\n\n@media screen and (min-width: 768px) {\n  main main figcaption {\n    background: rgba(0, 0, 0, 0.6);\n    color: #fdf8f3;\n    max-width: 300px; } }\n\nmain header {\n  width: 100%;\n  margin: 0;\n  padding: 0; }\n  @media screen and (min-width: 768px) {\n    main header {\n      display: none; } }\n\n@media screen and (min-width: 768px) {\n  main .active main {\n    display: block !important; } }\n\n@media screen and (min-width: 768px) {\n  main main {\n    position: relative;\n    padding: 0;\n    margin-left: 0; } }\n\nmain button {\n  font-family: \"Inconsolata\", sans-serif;\n  text-transform: uppercase;\n  font-size: 30px;\n  letter-spacing: 1.5px;\n  font-weight: 800;\n  margin: 10px 0 5px; }\n\nmain section {\n  position: relative; }\n  main section[data-is-active=false] button:before {\n    content: '';\n    position: absolute;\n    left: 30px;\n    top: 0;\n    bottom: 0;\n    margin: auto;\n    background: #000;\n    width: 20px;\n    height: 4px; }\n  main section[data-is-active=false] button:after {\n    content: '';\n    position: absolute;\n    left: 38px;\n    top: 0;\n    bottom: 0;\n    margin: auto;\n    background: #000;\n    width: 4px;\n    height: 20px; }\n  main section[data-is-active=false] main {\n    display: none; }\n  main section[data-is-active=true] button:before {\n    content: '';\n    position: absolute;\n    left: 30px;\n    top: 0;\n    bottom: 0;\n    margin: auto;\n    background: #000;\n    width: 20px;\n    height: 4px; }\n  @media screen and (min-width: 768px) {\n    main section[data-is-active=true] main {\n      display: none; } }\n  main section button {\n    border: 0;\n    background: none;\n    margin: 0;\n    padding: 0;\n    display: block;\n    position: relative;\n    padding: 20px 60px;\n    border-top: 1px solid #ccc;\n    font-family: \"Open Sans\", sans-serif;\n    width: 100%;\n    text-align: left;\n    font-size: 20px;\n    background: #f7f3f0; }\n  main section figcaption {\n    text-transform: none;\n    margin: 0;\n    width: 100%;\n    padding: 20px 20px 0 20px; }\n    @media screen and (min-width: 768px) {\n      main section figcaption {\n        width: auto;\n        padding: 20px; } }\n  main section h3 {\n    text-transform: uppercase;\n    padding: 0;\n    margin: 0; }\n  main section p {\n    font-family: \"Open Sans\", sans-serif;\n    padding: 0 0 40px 0;\n    margin: 0;\n    font-size: 12px; }\n    @media screen and (min-width: 768px) {\n      main section p {\n        padding: 0; } }\n\n#contact h1 {\n  margin-bottom: 20px; }\n  @media screen and (min-width: 768px) {\n    #contact h1 {\n      display: none; } }\n\n#contact h2 {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 16px;\n  margin: 0 0 5px 0;\n  letter-spacing: 2px;\n  font-weight: 800;\n  text-transform: uppercase;\n  position: relative;\n  font-size: 25px;\n  padding: 0 0 15px 0;\n  margin-bottom: 50px;\n  text-align: center; }\n  #contact h2:after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: 0 auto;\n    width: 100px;\n    height: 4px;\n    background: #62b6ff; }\n\n#contact h3 {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 16px;\n  margin: 0 0 5px 0;\n  letter-spacing: 2px;\n  font-size: 15px; }\n\n#contact h4 {\n  font-weight: 200;\n  font-size: 15px;\n  margin: 2px 0 5px; }\n  #contact h4 a {\n    color: #000; }\n\n#contact h5 {\n  font-family: \"Inconsolata\", sans-serif;\n  font-size: 13px;\n  font-weight: 200;\n  margin: 0;\n  line-height: 17px;\n  color: #3c3c3c; }\n\n#contact p {\n  font-size: 15px;\n  margin-top: 20px;\n  color: #3c3c3c; }\n  @media screen and (min-width: 768px) {\n    #contact p {\n      margin-bottom: 50px; } }\n\n#contact ul {\n  margin: 0 0 30px 0;\n  padding: 0 0 0 5%;\n  display: inline-block; }\n\n#contact li {\n  font-family: \"Inconsolata\", sans-serif;\n  text-transform: uppercase;\n  font-size: 30px;\n  letter-spacing: 1.5px;\n  font-weight: 800;\n  margin: 10px 0 5px;\n  font-size: 13px;\n  font-weight: 200;\n  color: #3c3c3c; }\n\n#contact main {\n  width: 100%;\n  padding: 0 20px;\n  margin: 0; }\n  @media screen and (min-width: 768px) {\n    #contact main {\n      padding: 0 50px; } }\n  #contact main > section {\n    display: block;\n    max-width: 800px;\n    margin: 0 auto; }\n    #contact main > section > section {\n      display: inline-block; }\n  #contact main header {\n    margin: 50px 0 100px; }\n    @media screen and (min-width: 768px) {\n      #contact main header {\n        display: inline-block;\n        position: relative;\n        margin: 50px 0 0;\n        padding-top: 150px; } }\n    #contact main header a {\n      color: #000;\n      margin: 0 0 10px;\n      display: inline-block;\n      text-decoration: none; }\n      #contact main header a:hover {\n        text-decoration: underline; }\n    #contact main header h3 {\n      font-size: 13px; }\n\n#contact section section {\n  margin-bottom: 50px;\n  position: relative; }\n  #contact section section:after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: 0 auto;\n    width: 30px;\n    height: 2px;\n    background: #62b6ff; }\n\n#contact section:last-child:after {\n  display: none; }\n", ""]);
+	exports.push([module.id, "* {\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box; }\n\nbody {\n  margin: 0 auto;\n  padding: 0;\n  background: #fdf8f3; }\n  body h1 {\n    font-family: \"Open Sans\", sans-serif;\n    display: inline-block;\n    font-size: 30px;\n    margin: 0;\n    letter-spacing: 1px;\n    line-height: 30px;\n    text-transform: uppercase; }\n    @media screen and (min-width: 768px) {\n      body h1 {\n        padding-bottom: 20px;\n        position: relative;\n        display: none; } }\n  body h2 {\n    font-family: \"Inconsolata\", sans-serif;\n    text-transform: uppercase;\n    font-size: 30px;\n    letter-spacing: 1.5px;\n    font-weight: 800;\n    margin: 10px 0 5px;\n    font-size: 20px;\n    text-transform: none;\n    margin: 0;\n    font-weight: 400; }\n  body h3 {\n    font-family: \"Inconsolata\", sans-serif;\n    text-transform: uppercase;\n    font-size: 30px;\n    letter-spacing: 1.5px;\n    font-weight: 800;\n    margin: 10px 0 5px;\n    font-size: 20px; }\n  body h4 {\n    font-family: \"Inconsolata\", sans-serif;\n    text-transform: uppercase;\n    font-size: 30px;\n    letter-spacing: 1.5px;\n    font-weight: 800;\n    margin: 10px 0 5px; }\n  body p {\n    font-family: \"Open Sans\", sans-serif;\n    display: inline-block;\n    font-weight: 200;\n    line-height: 25px;\n    letter-spacing: .4px; }\n\nheader {\n  width: 100%;\n  padding: 0 20px;\n  margin: 0;\n  padding: 50px 20px;\n  position: relative; }\n  @media screen and (min-width: 768px) {\n    header {\n      padding: 0; } }\n  @media screen and (min-width: 768px) {\n    header main {\n      width: 225px;\n      left: 0;\n      top: 50%;\n      transform: translateY(-50%);\n      position: fixed;\n      padding: 40px 30px;\n      margin-left: 0;\n      min-height: 0;\n      background: none; } }\n  @media screen and (min-width: 768px) {\n    header main section {\n      display: none; } }\n  header main section p {\n    font-size: 14px;\n    display: block;\n    padding: 0 0 20px; }\n    header main section p:last-of-type {\n      padding: 0; }\n  header h2 {\n    margin: 20px 0;\n    line-height: 25px; }\n  header nav {\n    display: none; }\n    @media screen and (min-width: 768px) {\n      header nav {\n        display: inline-block;\n        width: 100%; } }\n\nnav {\n  margin-top: 20px; }\n  nav ul {\n    width: 100%;\n    padding: 0 20px;\n    margin: 0;\n    padding: 0; }\n  nav li {\n    list-style: none;\n    margin: 10px 0; }\n    nav li:first-of-type {\n      margin: 0; }\n    nav li a {\n      padding-left: 20px;\n      position: relative; }\n      nav li a.active {\n        background: #000;\n        color: #fdf8f3; }\n  nav li:first-of-type h3 a {\n    margin: 0; }\n  nav li h3 a {\n    padding: 5px;\n    margin: 20px 0 0; }\n  nav a {\n    font-family: \"Open Sans\", sans-serif;\n    color: #000;\n    margin: 0;\n    display: inline-block;\n    text-decoration: none; }\n    nav a:hover {\n      text-decoration: underline; }\n    nav a h3 {\n      font-family: \"Inconsolata\", sans-serif;\n      font-size: 20px;\n      text-transform: uppercase; }\n\n@media screen and (min-width: 768px) {\n  main {\n    margin-left: 225px;\n    background: #f7f3f0;\n    min-height: 100vh; } }\n\nmain figure {\n  position: relative;\n  width: 100%;\n  height: 350px;\n  overflow: hidden;\n  margin: 0 auto;\n  background-size: cover;\n  background-position: center center; }\n  @media screen and (min-width: 768px) {\n    main figure {\n      width: 400px;\n      height: 250px;\n      margin: 0;\n      background-color: gray; } }\n  main figure img {\n    position: absolute;\n    left: 50%;\n    bottom: 0;\n    height: 100%;\n    top: 0;\n    margin: 0;\n    transform: translate(-50%, 0); }\n    @media screen and (min-width: 768px) {\n      main figure img {\n        height: auto;\n        width: 120%;\n        left: 0;\n        transform: translate(-10%, 0); } }\n\nmain main > section {\n  position: relative; }\n  @media screen and (min-width: 768px) {\n    main main > section {\n      display: block;\n      margin: 0 auto; } }\n\n@media screen and (min-width: 768px) {\n  main main figcaption {\n    background: rgba(0, 0, 0, 0.6);\n    color: #fdf8f3;\n    max-width: 300px; } }\n\nmain header {\n  width: 100%;\n  margin: 0;\n  padding: 0; }\n  @media screen and (min-width: 768px) {\n    main header {\n      display: none; } }\n\n@media screen and (min-width: 768px) {\n  main .active main {\n    display: block !important;\n    height: auto;\n    transform: translateX(0) !important;\n    transition: .3s transform ease-out; } }\n\n@media screen and (min-width: 768px) {\n  main main {\n    position: relative;\n    padding: 0;\n    margin-left: 0; } }\n\nmain button {\n  font-family: \"Inconsolata\", sans-serif;\n  text-transform: uppercase;\n  font-size: 30px;\n  letter-spacing: 1.5px;\n  font-weight: 800;\n  margin: 10px 0 5px; }\n\nmain section {\n  position: relative; }\n  @media screen and (min-width: 768px) {\n    main section {\n      display: inline-block;\n      vertical-align: top;\n      overflow-x: hidden; } }\n  main section[data-is-active=false] button:before {\n    content: '';\n    position: absolute;\n    left: 30px;\n    top: 0;\n    bottom: 0;\n    margin: auto;\n    background: #000;\n    width: 20px;\n    height: 4px; }\n  main section[data-is-active=false] button:after {\n    content: '';\n    position: absolute;\n    left: 38px;\n    top: 0;\n    bottom: 0;\n    margin: auto;\n    background: #000;\n    width: 4px;\n    height: 20px; }\n  main section[data-is-active=false] main {\n    display: none; }\n    @media screen and (min-width: 768px) {\n      main section[data-is-active=false] main {\n        transform: translateX(100%);\n        display: none;\n        transition: .15s transform ease-in; } }\n  main section[data-is-active=true] button:before {\n    content: '';\n    position: absolute;\n    left: 30px;\n    top: 0;\n    bottom: 0;\n    margin: auto;\n    background: #000;\n    width: 20px;\n    height: 4px; }\n  main section[data-is-active=true] main {\n    display: inline-block;\n    width: 100%; }\n    @media screen and (min-width: 768px) {\n      main section[data-is-active=true] main {\n        transform: translateX(100%);\n        display: none;\n        transition: .15s transform ease-in; } }\n  main section button {\n    border: 0;\n    background: none;\n    margin: 0;\n    padding: 0;\n    display: block;\n    position: relative;\n    padding: 20px 60px;\n    border-top: 1px solid #ccc;\n    font-family: \"Open Sans\", sans-serif;\n    width: 100%;\n    text-align: left;\n    font-size: 20px;\n    background: #f7f3f0; }\n  main section figcaption {\n    text-transform: none;\n    margin: 0;\n    width: 100%;\n    padding: 20px 20px 0 20px; }\n    @media screen and (min-width: 768px) {\n      main section figcaption {\n        width: auto;\n        padding: 20px; } }\n  main section h3 {\n    text-transform: uppercase;\n    padding: 0;\n    margin: 0; }\n  main section p {\n    font-family: \"Open Sans\", sans-serif;\n    padding: 0 0 40px 0;\n    margin: 0;\n    font-size: 12px; }\n    @media screen and (min-width: 768px) {\n      main section p {\n        padding: 0; } }\n\n@media screen and (min-width: 768px) {\n  #contact {\n    display: block; } }\n\n#contact h1 {\n  margin-bottom: 20px; }\n  @media screen and (min-width: 768px) {\n    #contact h1 {\n      display: inline-block; } }\n\n#contact h2 {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 16px;\n  margin: 0 0 5px 0;\n  letter-spacing: 2px;\n  font-weight: 800;\n  text-transform: uppercase;\n  position: relative;\n  font-size: 25px;\n  padding: 0 0 15px 0;\n  margin-bottom: 50px;\n  text-align: center; }\n  #contact h2:after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: 0 auto;\n    width: 70px;\n    height: 4px;\n    background: #73acf2; }\n\n#contact h3 {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 16px;\n  margin: 0 0 5px 0;\n  letter-spacing: 2px;\n  font-size: 15px; }\n\n#contact h4 {\n  font-weight: 200;\n  font-size: 15px;\n  margin: 2px 0 5px; }\n  #contact h4 a {\n    color: #000; }\n\n#contact h5 {\n  font-family: \"Inconsolata\", sans-serif;\n  font-size: 13px;\n  font-weight: 200;\n  margin: 0;\n  line-height: 17px;\n  color: #3c3c3c; }\n\n#contact p {\n  font-size: 15px;\n  margin-top: 20px;\n  color: #3c3c3c; }\n  @media screen and (min-width: 768px) {\n    #contact p {\n      margin-bottom: 50px; } }\n\n#contact ul {\n  margin: 0 0 30px 0;\n  padding: 0 0 0 5%;\n  display: inline-block; }\n\n#contact li {\n  font-family: \"Inconsolata\", sans-serif;\n  text-transform: uppercase;\n  font-size: 30px;\n  letter-spacing: 1.5px;\n  font-weight: 800;\n  margin: 10px 0 5px;\n  font-size: 13px;\n  font-weight: 200;\n  color: #3c3c3c; }\n\n#contact main {\n  width: 100%;\n  padding: 0 20px;\n  margin: 0; }\n  @media screen and (min-width: 768px) {\n    #contact main {\n      padding: 50px 50px; } }\n  #contact main > section {\n    display: block;\n    max-width: 800px;\n    margin: 0 auto; }\n    #contact main > section > section {\n      display: inline-block; }\n  #contact main header {\n    margin: 50px 0 100px; }\n    @media screen and (min-width: 768px) {\n      #contact main header {\n        display: inline-block;\n        position: relative;\n        margin: 50px 0 100px;\n        padding: 0; } }\n    #contact main header a {\n      color: #000;\n      margin: 0 0 10px;\n      display: inline-block;\n      text-decoration: none; }\n      #contact main header a:hover {\n        text-decoration: underline; }\n    #contact main header h3 {\n      font-size: 13px; }\n\n#contact section section {\n  margin-bottom: 50px;\n  position: relative; }\n  @media screen and (min-width: 768px) {\n    #contact section section {\n      display: block; } }\n  #contact section section:after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: 0 auto;\n    width: 30px;\n    height: 2px;\n    background: #73acf2; }\n  #contact section section:last-of-type {\n    margin-bottom: 0; }\n\n#contact section:last-child:after {\n  display: none; }\n\n#about {\n  position: fixed;\n  width: 100%;\n  height: 100vh;\n  overflow: hidden;\n  padding: 75px 20%;\n  top: 0;\n  z-index: 1;\n  left: 0;\n  background: rgba(115, 172, 242, 0.96);\n  color: white;\n  cursor: url(\"/media/images/x-cursor.png\"), pointer; }\n  #about[data-modal-is-open=false] {\n    overflow: hidden;\n    padding: 0;\n    top: 50%;\n    left: 50%;\n    border-radius: 100%;\n    width: 50px;\n    height: 50px;\n    transform: translate(-50%, -50%) scale(0);\n    transition: .3s transform, border-radius ease-out; }\n  #about[data-modal-is-open=true] {\n    top: 50%;\n    left: 50%;\n    border-radius: 0;\n    width: 100%;\n    height: 100vh;\n    transform: translate(-50%, -50%) scale(1);\n    transition: .15s transform, border-radius ease-in; }\n  #about header {\n    transform: none;\n    display: inline-block;\n    position: relative;\n    transform: none;\n    top: 0;\n    left: 0; }\n  #about h2 {\n    font-family: \"Open Sans\", sans-serif;\n    font-size: 16px;\n    margin: 0 0 5px 0;\n    letter-spacing: 2px;\n    font-weight: 800;\n    font-size: 75px;\n    display: inline-block;\n    line-height: initial;\n    text-transform: uppercase;\n    margin-left: -5px; }\n  #about h3 {\n    text-transform: none;\n    font-weight: 200;\n    font-size: 30px;\n    line-height: 35px; }\n  #about p {\n    font-family: \"Open Sans\", sans-serif;\n    font-size: 16px;\n    margin: 0 0 5px 0;\n    letter-spacing: 2px;\n    margin: 20px 0;\n    font-size: 18px; }\n  #about main {\n    display: inline-block;\n    min-height: 0;\n    background: initial;\n    margin-top: 20px;\n    width: 100%;\n    padding: 0 20px;\n    transform: translate(0, 0);\n    top: 0;\n    position: relative;\n    padding: 0; }\n", ""]);
 
 	// exports
 
