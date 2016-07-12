@@ -11,8 +11,8 @@ export default class Link_Item extends React.Component {
 
     return(  
 		<section>
-			<figure>
-				<img src={link.image} alt={link.imageAlt} />
+			<figure style={{backgroundImage: 'url(' + link.image + ')'}}>
+				
 			</figure>	
       <figcaption>
 			 <h3>{link.title}</h3>
