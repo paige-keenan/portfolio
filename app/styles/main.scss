@@ -67,7 +67,6 @@ body {
 		@media screen and (min-width:768px) {
 			padding-bottom: 20px;
 			position: relative;
-			display: none;
 		}
 	}
 
@@ -225,10 +224,14 @@ main {
 		background-position: center center;
 
 		@media screen and (min-width:768px) {
-			width: 400px;
-			height: 250px;
-			margin: 0;
-			background-color: gray;
+			width: 74%;
+			height: 350px;
+			display: inline-block;
+			margin: 50px 0;
+		}
+
+		@media screen and (min-width:1000px) {
+			height: 450px;
 		}
 
 		img {
@@ -256,27 +259,10 @@ main {
 			@media screen and (min-width:768px) {
 				display: block;
 				margin: 0 auto;
-
-				// &:hover figcaption {
-				// 	opacity: 1;
-				// 	transition: .3s ease-in;
-				// }
+				max-width: 800px;
 			}
 
 		}	
-
-		figcaption {
-			@media screen and (min-width:768px) {
-				// position: absolute;
-				// top: 20px;
-				// left: 20px;
-				background: rgba(0, 0, 0, 0.6);
-				color: $background-color;
-				max-width: 300px;
-				// opacity: 0;
-				// transition: .15s ease-out;
-			}
-		}
 	}	
 
 	header {
@@ -320,6 +306,7 @@ main {
 			display: inline-block;
 			vertical-align: top;
 			overflow-x: hidden;
+			width: 100%;
 		}
 
 		// Closed Work State
@@ -410,8 +397,12 @@ main {
 			padding: 20px 20px 0 20px;
 
 			@media screen and (min-width:768px) {
-				width: auto;
+				width: 25%;
 				padding: 20px;
+				display: inline-block;
+				vertical-align: top;
+				margin-top: 25px;
+				margin: 50px 0;
 			}
 		}
 
@@ -506,13 +497,17 @@ main {
 
 	ul {
 	    margin: 0 0 30px 0;
-	    padding: 0 0 0 5%;
+	    padding: 0 0 0 30px;
 	    display: inline-block;
+
+	    @media screen and (min-width:768px) {
+	    	padding: 0 0 0 5%;
+	    }
 	}
 
 	li {
 		@include headline-font;
-		font-size: 13px;
+		font-size: 15px;
 		font-weight: 200;
 		color: $gray;
 	}
@@ -617,6 +612,12 @@ main {
 	    height: 50px;
 	    transform: translate(-50%, -50%) scale(0);
 	    transition: .3s transform, border-radius ease-out;
+
+	    
+	    > header,
+	    > main {
+	    	animation: opacity_out .15s;
+	    }
 	}
 
 	&[data-modal-is-open=true] {
@@ -627,6 +628,12 @@ main {
 		height: 100vh;
 		transform: translate(-50%, -50%) scale(1);
 		transition: .15s transform, border-radius ease-in;
+
+		
+		> header,
+		> main {
+			animation: opacity_in .35s;
+		}
 	} 
 
 	header {
@@ -675,4 +682,15 @@ main {
 	}
 }
 
+// Animations
+@keyframes opacity_in {
+	0%   {opacity: 0;}
+	80%  {opacity: 0;}
+	100% {opacity: 1;}
+}
 
+@keyframes opacity_out {
+	0%   {opacity: 1;}
+	90%  {opacity: 0;}
+	100% {opacity: 0;}
+}	
