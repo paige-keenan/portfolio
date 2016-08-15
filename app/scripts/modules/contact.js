@@ -50,9 +50,16 @@ export default class Contact extends React.Component {
               <article>
               <h2>Experience</h2>
                 <section>
+                  <h3>WyzAnt</h3>
+                  <h4>CHICAGO, IL &mdash; <a href='http://www.wyzant.com/' target='_blank'>Learn More</a></h4>
+                  <h5>Front End Developer: August 2016 - Present</h5>
+                  <p>In this role, I have provided maintenance work on Bridgestone Tire's website, been a core member of the development team that launched Firestone Tire's latest rendition of their website, and joined the team of a large banking website where my role includes maintenance and configuring unit tests to better expedite and ensure quality code.</p>
+                </section>
+
+                <section>
                   <h3>Razorfish</h3>
                   <h4>ATLANTA, GA &mdash; <a href='http://www.razorfish.com/' target='_blank'>Learn More</a></h4>
-                  <h5>Presentation Layer Engineer: January 2016 - Present</h5>
+                  <h5>Presentation Layer Engineer: January 2016 - August 2016</h5>
                   <p>In this role, I have provided maintenance work on Bridgestone Tire's website, been a core member of the development team that launched Firestone Tire's latest rendition of their website, and joined the team of a large banking website where my role includes maintenance and configuring unit tests to better expedite and ensure quality code.</p>
                 </section>
 

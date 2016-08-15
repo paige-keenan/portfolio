@@ -36,7 +36,7 @@ export default class Header extends React.Component {
       	<main>
 	        <h1>Paige Keenan</h1>
 	        <section>
-		        <h2>I'm a Front-end Developer at Razorfish in Atlanta, GA.</h2>
+		        <h2>I'm a Front-end Developer at WyzAnt in Chicago, IL.</h2>
 		        <p>My goal is to farther my craft everyday.</p>
 		        <p>I want to work on projects that push me and force me out of my comfort zone.</p>
 		        <p>I want to be a team player and a solid teammate on all projects I work on.</p>
