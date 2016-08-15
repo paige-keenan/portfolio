@@ -7,6 +7,14 @@ This is the code base of my personal portfolio. It's evolved a lot over the year
 
 ### To Run Project Locally
 This is a ```React``` based project
+* Make sure you have ```Webpack``` installed globally
+```
+npm install webpack -g
+```
+* Make sure you have ```Webpack's Server``` installed globally
+```
+npm install webpack-dev-server -g
+```
 * Assuming you have [npm](https://www.npmjs.com/), ```npm install``` this bad boy
 
 ### To Simply View Site as You Would on the Web
